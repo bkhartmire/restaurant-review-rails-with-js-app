@@ -1,11 +1,11 @@
-<h1>Welcome to Restaurant Critic!</h1>
-
-
+<h1>Welcome to Restaurant World Critic!</h1>
+<h5>Log In or Sign Up to Add a Restaurant Listing or Post a Review!</h5>
+<h3>Browse Restaurants by City (A-Z)</h3>
 <% @cities.each do |city| %>
   <ul>
     <h3><%= link_to city.name, city_path(city) %></h3>
       <% city.cuisines.uniq.each do |cuisine| %>
-        <li><%= cuisine.name %></li>
+        <li><%= link_to cuisine.name, city_cuisine_path(city, cuisine) %></li>
       <% end %>
   </ul>
 <% end %>
