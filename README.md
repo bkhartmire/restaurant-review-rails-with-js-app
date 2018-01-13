@@ -10,6 +10,7 @@ Restaurants:
   -belongs to a city
   -belongs to a cuisine (must select from checkbox, seed data)
   -(join table between city & cuisine)
+  -***Add Price Level??***
 Cuisine:
   -has_many restaurants
   -has_many cities, through restaurants

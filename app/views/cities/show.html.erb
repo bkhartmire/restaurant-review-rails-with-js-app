@@ -1,1 +1,8 @@
 <h1>Restaurants in <%= @city.name %>: </h1>
+<ul>
+  <% @city.restaurants.each do |restaurant| %>
+    <li>
+      <%= restaurant.name %> (<%= restaurant.cuisine.name %>)
+    </li>
+  <% end %>
+</ul>
