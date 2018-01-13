@@ -3,7 +3,7 @@
 
 <% @cities.each do |city| %>
   <ul>
-    <h3><%= city.name %></h3>
+    <h3><%= link_to city.name, city_path(city) %></h3>
       <% city.cuisines.uniq.each do |cuisine| %>
         <li><%= cuisine.name %></li>
       <% end %>
