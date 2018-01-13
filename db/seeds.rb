@@ -5,10 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-cuisines = Cuisine.create([{name: 'Japanese'}, {name: 'Chinese'}, {name: 'Korean'}, {name: 'Italian'}, {name: 'French'}, {name: 'New American'}, {name: 'Mexican'}, {name: 'Fast Food'}])
+cuisines = Cuisine.create([{name: 'Japanese'}, {name: 'Chinese'}, {name: 'Korean'}, {name: 'Italian'}, {name: 'French'}, {name: 'New American'}, {name: 'Mexican'}, {name: 'Fast Food'}, {name: 'Tapas'}])
 
-cities = City.create([{name: 'Los Angeles'}, {name: 'New York'}, {name: 'Barcelona'}, {name: 'London'}, {name: 'Paris'}, {name: 'Tokyo'}, {name: 'Hong Kong'}, {name: 'Mexico City'}, {name: 'Cape Town'}, {name: 'Melbourne'}])
+cities = City.create([{name: 'Los Angeles'}, {name: 'New York City'}, {name: 'Barcelona'}, {name: 'Paris'}, {name: 'Tokyo'}, {name: 'Hong Kong'}, {name: 'Mexico City'}, {name: 'Cape Town'}, {name: 'Melbourne'}])
 
 restaurants = Restaurant.create([
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '')}
+    {name: 'Cal Mare', city_id: City.find_by(name: 'Los Angeles').id , cuisine_id: Cuisine.find_by(name: 'Italian').id},
+    {name: 'In-N-Out', city_id: City.find_by(name: 'Los Angeles').id , cuisine_id: Cuisine.find_by(name: 'Fast Food').id},
+    {name: 'Guisados', city_id: City.find_by(name: 'Los Angeles').id , cuisine_id: Cuisine.find_by(name: 'Mexican').id},
+    {name: 'Inko Nito', city_id: City.find_by(name: 'Los Angeles').id , cuisine_id: Cuisine.find_by(name: 'Japanese').id},
+    {name: 'Katz\'s Delicatessen', city_id: City.find_by(name: 'New York City').id , cuisine_id: Cuisine.find_by(name: 'Fast Food').id},
+    {name: 'ABC Kitchen', city_id: City.find_by(name: 'New York City').id , cuisine_id: Cuisine.find_by(name: 'New American').id},
+    {name: 'Balthazar', city_id: City.find_by(name: 'New York City').id , cuisine_id: Cuisine.find_by(name: 'French').id},
+    {name: 'Di Fara', city_id: City.find_by(name: 'New York City').id , cuisine_id: Cuisine.find_by(name: 'Italian').id},
+    {name: 'Gray\'s Papaya', city_id: City.find_by(name: 'New York City').id , cuisine_id: Cuisine.find_by(name: 'Fast Food').id},
+    {name: 'Quimet i Quimet', city_id: City.find_by(name: 'Barcelona').id , cuisine_id: Cuisine.find_by(name: 'Tapas').id},
+    {name: 'La Esquinica', city_id: City.find_by(name: 'Barcelona').id , cuisine_id: Cuisine.find_by(name: 'Tapas').id},
+    {name: 'Floreta', city_id: City.find_by(name: 'Barcelona').id , cuisine_id: Cuisine.find_by(name: 'Tapas').id},
+    {name: 'Le Cucine Mandarosso', city_id: City.find_by(name: 'Barcelona').id , cuisine_id: Cuisine.find_by(name: 'Italian').id},
+    {name: 'PerBacco!', city_id: City.find_by(name: 'Barcelona').id , cuisine_id: Cuisine.find_by(name: 'Italian').id},
+
   ])
