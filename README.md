@@ -8,6 +8,10 @@ Restaurants:
   -has many reviews
   -has many users, through reviews
   -belongs to a city
+  -belongs to a cuisine (must select from checkbox, seed data)
+Cuisine:
+  -has_many restaurants
+  -name
 Reviews:
   -rating(1-5), content(optional)
   -belongs to user
