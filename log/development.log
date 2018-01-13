@@ -101,3 +101,147 @@ Processing by WelcomeController#home as HTML
 Completed 200 OK in 346ms (Views: 328.2ms | ActiveRecord: 0.9ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Japanese"], ["created_at", "2018-01-13 15:27:50.176207"], ["updated_at", "2018-01-13 15:27:50.176207"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Chinese"], ["created_at", "2018-01-13 15:27:50.180534"], ["updated_at", "2018-01-13 15:27:50.180534"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Korean"], ["created_at", "2018-01-13 15:27:50.183785"], ["updated_at", "2018-01-13 15:27:50.183785"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Italian"], ["created_at", "2018-01-13 15:27:50.186894"], ["updated_at", "2018-01-13 15:27:50.186894"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "French"], ["created_at", "2018-01-13 15:27:50.190875"], ["updated_at", "2018-01-13 15:27:50.190875"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "New American"], ["created_at", "2018-01-13 15:27:50.194492"], ["updated_at", "2018-01-13 15:27:50.194492"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mexican"], ["created_at", "2018-01-13 15:27:50.198045"], ["updated_at", "2018-01-13 15:27:50.198045"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fast Food"], ["created_at", "2018-01-13 15:27:50.201095"], ["updated_at", "2018-01-13 15:27:50.201095"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Los Angeles"], ["created_at", "2018-01-13 15:27:50.222746"], ["updated_at", "2018-01-13 15:27:50.222746"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "New York"], ["created_at", "2018-01-13 15:27:50.227064"], ["updated_at", "2018-01-13 15:27:50.227064"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Barcelona"], ["created_at", "2018-01-13 15:27:50.231589"], ["updated_at", "2018-01-13 15:27:50.231589"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "London"], ["created_at", "2018-01-13 15:27:50.237146"], ["updated_at", "2018-01-13 15:27:50.237146"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Paris"], ["created_at", "2018-01-13 15:27:50.241788"], ["updated_at", "2018-01-13 15:27:50.241788"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tokyo"], ["created_at", "2018-01-13 15:27:50.250005"], ["updated_at", "2018-01-13 15:27:50.250005"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Hong Kong"], ["created_at", "2018-01-13 15:27:50.255713"], ["updated_at", "2018-01-13 15:27:50.255713"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mexico City"], ["created_at", "2018-01-13 15:27:50.266922"], ["updated_at", "2018-01-13 15:27:50.266922"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cape Town"], ["created_at", "2018-01-13 15:27:50.272017"], ["updated_at", "2018-01-13 15:27:50.272017"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Melbourne"], ["created_at", "2018-01-13 15:27:50.276559"], ["updated_at", "2018-01-13 15:27:50.276559"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2018-01-13 16:29:07 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines"[0m
+  Rendered welcome/home.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 384ms (Views: 354.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-13 16:31:01 +0100
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+Completed 401 Unauthorized in 33ms
+
+
+  
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+NoMethodError (undefined method `sort_by!' for #<City::ActiveRecord_Relation:0x007ff3468d9640>
+Did you mean?  sort_by):
+  
+app/controllers/welcome_controller.rb:4:in `home'
+Started GET "/" for 127.0.0.1 at 2018-01-13 16:31:16 +0100
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+Completed 401 Unauthorized in 39ms (ActiveRecord: 1.8ms)
+
+
+  
+NoMethodError (undefined method `group' for #<City:0x007ff349d05db0>):
+  
+app/controllers/welcome_controller.rb:4:in `block in home'
+app/controllers/welcome_controller.rb:4:in `sort_by'
+app/controllers/welcome_controller.rb:4:in `home'
+Started GET "/" for 127.0.0.1 at 2018-01-13 16:32:34 +0100
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+Completed 401 Unauthorized in 33ms
+
+
+  
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+NoMethodError (undefined method `sort_by!' for #<City::ActiveRecord_Relation:0x007ff346add220>
+Did you mean?  sort_by):
+  
+app/controllers/welcome_controller.rb:4:in `home'
+Started PUT "/__web_console/repl_sessions/2ebe28ae8f4c907906bd57d37b8ede56" for 127.0.0.1 at 2018-01-13 16:32:38 +0100
+Started PUT "/__web_console/repl_sessions/2ebe28ae8f4c907906bd57d37b8ede56" for 127.0.0.1 at 2018-01-13 16:32:38 +0100
+Started PUT "/__web_console/repl_sessions/2ebe28ae8f4c907906bd57d37b8ede56" for 127.0.0.1 at 2018-01-13 16:32:39 +0100
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/2ebe28ae8f4c907906bd57d37b8ede56" for 127.0.0.1 at 2018-01-13 16:32:42 +0100
+Started PUT "/__web_console/repl_sessions/2ebe28ae8f4c907906bd57d37b8ede56" for 127.0.0.1 at 2018-01-13 16:32:45 +0100
+Started PUT "/__web_console/repl_sessions/2ebe28ae8f4c907906bd57d37b8ede56" for 127.0.0.1 at 2018-01-13 16:32:51 +0100
+Started PUT "/__web_console/repl_sessions/2ebe28ae8f4c907906bd57d37b8ede56" for 127.0.0.1 at 2018-01-13 16:32:57 +0100
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2018-01-13 16:34:01 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+Completed 401 Unauthorized in 44ms (ActiveRecord: 0.0ms)
+
+
+  
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+NoMethodError (undefined method `sort_by!' for #<City::ActiveRecord_Relation:0x007ff3444107c8>
+Did you mean?  sort_by):
+  
+app/controllers/welcome_controller.rb:4:in `home'
+Started GET "/" for 127.0.0.1 at 2018-01-13 16:34:10 +0100
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+Completed 401 Unauthorized in 24ms (ActiveRecord: 2.0ms)
+
+
+  
+NoMethodError (undefined method `group' for #<City:0x007ff34362cd78>):
+  
+app/controllers/welcome_controller.rb:4:in `block in home'
+app/controllers/welcome_controller.rb:4:in `sort_by'
+app/controllers/welcome_controller.rb:4:in `home'
+Started GET "/" for 127.0.0.1 at 2018-01-13 16:34:33 +0100
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines"[0m
+  Rendered welcome/home.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 269ms (Views: 248.2ms | ActiveRecord: 2.0ms)
+
+
