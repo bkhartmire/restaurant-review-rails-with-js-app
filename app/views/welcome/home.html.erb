@@ -1,8 +1,11 @@
 <h1>Welcome to Restaurant Critic!</h1>
-<% @cuisines.each do |cuisine| %>
-  <%= cuisine.name %><br>
-<% end %>
+
 
 <% @cities.each do |city| %>
-  <%= city.name %><br>
+  <ul>
+    <h3><%= city.name %></h3>
+      <% @cuisines.each do |cuisine| %>
+        <li><%= cuisine.name %></li>
+      <% end %>
+  </ul>
 <% end %>

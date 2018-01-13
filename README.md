@@ -9,8 +9,10 @@ Restaurants:
   -has many users, through reviews
   -belongs to a city
   -belongs to a cuisine (must select from checkbox, seed data)
+  -(join table between city & cuisine)
 Cuisine:
   -has_many restaurants
+  -has_many cities, through restaurants
   -name
 Reviews:
   -rating(1-5), content(optional)
@@ -20,6 +22,7 @@ Reviews:
 City:
   -name
   -has many restaurants
+  -has many cuisines, through restaurants
 
 Views/Welcome/Home:
   -Sign Up, Log In (allow facebook login with OmniAuth), Sign Out
