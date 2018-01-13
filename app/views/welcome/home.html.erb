@@ -4,7 +4,7 @@
 <% @cities.each do |city| %>
   <ul>
     <h3><%= city.name %></h3>
-      <% @cuisines.each do |cuisine| %>
+      <% city.cuisines.uniq.each do |cuisine| %>
         <li><%= cuisine.name %></li>
       <% end %>
   </ul>
