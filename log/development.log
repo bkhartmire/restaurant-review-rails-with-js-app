@@ -986,3 +986,49 @@ Processing by CuisinesController#show as HTML
 Completed 200 OK in 29ms (Views: 24.8ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/cities/3/cuisines/9" for 127.0.0.1 at 2018-01-13 17:40:02 +0100
+Processing by CuisinesController#show as HTML
+  Parameters: {"city_id"=>"3", "id"=>"9"}
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 401 Unauthorized in 235ms (ActiveRecord: 2.6ms)
+
+
+  
+NameError (undefined local variable or method `restaurant' for #<CuisinesController:0x007f909cac23d8>):
+  
+app/controllers/cuisines_controller.rb:5:in `show'
+Started GET "/cities/3/cuisines/9" for 127.0.0.1 at 2018-01-13 17:40:13 +0100
+Processing by CuisinesController#show as HTML
+  Parameters: {"city_id"=>"3", "id"=>"9"}
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 401 Unauthorized in 186ms (ActiveRecord: 1.7ms)
+
+
+  
+NameError (undefined local variable or method `restaurant' for #<CuisinesController:0x007f909c6b0240>):
+  
+app/controllers/cuisines_controller.rb:5:in `show'
+Started GET "/cities/3/cuisines/9" for 127.0.0.1 at 2018-01-13 17:41:34 +0100
+Processing by CuisinesController#show as HTML
+  Parameters: {"city_id"=>"3", "id"=>"9"}
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 3]]
+  Rendering cuisines/show.html.erb within layouts/application
+  Rendered cuisines/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 74ms (Views: 21.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/cities/3/cuisines/9" for 127.0.0.1 at 2018-01-13 17:43:14 +0100
+Processing by CuisinesController#show as HTML
+  Parameters: {"city_id"=>"3", "id"=>"9"}
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 3]]
+  Rendering cuisines/show.html.erb within layouts/application
+  Rendered cuisines/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 90ms (Views: 29.7ms | ActiveRecord: 4.0ms)
+
+
