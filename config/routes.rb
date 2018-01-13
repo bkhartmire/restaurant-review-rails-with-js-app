@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   resources :cities, only: [:show] do
     resources :cuisines, only: [:show]
   end
-  resources :restaurants
+  resources :restaurants, only: [:show] do
+    resources :reviews, only: [:new, :create]
+  end
+
 end
