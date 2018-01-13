@@ -3577,3 +3577,664 @@ Processing by ReviewsController#new as HTML
 Completed 200 OK in 58ms (Views: 50.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/restaurants/13/reviews/new" for 127.0.0.1 at 2018-01-13 19:26:52 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"13"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_header.html.erb (3.5ms)
+Completed 200 OK in 137ms (Views: 85.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/restaurants/13/reviews/new" for 127.0.0.1 at 2018-01-13 19:32:18 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"13"}
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (246.2ms)
+Completed 401 Unauthorized in 358ms (ActiveRecord: 7.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `reviews_path' for #<#<Class:0x007fdcb291b950>:0x007fdcb2919c68>):
+    1: <h1>Review <%= @restaurant.name %></h1>
+    2: <%= form_for @review do |f| %>
+    3:   <%= f.hidden_field :restaurant_id %>
+    4:   <%= f.label :rating %>
+    5:   <%= f.text_field :content %>
+  
+app/views/reviews/new.html.erb:2:in `_app_views_reviews_new_html_erb__4260970481836037383_70292924743940'
+Started GET "/restaurants/13/reviews/new" for 127.0.0.1 at 2018-01-13 19:32:54 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"13"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (348.6ms)
+Completed 401 Unauthorized in 372ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `reviews_path' for #<#<Class:0x007fdcb291b950>:0x007fdcadce38f8>):
+    1: <h1>Review <%= @restaurant.name %></h1>
+    2: 
+    3: <%= form_for(@review) do |f| %>
+    4:   <%= f.hidden_field :restaurant_id %>
+    5:   <%= f.label :rating %>
+    6:   <%= f.text_field :content %>
+  
+app/views/reviews/new.html.erb:3:in `_app_views_reviews_new_html_erb__4260970481836037383_70292901011740'
+Started GET "/restaurants/13/reviews/new" for 127.0.0.1 at 2018-01-13 19:35:39 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"13"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (283.0ms)
+Completed 401 Unauthorized in 448ms (ActiveRecord: 7.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `reviews_path' for #<#<Class:0x007fdcadaec428>:0x007fdcaea8a178>):
+    1: <h1>Review <%= @restaurant.name %></h1>
+    2: 
+    3: <%= form_for(@review) do |f| %>
+    4:   <%= f.hidden_field :restaurant_id %>
+    5:   <%= f.label :rating %>
+    6:   <%= f.number_field :rating %>
+  
+app/views/reviews/new.html.erb:3:in `_app_views_reviews_new_html_erb__4260970481836037383_70292891723500'
+Started GET "/restaurants/13/reviews/new" for 127.0.0.1 at 2018-01-13 19:38:30 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"13"}
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (296.2ms)
+Completed 401 Unauthorized in 384ms (ActiveRecord: 3.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `reviews_path' for #<#<Class:0x007fdca9a59230>:0x007fdca8b25db8>):
+    1: <h1>Review <%= @restaurant.name %></h1>
+    2: 
+    3: <%= form_for(@review) do |f| %>
+    4:   <%= f.hidden_field :restaurant_id %>
+    5:   <%= f.label :rating %>
+    6:   <%= f.number_field :rating %>
+  
+app/views/reviews/new.html.erb:3:in `_app_views_reviews_new_html_erb__4260970481836037383_70292857868620'
+Started GET "/restaurants/13/reviews/new" for 127.0.0.1 at 2018-01-13 19:39:36 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"13"}
+  [1m[36mRestaurant Load (1.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (750.2ms)
+Completed 401 Unauthorized in 816ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `review' for #<#<Class:0x007fdcafb627e8>:0x007fdcafb60b00>
+Did you mean?  @review):
+    1: <h1>Review <%= @restaurant.name %></h1>
+    2: 
+    3: <%= form_for review do |f| %>
+    4:   <%= f.hidden_field :restaurant_id %>
+    5:   <%= f.label :rating %>
+    6:   <%= f.number_field :rating %>
+  
+app/views/reviews/new.html.erb:3:in `_app_views_reviews_new_html_erb__4260970481836037383_70292908742720'
+Started GET "/restaurants/13/reviews/new" for 127.0.0.1 at 2018-01-13 19:39:49 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"13"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (310.4ms)
+Completed 401 Unauthorized in 330ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `reviews_path' for #<#<Class:0x007fdcafb627e8>:0x007fdcaeb2f7b8>):
+    1: <h1>Review <%= @restaurant.name %></h1>
+    2: 
+    3: <%= form_for @review do |f| %>
+    4:   <%= f.hidden_field :restaurant_id %>
+    5:   <%= f.label :rating %>
+    6:   <%= f.number_field :rating %>
+  
+app/views/reviews/new.html.erb:3:in `_app_views_reviews_new_html_erb__4260970481836037383_70292906983700'
+Started PUT "/__web_console/repl_sessions/b310c4f6cde4b63365febf8aaad7e10b" for 127.0.0.1 at 2018-01-13 19:39:54 +0100
+Started PUT "/__web_console/repl_sessions/b310c4f6cde4b63365febf8aaad7e10b" for 127.0.0.1 at 2018-01-13 19:39:55 +0100
+Started GET "/restaurants/13/reviews/new" for 127.0.0.1 at 2018-01-13 19:40:52 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"13"}
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (65.7ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 343ms (Views: 238.8ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2018-01-13 19:41:32 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wMInDvw/mUB7NjlDiAogVWSh+ow/mdHbSO8J/qza+Ye/TJF09fWEwu39OQlgGevBzMk4CB5DtGGzGZwvcGvhTw==", "review"=>{"restaurant_id"=>"", "rating"=>"4", "content"=>"Great service!"}, "commit"=>"Create Review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/reviews_controller.rb:9:in `create'
+Started GET "/" for 127.0.0.1 at 2018-01-13 19:41:54 +0100
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 3]]
+  [1m[36mCuisine Load (0.5ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 6]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 1]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 7]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 2]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 4]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 5]]
+  Rendered welcome/home.html.erb within layouts/application (98.2ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 164ms (Views: 141.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-01-13 19:41:56 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/brittanyhartmire/.rvm/gems/ruby-2.3.3/gems/devise-4.4.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/brittanyhartmire/.rvm/gems/ruby-2.3.3/gems/devise-4.4.0/app/views/devise/shared/_links.html.erb (2.3ms)
+  Rendered /Users/brittanyhartmire/.rvm/gems/ruby-2.3.3/gems/devise-4.4.0/app/views/devise/registrations/new.html.erb within layouts/application (18.5ms)
+  Rendered layouts/_header.html.erb (2.8ms)
+Completed 200 OK in 115ms (Views: 84.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-01-13 19:42:10 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Rixn1g5t/CzNX9xAkLQcyZ0bBrUnpAUSu+dpQX+Gauj1V13G9glE04uOffh6gsQU7066hG5ATmSKFoqF99FagQ==", "user"=>{"email"=>"user@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@mail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "user@mail.com"], ["encrypted_password", "$2a$11$uA.RIUEqHNni/0ylePP1neFqILyNcl4xlJirQO3sDkWv782R/IcQC"], ["created_at", "2018-01-13 18:42:10.900225"], ["updated_at", "2018-01-13 18:42:10.900225"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", "2018-01-13 18:42:10.908402"], ["last_sign_in_at", "2018-01-13 18:42:10.908402"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", "2018-01-13 18:42:10.911163"], ["id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 327ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-13 19:42:10 +0100
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mCuisine Load (0.7ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 3]]
+  [1m[36mCuisine Load (0.5ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 6]]
+  [1m[36mCuisine Load (0.7ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 1]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 7]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 2]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 4]]
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 5]]
+  Rendered welcome/home.html.erb within layouts/application (78.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (453.0ms)
+Completed 401 Unauthorized in 619ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x007fdcaee68dd0>:0x007fdcaf2a5060>):
+    2:     <h3>
+    3:       <%= link_to 'Home', root_path %> |
+    4:       <% if user_signed_in? %>
+    5:         <%= link_to 'Your Profile', user_path(current_user) %> |
+    6:         <%= link_to 'Sign Out', destroy_user_session_path, method: 'delete' %>
+    7:       <% else %>
+    8:         <%= link_to 'Sign Up', new_user_registration_path %> |
+  
+app/views/layouts/_header.html.erb:5:in `_app_views_layouts__header_html_erb__4483879177860810140_70292906288180'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__1071025933012461915_70292899587260'
+Started PUT "/__web_console/repl_sessions/4ee04f2785e3d4625865483907c7672d" for 127.0.0.1 at 2018-01-13 19:42:24 +0100
+Started PUT "/__web_console/repl_sessions/4ee04f2785e3d4625865483907c7672d" for 127.0.0.1 at 2018-01-13 19:42:26 +0100
+Started GET "/" for 127.0.0.1 at 2018-01-13 19:43:41 +0100
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 3]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 6]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 7]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 2]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 4]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 5]]
+  Rendered welcome/home.html.erb within layouts/application (16.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (451.8ms)
+Completed 401 Unauthorized in 513ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_path' for #<#<Class:0x007fdcaee68dd0>:0x007fdcaf5119e8>):
+    2:     <h3>
+    3:       <%= link_to 'Home', root_path %> |
+    4:       <% if user_signed_in? %>
+    5:         <%= link_to 'Your Profile', user_path(current_user) %> |
+    6:         <%= link_to 'Sign Out', destroy_user_session_path, method: 'delete' %>
+    7:       <% else %>
+    8:         <%= link_to 'Sign Up', new_user_registration_path %> |
+  
+app/views/layouts/_header.html.erb:5:in `_app_views_layouts__header_html_erb__4483879177860810140_70292892865600'
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb__1071025933012461915_70292904167920'
+Started GET "/" for 127.0.0.1 at 2018-01-13 19:44:32 +0100
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 3]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 6]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 7]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 2]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 4]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 5]]
+  Rendered welcome/home.html.erb within layouts/application (180.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (80.7ms)
+Completed 200 OK in 372ms (Views: 337.8ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-01-13 19:44:36 +0100
+  
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.4) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.4) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.8.1) lib/omniauth/strategy.rb:190:in `call!'
+omniauth (1.8.1) lib/omniauth/strategy.rb:168:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/1" for 127.0.0.1 at 2018-01-13 19:45:05 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (99.8ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+Completed 200 OK in 267ms (Views: 258.5ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-13 19:45:15 +0100
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 3]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 6]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 1]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 7]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 2]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 4]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 5]]
+  Rendered welcome/home.html.erb within layouts/application (56.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.2ms)
+Completed 200 OK in 132ms (Views: 95.4ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/cities/6" for 127.0.0.1 at 2018-01-13 19:45:17 +0100
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 6]]
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered cities/show.html.erb within layouts/application (36.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.0ms)
+Completed 200 OK in 92ms (Views: 83.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/restaurants/27" for 127.0.0.1 at 2018-01-13 19:45:18 +0100
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  Rendered restaurants/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (5.3ms)
+Completed 200 OK in 74ms (Views: 66.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/restaurants/27/reviews/new" for 127.0.0.1 at 2018-01-13 19:45:19 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"27"}
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (34.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (9.0ms)
+Completed 200 OK in 396ms (Views: 124.0ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2018-01-13 19:45:27 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tSyVIyIXs2CXN3XdIq0RpXLSRh04y7l2GUGwAq3wfMyQOfQdzJqtifzBmAw7XZ/xi8OJOOWVaQIml5wuQgfWfA==", "review"=>{"restaurant_id"=>"", "rating"=>"5", "content"=>"Delicious!"}, "commit"=>"Create Review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 401 Unauthorized in 18ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"restaurants", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/reviews_controller.rb:11:in `create'
+Started POST "/reviews" for 127.0.0.1 at 2018-01-13 19:46:11 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tSyVIyIXs2CXN3XdIq0RpXLSRh04y7l2GUGwAq3wfMyQOfQdzJqtifzBmAw7XZ/xi8OJOOWVaQIml5wuQgfWfA==", "review"=>{"restaurant_id"=>"", "rating"=>"5", "content"=>"Delicious!"}, "commit"=>"Create Review"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+Completed 401 Unauthorized in 165ms (ActiveRecord: 7.7ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"restaurants", :id=>nil}, possible unmatched constraints: [:id]):
+  
+app/controllers/reviews_controller.rb:11:in `create'
+Started POST "/reviews" for 127.0.0.1 at 2018-01-13 19:46:23 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tSyVIyIXs2CXN3XdIq0RpXLSRh04y7l2GUGwAq3wfMyQOfQdzJqtifzBmAw7XZ/xi8OJOOWVaQIml5wuQgfWfA==", "review"=>{"restaurant_id"=>"", "rating"=>"5", "content"=>"Delicious!"}, "commit"=>"Create Review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 401 Unauthorized in 145ms (ActiveRecord: 4.6ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"restaurants", :restaurant_id=>nil}, missing required keys: [:id]):
+  
+app/controllers/reviews_controller.rb:11:in `create'
+Started PUT "/__web_console/repl_sessions/da6a03ec4d0b9381a27608b5466c2755" for 127.0.0.1 at 2018-01-13 19:46:35 +0100
+Started PUT "/__web_console/repl_sessions/da6a03ec4d0b9381a27608b5466c2755" for 127.0.0.1 at 2018-01-13 19:46:36 +0100
+Started PUT "/__web_console/repl_sessions/da6a03ec4d0b9381a27608b5466c2755" for 127.0.0.1 at 2018-01-13 19:46:39 +0100
+Started PUT "/__web_console/repl_sessions/da6a03ec4d0b9381a27608b5466c2755" for 127.0.0.1 at 2018-01-13 19:46:42 +0100
+Started POST "/reviews" for 127.0.0.1 at 2018-01-13 19:47:06 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tSyVIyIXs2CXN3XdIq0RpXLSRh04y7l2GUGwAq3wfMyQOfQdzJqtifzBmAw7XZ/xi8OJOOWVaQIml5wuQgfWfA==", "review"=>{"restaurant_id"=>"", "rating"=>"5", "content"=>"Delicious!"}, "commit"=>"Create Review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 401 Unauthorized in 71ms (ActiveRecord: 3.4ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"restaurants", :restaurant_id=>nil}, missing required keys: [:id]):
+  
+app/controllers/reviews_controller.rb:11:in `create'
+Started GET "/restaurants/27" for 127.0.0.1 at 2018-01-13 19:47:12 +0100
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  Rendered restaurants/show.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.7ms)
+Completed 200 OK in 112ms (Views: 90.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/restaurants/27/reviews/new" for 127.0.0.1 at 2018-01-13 19:47:14 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"27"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 27], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (12.2ms)
+Completed 401 Unauthorized in 41ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for 27:Fixnum):
+    1: <h1>Review <%= @restaurant.name %></h1>
+    2: 
+    3: <%= form_for @review do |f| %>
+    4:   <%= f.hidden_field :restaurant_id, @restaurant.id %>
+    5:   <%= f.label :rating %>
+    6:   <%= f.number_field :rating %>
+    7:   <%= f.text_field :content %>
+  
+app/views/reviews/new.html.erb:4:in `block in _app_views_reviews_new_html_erb__4260970481836037383_70292928035580'
+app/views/reviews/new.html.erb:3:in `_app_views_reviews_new_html_erb__4260970481836037383_70292928035580'
+Started POST "/reviews" for 127.0.0.1 at 2018-01-13 19:47:17 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q8mPrjO+fiRTCTTC65lBAtp1U2MNSdwhekngQg1zyxM8RznUOnRjpsXCNIgDioqWch2R5yyTuZuBv3WT0cLT2w==", "review"=>{"restaurant_id"=>"", "rating"=>"5", "content"=>"Delicious!"}, "commit"=>"Create Review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 401 Unauthorized in 11ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"restaurants", :restaurant_id=>nil}, missing required keys: [:id]):
+  
+app/controllers/reviews_controller.rb:11:in `create'
+Started PUT "/__web_console/repl_sessions/3af634507d0127a69c413646fa6f7091" for 127.0.0.1 at 2018-01-13 19:47:24 +0100
+Started PUT "/__web_console/repl_sessions/3af634507d0127a69c413646fa6f7091" for 127.0.0.1 at 2018-01-13 19:47:25 +0100
+Started POST "/reviews" for 127.0.0.1 at 2018-01-13 19:49:18 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q8mPrjO+fiRTCTTC65lBAtp1U2MNSdwhekngQg1zyxM8RznUOnRjpsXCNIgDioqWch2R5yyTuZuBv3WT0cLT2w==", "review"=>{"restaurant_id"=>"", "rating"=>"5", "content"=>"Delicious!"}, "commit"=>"Create Review"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 149ms (ActiveRecord: 5.4ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/reviews_controller.rb:9:in `create'
+Started PUT "/__web_console/repl_sessions/82145083ca7263ebd3a852de84de1f35" for 127.0.0.1 at 2018-01-13 19:49:27 +0100
+Started PUT "/__web_console/repl_sessions/82145083ca7263ebd3a852de84de1f35" for 127.0.0.1 at 2018-01-13 19:49:29 +0100
+Started POST "/reviews" for 127.0.0.1 at 2018-01-13 19:49:50 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q8mPrjO+fiRTCTTC65lBAtp1U2MNSdwhekngQg1zyxM8RznUOnRjpsXCNIgDioqWch2R5yyTuZuBv3WT0cLT2w==", "review"=>{"restaurant_id"=>"", "rating"=>"5", "content"=>"Delicious!"}, "commit"=>"Create Review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 401 Unauthorized in 50ms (ActiveRecord: 3.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Restaurant with 'id'=):
+  
+app/controllers/reviews_controller.rb:9:in `create'
+Started PUT "/__web_console/repl_sessions/c98ae7eb8d178b87937373c864c8b75f" for 127.0.0.1 at 2018-01-13 19:49:56 +0100
+Started PUT "/__web_console/repl_sessions/c98ae7eb8d178b87937373c864c8b75f" for 127.0.0.1 at 2018-01-13 19:49:58 +0100
+Started POST "/reviews" for 127.0.0.1 at 2018-01-13 19:52:30 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q8mPrjO+fiRTCTTC65lBAtp1U2MNSdwhekngQg1zyxM8RznUOnRjpsXCNIgDioqWch2R5yyTuZuBv3WT0cLT2w==", "review"=>{"restaurant_id"=>"", "rating"=>"5", "content"=>"Delicious!"}, "commit"=>"Create Review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Completed 401 Unauthorized in 137ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"restaurants", :id=>nil}, missing required keys: [:id]):
+  
+app/controllers/reviews_controller.rb:11:in `create'
+Started PUT "/__web_console/repl_sessions/fd9ada3836ea0062a958e87f7629ffb7" for 127.0.0.1 at 2018-01-13 19:52:38 +0100
+Started PUT "/__web_console/repl_sessions/fd9ada3836ea0062a958e87f7629ffb7" for 127.0.0.1 at 2018-01-13 19:52:39 +0100
+Started GET "/cities/6" for 127.0.0.1 at 2018-01-13 19:52:52 +0100
+Processing by CitiesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering cities/show.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 6]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendered cities/show.html.erb within layouts/application (240.3ms)
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (74.9ms)
+Completed 200 OK in 387ms (Views: 355.0ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-01-13 19:52:55 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 132ms (Views: 107.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-13 19:52:56 +0100
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mCuisine Load (0.6ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 3]]
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 6]]
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 1]]
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 7]]
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 2]]
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 4]]
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 5]]
+  Rendered welcome/home.html.erb within layouts/application (165.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.7ms)
+Completed 200 OK in 239ms (Views: 229.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/cities/3/cuisines/4" for 127.0.0.1 at 2018-01-13 19:52:58 +0100
+Processing by CuisinesController#show as HTML
+  Parameters: {"city_id"=>"3", "id"=>"4"}
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 3]]
+  Rendering cuisines/show.html.erb within layouts/application
+  Rendered cuisines/show.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (43.5ms)
+Completed 200 OK in 111ms (Views: 94.0ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/restaurants/14" for 127.0.0.1 at 2018-01-13 19:52:59 +0100
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  Rendered restaurants/show.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.5ms)
+Completed 200 OK in 52ms (Views: 41.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/restaurants/14/reviews/new" for 127.0.0.1 at 2018-01-13 19:53:00 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"14"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/new.html.erb within layouts/application (9.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.7ms)
+Completed 200 OK in 95ms (Views: 65.1ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2018-01-13 19:53:10 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qEyCO9gzXbnGkvmEoDBQ3sz8aPysEQHErJJlXbqMgoSNWeMFNr5DUK1kFFW5wN6KNe2n2XFP0bCTRElxVXsoNA==", "review"=>{"restaurant_id"=>"14", "rating"=>"5", "content"=>"deliciosooo"}, "commit"=>"Create Review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("rating", "content", "user_id", "restaurant_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["rating", 5], ["content", "deliciosooo"], ["user_id", 1], ["restaurant_id", 14], ["created_at", "2018-01-13 18:53:10.298040"], ["updated_at", "2018-01-13 18:53:10.298040"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/restaurants/14
+Completed 302 Found in 25ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/restaurants/14" for 127.0.0.1 at 2018-01-13 19:53:10 +0100
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  Rendered restaurants/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (15.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (25.7ms)
+Completed 200 OK in 68ms (Views: 47.4ms | ActiveRecord: 15.9ms)
+
+
