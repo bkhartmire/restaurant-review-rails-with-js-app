@@ -5,7 +5,9 @@
   <% current_user.reviews.each do |review| %>
     <li>
       <p>You reviewed <%= link_to review.restaurant.name, restaurant_path(review.restaurant) %> on <%= review.updated_at.strftime("%b %d, %Y %I:%M %p") %> </p>
-      <p><%=review.rating.to_s %> Star Rating: <%= review.content %></p>
+      <p><%=review.rating.to_s %> Star Rating: <%= review.content %>
+      <%= button_to 'Edit', edit_review_path(review) %> </p>
+
   </li>
   <% end %>
 </ul>
