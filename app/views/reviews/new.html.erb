@@ -1,9 +1,3 @@
 <h1>Review <%= @restaurant.name %></h1>
 
-<%= form_for @review do |f| %>
-  <%= f.hidden_field :restaurant_id %>
-  <%= f.label :rating %>
-  <%= f.number_field :rating %>
-  <%= f.text_field :content %>
-  <%= f.submit %>
-<% end %>
+<%= render 'form', locals: {review: @review} %>
