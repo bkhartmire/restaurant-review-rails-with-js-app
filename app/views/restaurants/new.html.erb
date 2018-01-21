@@ -1,4 +1,10 @@
 <h1>Add Restaurant Listing</h1>
 <%= form_for(@restaurant) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :cuisine %>
+  <%= f.select 'cuisine', options_from_collection_for_select(@cuisines, 'id', 'name') %>
+  <%= f.label :city %>
+  <%= f.select 'city', options_from_collection_for_select(@cities, 'id', 'name') %>
   <%= f.submit "Submit"%>
 <% end %>

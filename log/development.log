@@ -8460,3 +8460,97 @@ Processing by RestaurantsController#new as HTML
 Completed 200 OK in 306ms (Views: 268.3ms | ActiveRecord: 1.9ms)
 
 
+Started GET "/restaurants/new" for 127.0.0.1 at 2018-01-21 17:01:17 +0100
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/new.html.erb within layouts/application (34.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (24.3ms)
+Completed 200 OK in 104ms (Views: 85.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/restaurants/new" for 127.0.0.1 at 2018-01-21 17:01:23 +0100
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/new.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.7ms)
+Completed 200 OK in 43ms (Views: 39.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/restaurants/new" for 127.0.0.1 at 2018-01-21 17:01:45 +0100
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/new.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (11.1ms)
+Completed 200 OK in 52ms (Views: 48.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/restaurants/new" for 127.0.0.1 at 2018-01-21 17:03:30 +0100
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/new.html.erb within layouts/application (30.5ms)
+Completed 401 Unauthorized in 45ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `cities' for #<Restaurant:0x007fbd49545340>):
+    3:   <%= f.label :name %>
+    4:   <%= f.text_field :name %><br>
+    5:   <%= f.label :city %>
+    6:   <%= f.select :cities%>
+    7:   <%= f.label :cuisine %>
+    8: 
+    9:   <%= f.submit "Submit"%>
+  
+app/views/restaurants/new.html.erb:6:in `block in _app_views_restaurants_new_html_erb__3922491732022778623_70225426018680'
+app/views/restaurants/new.html.erb:2:in `_app_views_restaurants_new_html_erb__3922491732022778623_70225426018680'
+Started GET "/restaurants/new" for 127.0.0.1 at 2018-01-21 17:06:36 +0100
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered restaurants/new.html.erb within layouts/application (274.5ms)
+Completed 401 Unauthorized in 316ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `options_from_collection_for_select' for #<ActionView::Helpers::FormBuilder:0x007fbd43b8c0b0>):
+    3:   <%= f.label :name %>
+    4:   <%= f.text_field :name %><br>
+    5:   <%= f.label :city %>
+    6:   <%= f.options_from_collection_for_select(@cities, 'id', 'name') %>
+    7:   <%= f.label :cuisine %>
+    8: 
+    9:   <%= f.submit "Submit"%>
+  
+app/views/restaurants/new.html.erb:6:in `block in _app_views_restaurants_new_html_erb__3922491732022778623_70225453652160'
+app/views/restaurants/new.html.erb:2:in `_app_views_restaurants_new_html_erb__3922491732022778623_70225453652160'
+Started GET "/restaurants/new" for 127.0.0.1 at 2018-01-21 17:08:30 +0100
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered restaurants/new.html.erb within layouts/application (12.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (19.9ms)
+Completed 200 OK in 64ms (Views: 59.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/restaurants/new" for 127.0.0.1 at 2018-01-21 17:09:17 +0100
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines"[0m
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered restaurants/new.html.erb within layouts/application (6.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.3ms)
+Completed 200 OK in 39ms (Views: 32.7ms | ActiveRecord: 0.8ms)
+
+

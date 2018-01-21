@@ -1,6 +1,8 @@
 class RestaurantsController < ApplicationController
   def new
     @restaurant = Restaurant.new
+    @cities = City.all
+    @cuisines = Cuisine.all
   end
 
   def create
