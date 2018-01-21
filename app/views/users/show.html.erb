@@ -2,7 +2,7 @@
 <h5>Logged in as <%= current_user.email %></h5>
 <h3>Your Reviews</h3>
 <ul>
-  <% current_user.reviews.each do |review| %>
+  <% current_user.reviews.order({created_at: :desc})each do |review| %>
     <li>
       <p>You reviewed <%= link_to review.restaurant.name, restaurant_path(review.restaurant) %> on <%= review.updated_at.strftime("%b %d, %Y %I:%M %p") %> </p>
       <%=review.rating.to_s %> Star Rating: <%= review.content %>
