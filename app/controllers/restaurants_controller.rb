@@ -7,14 +7,14 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.create(restaurant_params)
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   def show
     @restaurant = Restaurant.find(params[:id])
+  end
+
+  def destroy
+    restaurant = Restaurant.find(params[:id])
+    restaurant.destroy
+    redirect_to root_path, notice: "#{restaurant.name} has successfully been deleted."
   end
 
   private
