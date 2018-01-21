@@ -1,9 +1,5 @@
 <h1>Welcome to Restaurant World Critic!</h1>
-<% if user_signed_in? %>
-  <%= link_to "Add Restaurant Listing", new_restaurant_path %>
-<% else %>
-  <h5>Log In or Sign Up to Add a Restaurant Listing or Post a Review!</h5>
-<% end %>
+
 <h3>Browse Restaurants by City (A-Z)</h3>
 <% @cities.each do |city| %>
   <ul>
@@ -12,4 +8,10 @@
         <li><%= link_to cuisine.name, city_cuisine_path(city, cuisine) %></li>
       <% end %>
   </ul>
+<% end %>
+
+<% if user_signed_in? %>
+  <%= link_to "Add Restaurant Listing", new_restaurant_path %>
+<% else %>
+  <h5>Log In or Sign Up to Add a Restaurant Listing or Post a Review!</h5>
 <% end %>
