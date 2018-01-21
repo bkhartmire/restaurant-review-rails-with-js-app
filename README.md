@@ -1,14 +1,14 @@
 # README
 Users:
   -name, email, password
-  -has many reviews
-  -has many restaurants, through reviews
+  X-has many reviews
+  X-has many restaurants, through reviews
 Restaurants:
-  -city, name, cuisine
-  -has many reviews
-  -has many users, through reviews
-  -belongs to a city
-  -belongs to a cuisine (must select from checkbox, seed data)
+  X-city, name, cuisine
+  X-has many reviews
+  X-has many users, through reviews
+  X-belongs to a city
+  X-belongs to a cuisine (must select from checkbox, seed data)
   -(join table between city & cuisine)
   -***Add Price Level??***
 Cuisine:

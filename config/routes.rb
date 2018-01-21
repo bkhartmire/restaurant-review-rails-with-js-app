@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
   resources :reviews
+  resources :restaurant
   resources :users, only: [:show]
-  post 'reviews/:id/edit' => 'reviews#edit' 
+  post 'reviews/:id/edit' => 'reviews#edit'
 end
