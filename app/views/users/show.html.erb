@@ -7,6 +7,7 @@
       <p>You reviewed <%= link_to review.restaurant.name, restaurant_path(review.restaurant) %> on <%= review.updated_at.strftime("%b %d, %Y %I:%M %p") %> </p>
       <p><%=review.rating.to_s %> Star Rating: <%= review.content %>
       <%= button_to 'Edit', controller: 'reviews', action: 'edit', review_id: review.id, method: "get" %> </p>
+      <%= button_to 'Delete', {controller: 'reviews', action: 'destroy', review_id: review.id}, method: "delete" %></p>
 
   </li>
   <% end %>
