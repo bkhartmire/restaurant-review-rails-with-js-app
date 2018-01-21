@@ -3,8 +3,8 @@
   <%= f.label :name %>
   <%= f.text_field :name %><br>
   <%= f.label :cuisine %>
-  <%= f.select 'cuisine', options_from_collection_for_select(@cuisines, 'id', 'name') %>
+  <%= f.select 'cuisine', options_from_collection_for_select(@cuisines, 'id', 'name'), include_blank: true %>
   <%= f.label :city %>
-  <%= f.select 'city', options_from_collection_for_select(@cities, 'id', 'name') %>
+  <%= f.select 'city', options_from_collection_for_select(@cities, 'id', 'name'), include_blank: true %>
   <%= f.submit "Submit"%>
 <% end %>
