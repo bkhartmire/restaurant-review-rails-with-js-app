@@ -1,14 +1,9 @@
 <h1><%= @restaurant.name %></h1>
-<h3>Average Rating: <%= calculate_average(@restaurant) %> Stars </h3>
+<h3><%= calculate_average(@restaurant) %></h3>
 <% if user_signed_in? %>
   <h4><%= link_to 'Add Review', "/restaurants/#{@restaurant.id}/reviews/new" %></h4>
 <% end %>
-<h3>Reviews</h3>
-<ul>
-  <% @restaurant.reviews.each do |review| %>
-    <li>
-      <p><%=link_to review.user.email, user_path(review.user) %> at <%= review.updated_at.strftime("%b %d, %Y %I:%M %p") %> </p>
-      <p><%=review.rating.to_s %> Star Rating: <%= review.content %></p>
-    </li>
-  <% end %>
-</ul>
+
+<% if @restaurant.reviews.any? %>
+  <%= render partial: 'list_reviews', locals: {restaurant: @restaurant} %>
+<% end %>
