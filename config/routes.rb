@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
   resources :reviews
   resources :users, only: [:show]
+  post 'reviews/:id/edit' => 'reviews#edit' 
 end

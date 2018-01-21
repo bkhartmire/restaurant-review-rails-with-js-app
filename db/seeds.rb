@@ -45,3 +45,9 @@ restaurants = Restaurant.create([
     {name: 'Au Pied de Cochon', city_id: City.find_by(name: 'Mexico City').id, cuisine_id: Cuisine.find_by(name: 'French').id},
     {name: 'Dulce Patria', city_id: City.find_by(name: 'Mexico City').id, cuisine_id: Cuisine.find_by(name: 'Mexican').id}
   ])
+
+counter = 1
+8.times do
+  User.create(email: "user#{counter}@email.com", password: "password")
+  counter += 1
+end
