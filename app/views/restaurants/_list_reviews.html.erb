@@ -4,6 +4,14 @@
     <li>
       <p><%=link_to review.user.email, user_path(review.user) %> at <%= review.updated_at.strftime("%b %d, %Y %I:%M %p") %> </p>
       <p><%=review.rating.to_s %> Star Rating: <%= review.content %></p>
+      <% if review.user == current_user %>
+        <div style = "float: left">
+          <%= button_to 'Edit', controller: 'reviews', action: 'edit', review_id: review.id, method: "get" %>
+        </div>
+        <div style = "float: left">
+          <%= button_to 'Delete', {controller: 'reviews', action: 'destroy', review_id: review.id}, method: "delete" %>
+        </div>
+      <% end %>
     </li>
   <% end %>
 </ul>
