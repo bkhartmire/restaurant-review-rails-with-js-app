@@ -12,15 +12,24 @@ Specs:
   -> reviews are user submittable
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
   -> City, Cuisine, Restaurant, Review have validations (User validations are automated through Devise)
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
-- [ ] Include a nested form writing to an associated model using a custom attribute writer (form URL, model name e.g. /recipe/new, Item)
-- [ ] Include signup (how e.g. Devise)
-- [ ] Include login (how e.g. Devise)
-- [ ] Include logout (how e.g. Devise)
-- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+  -> User.from_omniauth(auth)
+- [x] Include a nested form writing to an associated model using a custom attribute writer (form URL, model name e.g. /recipe/new, Item)
+  -> /restaurants/new, Cuisine & City
+- [x] Include signup (how e.g. Devise)
+  -> Devise
+- [x] Include login (how e.g. Devise)
+  -> Devise
+- [x] Include logout (how e.g. Devise)
+  -> Devise
+- [x] Include third party signup/login (how e.g. Devise/OmniAuth)
+  -> OmniAuth
+- [x] Include nested resource show or index (URL e.g. users/2/recipes)
+  -> /cities/:id/cuisines/:id
+- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
+  -> /restaurants/:id/reviews/new
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
+  -> /restaurants/:id/reviews/new & validation_errors partial
 
 Confirm:
 - [ ] The application is pretty DRY
