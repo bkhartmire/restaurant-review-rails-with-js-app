@@ -41,6 +41,5 @@ Views/Restaurants:
 
   To Do:
   1. Admin User
-  2. Input field for name
-  3. Add price level for restaurants
-  4. DRY refactoring
+  2. Add price level for restaurants
+  3. DRY refactoring
