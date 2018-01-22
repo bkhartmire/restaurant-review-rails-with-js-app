@@ -1,10 +1,14 @@
-<% if object.errors.any? %>
+<% error_messages = [] %>
+<% error_messages << object.errors.full_messages %>
+<% error_messages << object.cuisine.errors.full_messages %>
+<% error_messages << object.city.errors.full_messages %>
+<% if error_messages.any? %>
   <div id="error_explanation">
     <h2>
-      <%= pluralize(object.errors.count, "error") %> prohibited this <%= object.class %> from being saved:
+      <%= pluralize(error_messages.count, "error") %> prohibited this <%= object.class %> from being saved:
     </h2>
     <ul>
-      <% object.errors.full_messages.each do |message| %>
+      <% error_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>

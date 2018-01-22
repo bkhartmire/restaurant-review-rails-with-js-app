@@ -13393,3 +13393,255 @@ Processing by RestaurantsController#create as HTML
 Completed 200 OK in 60ms (Views: 42.7ms | ActiveRecord: 2.8ms)
 
 
+Started GET "/restaurants" for 127.0.0.1 at 2018-01-22 13:48:51 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/restaurants"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-22 13:49:00 +0100
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 3]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 6]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 1]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 7]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 2]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 4]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 5]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/home.html.erb within layouts/application (76.5ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 355ms (Views: 334.7ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/restaurants/new" for 127.0.0.1 at 2018-01-22 13:49:05 +0100
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (0.6ms)
+  Rendered layouts/_validation_errors.html.erb (4.5ms)
+  Rendered restaurants/new.html.erb within layouts/application (16.6ms)
+Completed 401 Unauthorized in 52ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <% if object.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <h2>
+    4:       <%= pluralize(object.errors.count, "error") %> prohibited this <%= object.class %> from being saved:
+  
+app/views/layouts/_validation_errors.html.erb:1:in `_app_views_layouts__validation_errors_html_erb___20799018002452297_70166277921860'
+app/views/restaurants/new.html.erb:4:in `block in _app_views_restaurants_new_html_erb__4409208747975706057_70166277376940'
+app/views/restaurants/new.html.erb:3:in `each'
+app/views/restaurants/new.html.erb:3:in `_app_views_restaurants_new_html_erb__4409208747975706057_70166277376940'
+Started GET "/restaurants/new" for 127.0.0.1 at 2018-01-22 13:49:05 +0100
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (1.3ms)
+  Rendered layouts/_validation_errors.html.erb (86.2ms)
+  Rendered restaurants/new.html.erb within layouts/application (99.7ms)
+Completed 401 Unauthorized in 213ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <% if object.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <h2>
+    4:       <%= pluralize(object.errors.count, "error") %> prohibited this <%= object.class %> from being saved:
+  
+app/views/layouts/_validation_errors.html.erb:1:in `_app_views_layouts__validation_errors_html_erb___20799018002452297_70166228090020'
+app/views/restaurants/new.html.erb:4:in `block in _app_views_restaurants_new_html_erb__4409208747975706057_70166231648280'
+app/views/restaurants/new.html.erb:3:in `each'
+app/views/restaurants/new.html.erb:3:in `_app_views_restaurants_new_html_erb__4409208747975706057_70166231648280'
+Started GET "/restaurants/new" for 127.0.0.1 at 2018-01-22 13:49:27 +0100
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/new.html.erb within layouts/application (1.1ms)
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/brittanyhartmire/Development/code/restaurant-review-rails-app/app/views/restaurants/new.html.erb:4: syntax error, unexpected ')', expecting =>
+...', {locals: {object: object}} );@output_buffer.safe_append='
+...                               ^
+/Users/brittanyhartmire/Development/code/restaurant-review-rails-app/app/views/restaurants/new.html.erb:5: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/brittanyhartmire/Development/code/restaurant-review-rails-app/app/views/restaurants/new.html.erb:6: syntax error, unexpected keyword_do_block, expecting ')'
+...pend=  form_for(@restaurant) do |f| @output_buffer.safe_appe...
+...                               ^
+/Users/brittanyhartmire/Development/code/restaurant-review-rails-app/app/views/restaurants/new.html.erb:24: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/brittanyhartmire/Development/code/restaurant-review-rails-app/app/views/restaurants/new.html.erb:26: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/brittanyhartmire/Development/code/restaurant-review-rails-app/app/views/restaurants/new.html.erb:28: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/restaurants/new.html.erb:4: syntax error, unexpected ')', expecting =>
+app/views/restaurants/new.html.erb:5: syntax error, unexpected keyword_end, expecting ')'
+app/views/restaurants/new.html.erb:6: syntax error, unexpected keyword_do_block, expecting ')'
+app/views/restaurants/new.html.erb:24: syntax error, unexpected keyword_end, expecting ')'
+app/views/restaurants/new.html.erb:26: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/restaurants/new.html.erb:28: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/restaurants/new" for 127.0.0.1 at 2018-01-22 13:51:05 +0100
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (1.2ms)
+  Rendered layouts/_validation_errors.html.erb (0.1ms)
+  Rendered layouts/_validation_errors.html.erb (0.0ms)
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines"[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered restaurants/new.html.erb within layouts/application (35.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (21.3ms)
+Completed 200 OK in 100ms (Views: 81.0ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/restaurants" for 127.0.0.1 at 2018-01-22 13:51:25 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zhcznpi1nuYftz4muQu3GxILvP58zC5oIm+KOLVnnMoiiEzOvpTj3lub2fQ5/FqcVS6YV1AcxULotQtOHyYH0Q==", "restaurant"=>{"name"=>"", "cuisine_name"=>"Japanese", "city_name"=>"New York City"}, "commit"=>"Add Listing"}
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "New York City"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Japanese"], ["LIMIT", 1]]
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (1.8ms)
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines"[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered restaurants/new.html.erb within layouts/application (9.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+Completed 200 OK in 49ms (Views: 41.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/restaurants" for 127.0.0.1 at 2018-01-22 13:53:31 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/restaurants"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/restaurants" for 127.0.0.1 at 2018-01-22 13:53:41 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zhcznpi1nuYftz4muQu3GxILvP58zC5oIm+KOLVnnMoiiEzOvpTj3lub2fQ5/FqcVS6YV1AcxULotQtOHyYH0Q==", "restaurant"=>{"name"=>"", "cuisine_name"=>"JAPPP", "city_name"=>"New York City"}, "commit"=>"Add Listing"}
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "New York City"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "JAPPP"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "JAPPP"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (10.1ms)
+  Rendered restaurants/new.html.erb within layouts/application (14.1ms)
+Completed 401 Unauthorized in 38ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `full_messages' for #<Array:0x007fa1bba14ff0>):
+     8:       <%= pluralize(total_errors.count, "error") %> prohibited this <%= object.class %> from being saved:
+     9:     </h2>
+    10:     <ul>
+    11:       <% total_errors.full_messages.each do |message| %>
+    12:         <li><%= message %></li>
+    13:       <% end %>
+    14:     </ul>
+  
+app/views/layouts/_validation_errors.html.erb:11:in `_app_views_layouts__validation_errors_html_erb___20799018002452297_70166299915520'
+app/views/restaurants/new.html.erb:2:in `_app_views_restaurants_new_html_erb__4409208747975706057_70166299978360'
+app/controllers/restaurants_controller.rb:12:in `create'
+Started PUT "/__web_console/repl_sessions/ba2e73a317ae9a17e02c4c20a0d73952" for 127.0.0.1 at 2018-01-22 13:53:52 +0100
+Started PUT "/__web_console/repl_sessions/ba2e73a317ae9a17e02c4c20a0d73952" for 127.0.0.1 at 2018-01-22 13:53:53 +0100
+Started PUT "/__web_console/repl_sessions/ba2e73a317ae9a17e02c4c20a0d73952" for 127.0.0.1 at 2018-01-22 13:53:59 +0100
+Started POST "/restaurants" for 127.0.0.1 at 2018-01-22 13:55:27 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zhcznpi1nuYftz4muQu3GxILvP58zC5oIm+KOLVnnMoiiEzOvpTj3lub2fQ5/FqcVS6YV1AcxULotQtOHyYH0Q==", "restaurant"=>{"name"=>"", "cuisine_name"=>"JAPPP", "city_name"=>"New York City"}, "commit"=>"Add Listing"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "New York City"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "JAPPP"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "JAPPP"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (303.2ms)
+  Rendered restaurants/new.html.erb within layouts/application (307.2ms)
+Completed 401 Unauthorized in 343ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `total_errors' for #<#<Class:0x007fa1b8138ec0>:0x007fa1b9b2bc38>):
+     5: <% if error_messages.any? %>
+     6:   <div id="error_explanation">
+     7:     <h2>
+     8:       <%= pluralize(total_errors.count, "error") %> prohibited this <%= object.class %> from being saved:
+     9:     </h2>
+    10:     <ul>
+    11:       <% error_messages.each do |message| %>
+  
+app/views/layouts/_validation_errors.html.erb:8:in `_app_views_layouts__validation_errors_html_erb___20799018002452297_70166278309840'
+app/views/restaurants/new.html.erb:2:in `_app_views_restaurants_new_html_erb__4409208747975706057_70166290977840'
+app/controllers/restaurants_controller.rb:12:in `create'
+Started POST "/restaurants" for 127.0.0.1 at 2018-01-22 13:55:35 +0100
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zhcznpi1nuYftz4muQu3GxILvP58zC5oIm+KOLVnnMoiiEzOvpTj3lub2fQ5/FqcVS6YV1AcxULotQtOHyYH0Q==", "restaurant"=>{"name"=>"", "cuisine_name"=>"JAPPP", "city_name"=>"New York City"}, "commit"=>"Add Listing"}
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "New York City"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "JAPPP"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "JAPPP"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered layouts/_validation_errors.html.erb (2.4ms)
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines"[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendered restaurants/new.html.erb within layouts/application (16.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (3.6ms)
+Completed 200 OK in 64ms (Views: 50.6ms | ActiveRecord: 2.0ms)
+
+
