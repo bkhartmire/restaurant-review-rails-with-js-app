@@ -18,9 +18,9 @@
       <option value="<%= city.name %>">
     <% end %>
   </datalist></p>
-  <%= f.radio_button :price_range, 1 %> $
-  <%= f.radio_button :price_range, 2 %> $$
-  <%= f.radio_button :price_range, 3 %> $$$
-  <%= f.radio_button :price_range, 4 %> $$$$
+  <%= f.radio_button :price_range, '$' %> $
+  <%= f.radio_button :price_range, '$$' %> $$
+  <%= f.radio_button :price_range, '$$$' %> $$$
+  <%= f.radio_button :price_range, '$$$$' %> $$$$
   <%= f.submit "Add Listing" %>
 <% end %>
