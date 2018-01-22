@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
       @review.update(user_id: current_user.id)
       redirect_to restaurant_path(@review.restaurant_id)
     else
-      redirect_to "/restaurants/#{@restaurant.id}/reviews/new"
+      redirect_to "/restaurants/#{@review.restaurant_id}/reviews/new"
     end
   end
 

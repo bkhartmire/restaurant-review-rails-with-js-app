@@ -20183,3 +20183,24 @@ NoMethodError (undefined method `id' for nil:NilClass):
 app/controllers/reviews_controller.rb:18:in `create'
 Started PUT "/__web_console/repl_sessions/5de6a64c17b453aa50e54eebba4d34bc" for 127.0.0.1 at 2018-01-22 22:17:54 +0100
 Started PUT "/__web_console/repl_sessions/5de6a64c17b453aa50e54eebba4d34bc" for 127.0.0.1 at 2018-01-22 22:17:56 +0100
+Started POST "/reviews" for 127.0.0.1 at 2018-01-22 22:20:04 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4KdhBzsUMDijdIfEBjjOfZgJhs82l0FEcbKgKKXCroG1IFv3LVArqJErxlEDmXAxgOxBY6EcIZD125NcIwjB6A==", "review"=>{"restaurant_id"=>"14", "rating"=>"", "content"=>""}, "commit"=>"Submit"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+Redirected to http://0.0.0.0:3000/restaurants/14/reviews/new
+Completed 302 Found in 32ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/restaurants/14/reviews/new" for 127.0.0.1 at 2018-01-22 22:20:04 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"14"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."restaurant_id" = ? LIMIT ?[0m  [["user_id", 9], ["restaurant_id", 14], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (3.0ms)
+  Rendered reviews/new.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 66ms (Views: 42.1ms | ActiveRecord: 1.1ms)
+
+
