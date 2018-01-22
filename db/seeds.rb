@@ -51,3 +51,5 @@ counter = 1
   User.create(email: "user#{counter}@email.com", password: "password")
   counter += 1
 end
+
+User.create(email: "admin@email.com", password: "password", admin: true)

@@ -41,9 +41,7 @@ Views/Restaurants:
 
   To Do:
   1. Admin User
-  2. Add price level for restaurants
-  3. be able to sort by price and rating
-  3. DRY refactoring
+  2. DRY refactoring
 
 
   Blog Tips:
