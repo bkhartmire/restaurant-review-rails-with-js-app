@@ -43,6 +43,4 @@ Views/Restaurants:
   1. Admin User
   2. Input field for name
   3. Add price level for restaurants
-  4. highest_rating scope method
-  5. Sort restaurants by rating
-  6. DRY refactoring
+  4. DRY refactoring

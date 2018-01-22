@@ -15137,3 +15137,63 @@ Processing by CitiesController#show as HTML
 Completed 200 OK in 144ms (Views: 80.5ms | ActiveRecord: 7.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-22 14:53:25 +0100
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 3]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 6]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 7]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 8]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 2]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 4]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/home.html.erb within layouts/application (45.6ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 81ms (Views: 66.2ms | ActiveRecord: 3.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-01-22 14:53:27 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WdFw1Z+Ost01pqjphSsimxqBVyroKmRB7joQsmWKDCW1Tg+Fua/P5XGKTzsF3M8cXaRzg8T6j2sk4JHEz8uXPg=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-22 14:53:27 +0100
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 3]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 6]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 7]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 8]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 2]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 4]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 5]]
+  Rendered welcome/home.html.erb within layouts/application (18.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 49ms (Views: 43.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-01-22 14:53:30 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/brittanyhartmire/.rvm/gems/ruby-2.3.3/gems/devise-4.4.0/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/brittanyhartmire/.rvm/gems/ruby-2.3.3/gems/devise-4.4.0/app/views/devise/shared/_links.html.erb (1.9ms)
+  Rendered /Users/brittanyhartmire/.rvm/gems/ruby-2.3.3/gems/devise-4.4.0/app/views/devise/registrations/new.html.erb within layouts/application (15.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 61ms (Views: 58.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
