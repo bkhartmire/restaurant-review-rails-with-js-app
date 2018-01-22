@@ -9,7 +9,7 @@ class Restaurant < ApplicationRecord
   end
 
   def cuisine_name
-    self.cuisine.name
+    self.cuisine.name if self.cuisine
   end
 
   def city_name=(name)
@@ -17,6 +17,6 @@ class Restaurant < ApplicationRecord
   end
 
   def city_name
-    self.city.name
+    self.city.name if self.city
   end
 end

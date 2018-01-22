@@ -8817,3 +8817,47 @@ ActionView::Template::Error (undefined method `name' for nil:NilClass):
 app/models/restaurant.rb:12:in `cuisine_name'
 app/views/restaurants/new.html.erb:5:in `block in _app_views_restaurants_new_html_erb__4409208747975706057_70166223636940'
 app/views/restaurants/new.html.erb:2:in `_app_views_restaurants_new_html_erb__4409208747975706057_70166223636940'
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" ORDER BY "restaurants"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+Started PUT "/__web_console/repl_sessions/501c41cbfb025fa8f8d8df62fce1d5ae" for 127.0.0.1 at 2018-01-22 10:31:43 +0100
+Started PUT "/__web_console/repl_sessions/501c41cbfb025fa8f8d8df62fce1d5ae" for 127.0.0.1 at 2018-01-22 10:31:47 +0100
+Started GET "/restaurants/new" for 127.0.0.1 at 2018-01-22 10:31:50 +0100
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/new.html.erb within layouts/application (9.7ms)
+Completed 401 Unauthorized in 57ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2: <%= form_for(@restaurant) do |f| %>
+    3:   <p><%= f.label :name %>
+    4:   <%= f.text_field :name %></p>
+    5:   <%= f.text_field :cuisine_name, list: "cuisine_autocomplete" %>
+    6:   <datalist id="cuisine_autocomplete">
+    7:     <% @cuisines.each do |cuisine| %>
+    8:       <option value="<%= cuisine.name %>">
+  
+app/models/restaurant.rb:12:in `cuisine_name'
+app/views/restaurants/new.html.erb:5:in `block in _app_views_restaurants_new_html_erb__4409208747975706057_70166275772560'
+app/views/restaurants/new.html.erb:2:in `_app_views_restaurants_new_html_erb__4409208747975706057_70166275772560'
+Started PUT "/__web_console/repl_sessions/56026d2aaa133614b63a2c2a162774ec" for 127.0.0.1 at 2018-01-22 10:31:53 +0100
+Started PUT "/__web_console/repl_sessions/56026d2aaa133614b63a2c2a162774ec" for 127.0.0.1 at 2018-01-22 10:31:53 +0100
+Started PUT "/__web_console/repl_sessions/56026d2aaa133614b63a2c2a162774ec" for 127.0.0.1 at 2018-01-22 10:31:56 +0100
+Started PUT "/__web_console/repl_sessions/56026d2aaa133614b63a2c2a162774ec" for 127.0.0.1 at 2018-01-22 10:31:59 +0100
+Started PUT "/__web_console/repl_sessions/56026d2aaa133614b63a2c2a162774ec" for 127.0.0.1 at 2018-01-22 10:32:07 +0100
+Started PUT "/__web_console/repl_sessions/56026d2aaa133614b63a2c2a162774ec" for 127.0.0.1 at 2018-01-22 10:32:07 +0100
+Started PUT "/__web_console/repl_sessions/56026d2aaa133614b63a2c2a162774ec" for 127.0.0.1 at 2018-01-22 10:32:10 +0100
+Started GET "/restaurants/new" for 127.0.0.1 at 2018-01-22 10:32:57 +0100
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines"[0m
+  Rendered restaurants/new.html.erb within layouts/application (12.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (40.3ms)
+Completed 200 OK in 302ms (Views: 268.8ms | ActiveRecord: 3.1ms)
+
+
