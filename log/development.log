@@ -8796,3 +8796,24 @@ Processing by RestaurantsController#new as HTML
 Completed 200 OK in 80ms (Views: 69.7ms | ActiveRecord: 1.4ms)
 
 
+Started GET "/restaurants/new" for 127.0.0.1 at 2018-01-22 10:28:17 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RestaurantsController#new as HTML
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/new.html.erb within layouts/application (61.7ms)
+Completed 401 Unauthorized in 126ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    2: <%= form_for(@restaurant) do |f| %>
+    3:   <p><%= f.label :name %>
+    4:   <%= f.text_field :name %></p>
+    5:   <%= f.text_field :cuisine_name, list: "cuisine_autocomplete" %>
+    6:   <datalist id="cuisine_autocomplete">
+    7:     <% @cuisines.each do |cuisine| %>
+    8:       <option value="<%= cuisine.name %>">
+  
+app/models/restaurant.rb:12:in `cuisine_name'
+app/views/restaurants/new.html.erb:5:in `block in _app_views_restaurants_new_html_erb__4409208747975706057_70166223636940'
+app/views/restaurants/new.html.erb:2:in `_app_views_restaurants_new_html_erb__4409208747975706057_70166223636940'

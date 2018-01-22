@@ -2,13 +2,11 @@
 <%= form_for(@restaurant) do |f| %>
   <p><%= f.label :name %>
   <%= f.text_field :name %></p>
-  <%= f.label :cuisine %>
-  <%= f.select 'cuisine', options_from_collection_for_select(@cuisines, 'id', 'name'), include_blank: true %><br>
-  <p>Not listed? Add a new cuisine:
-  <%= f.text_field :cuisine %></p>
-  <%= f.label :city %>
-  <%= f.select 'city', options_from_collection_for_select(@cities, 'id', 'name'), include_blank: true %><br>
-  <p>Not listed? Add a new city:
-  <%= f.text_field :city %></p>
+  <%= f.text_field :cuisine_name, list: "cuisine_autocomplete" %>
+  <datalist id="cuisine_autocomplete">
+    <% @cuisines.each do |cuisine| %>
+      <option value="<%= cuisine.name %>">
+    <% end %>
+  </datalist>
   <%= f.submit "Submit"%>
 <% end %>
