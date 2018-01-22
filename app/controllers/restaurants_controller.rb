@@ -7,7 +7,6 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.create(restaurant_params)
-    @restaurant.update(creator: current_user) if user_signed_in?
     redirect_to restaurant_path(@restaurant), notice: 'New listing added!'
   end
 

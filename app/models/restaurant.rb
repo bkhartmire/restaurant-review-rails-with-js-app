@@ -3,7 +3,7 @@ class Restaurant < ApplicationRecord
   has_many :users, through: :reviews
   belongs_to :cuisine
   belongs_to :city
-  belongs_to :creator, class: 'User'
+
 
   def cuisine_name=(name)
     self.cuisine = Cuisine.find_or_create_by(name: name)

@@ -1,14 +1,15 @@
 # README
 Users:
   -name, email, password
-  X-has many reviews
-  X-has many restaurants, through reviews
+  -add admin type that can delete listings and all reviews
+  -has many reviews
+  -has many restaurants, through reviews
 Restaurants:
-  X-city, name, cuisine
-  X-has many reviews
-  X-has many users, through reviews
-  X-belongs to a city
-  X-belongs to a cuisine (must select from checkbox, seed data)
+  -city, name, cuisine
+  -has many reviews
+  -has many users, through reviews
+  -belongs to a city
+  -belongs to a cuisine (must select from checkbox, seed data)
   -(join table between city & cuisine)
   -***Add Price Level??***
 Cuisine:
@@ -37,3 +38,8 @@ Views/Restaurants:
   -give average rating at top
   -list all reviews (link to user)
   -can add review (must be logged in)
+
+  To Do:
+  1. Admin User
+  2. Input field for name
+  3. Add price level for restaurants
