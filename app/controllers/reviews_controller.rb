@@ -10,9 +10,9 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @review.user_id = current_user.id
     if @review.valid?
       @review.save
-      @review.update(user_id: current_user.id)
       redirect_to restaurant_path(@review.restaurant_id)
     else
       redirect_to "/restaurants/#{@review.restaurant_id}/reviews/new"
