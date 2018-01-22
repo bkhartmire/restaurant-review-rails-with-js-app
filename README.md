@@ -42,4 +42,11 @@ Views/Restaurants:
   To Do:
   1. Admin User
   2. Add price level for restaurants
+  3. be able to sort by price and rating
   3. DRY refactoring
+
+
+  Blog Tips:
+    -configuring omniauth with devise
+    -server already in use (Address already in use - bind(2) for "0.0.0.0" port 3000)
+    -validation error messages for nested forms
