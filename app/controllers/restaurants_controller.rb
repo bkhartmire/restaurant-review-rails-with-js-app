@@ -1,13 +1,16 @@
 class RestaurantsController < ApplicationController
   def new
     @restaurant = Restaurant.new
-    @cities = City.all
-    @cuisines = Cuisine.all
   end
 
   def create
-    @restaurant = Restaurant.create(restaurant_params)
-    redirect_to restaurant_path(@restaurant), notice: 'New listing added!'
+    @restaurant = Restaurant.new(restaurant_params)
+    if @restaurant.valid? && @restaurant.cuisine.valid? && @restaurant.city.valid?
+      @restaurant.save
+      redirect_to restaurant_path(@restaurant), notice: 'New listing added!'
+    else
+      render :new
+    end
   end
 
   def show
