@@ -3,4 +3,5 @@ class City < ApplicationRecord
   has_many :cuisines, through: :restaurants
 
   validates :name, format: {with: /\A[A-Z]{1}[a-z]+(\z|\s[A-Z]{1}[a-z]+)/, message: "City must be correctly capitalized and only contain alphabetical characters (e.g. Los Angeles)"}
-end
+
+  validates :name, uniqueness: true
