@@ -2,7 +2,7 @@
   <% error_messages = [] %>
 
   <div id="error_explanation">
-    <% errors(restaurant, error_messages) %>
+    <% restaurant_errors(restaurant, error_messages) %>
     <h2><%= pluralize(error_messages.count, "error") %> prevented this listing from being saved:</h2>
       <ul>
         <% error_messages.each do |message| %>
