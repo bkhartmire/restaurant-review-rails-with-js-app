@@ -22349,3 +22349,85 @@ Migrating to AddPriceRangeToRestaurants (20180122191047)
   [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "admin") VALUES (?, ?, ?, ?, ?)[0m  [["email", "admin@email.com"], ["encrypted_password", "$2a$11$CrvUeIQqgTkn2EYnBu9Ym.Bn8l60OCR6qbX7v7XLbqH4cB7piQ5rq"], ["created_at", "2018-01-22 23:27:20.390263"], ["updated_at", "2018-01-22 23:27:20.390263"], ["admin", "t"]]
   [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2018-01-23 00:29:43 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 3]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 6]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 7]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 2]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 4]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT "cuisines".* FROM "cuisines" INNER JOIN "restaurants" ON "cuisines"."id" = "restaurants"."cuisine_id" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 5]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered welcome/home.html.erb within layouts/application (135.5ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 433ms (Views: 400.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/cities/3/cuisines/9" for 127.0.0.1 at 2018-01-23 00:29:52 +0100
+Processing by CuisinesController#show as HTML
+  Parameters: {"city_id"=>"3", "id"=>"9"}
+  [1m[36mCuisine Load (0.5ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."city_id" = ?[0m  [["city_id", 3]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 11], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 12], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 13], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 14], ["LIMIT", 1]]
+  Rendering cuisines/show.html.erb within layouts/application
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Review Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 12], ["LIMIT", 1]]
+  Rendered restaurants/_list_restaurants.html.erb (4.0ms)
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Review Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 11], ["LIMIT", 1]]
+  Rendered restaurants/_list_restaurants.html.erb (1.9ms)
+  [1m[36mCACHE Cuisine Load (0.0ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCACHE Review Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 10], ["LIMIT", 1]]
+  Rendered restaurants/_list_restaurants.html.erb (1.9ms)
+  Rendered cuisines/show.html.erb within layouts/application (16.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 88ms (Views: 42.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/restaurants/12" for 127.0.0.1 at 2018-01-23 00:29:54 +0100
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Review Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 12], ["LIMIT", 1]]
+  Rendered restaurants/show.html.erb within layouts/application (16.1ms)
+Completed 401 Unauthorized in 37ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `admin' for nil:NilClass):
+    18: 
+    19: <% end %>
+    20: 
+    21: <% if current_user.admin == true %>
+    22:   <div>
+    23:     <%= button_to 'Delete', {controller: 'restaurants', action: 'destroy', restaurant_id: @restaurant.id}, method: "delete" %>
+    24:   </div>
+  
+app/views/restaurants/show.html.erb:21:in `_app_views_restaurants_show_html_erb__2207207743700484806_70218422986260'
+Started GET "/restaurants/12" for 127.0.0.1 at 2018-01-23 00:30:41 +0100
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mCuisine Load (0.6ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 12], ["LIMIT", 1]]
+  [1m[36mCACHE Review Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 12], ["LIMIT", 1]]
+  Rendered restaurants/show.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+Completed 200 OK in 52ms (Views: 46.3ms | ActiveRecord: 1.7ms)
+
+
