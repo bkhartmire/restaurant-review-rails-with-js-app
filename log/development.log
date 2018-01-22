@@ -21928,3 +21928,424 @@ Processing by ReviewsController#new as HTML
 Completed 200 OK in 39ms (Views: 31.3ms | ActiveRecord: 0.8ms)
 
 
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20180113143512)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180113143512"]]
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateRestaurants (20180113144242)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "city_id" integer, "name" varchar, "cuisine_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180113144242"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCuisines (20180113144303)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "cuisines" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180113144303"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateReviews (20180113144348)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rating" integer, "content" varchar, "user_id" integer, "restaurant_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180113144348"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCities (20180113144414)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "cities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180113144414"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddColumnsToUsers (20180113173514)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180113173514"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddPriceRangeToRestaurants (20180122191047)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "restaurants" ADD "price_range" varchar[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180122191047"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-01-22 23:27:11.907006"], ["updated_at", "2018-01-22 23:27:11.907006"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Japanese"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Japanese"], ["created_at", "2018-01-22 23:27:17.895344"], ["updated_at", "2018-01-22 23:27:17.895344"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Chinese"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Chinese"], ["created_at", "2018-01-22 23:27:17.901188"], ["updated_at", "2018-01-22 23:27:17.901188"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Korean"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Korean"], ["created_at", "2018-01-22 23:27:17.905172"], ["updated_at", "2018-01-22 23:27:17.905172"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Italian"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Italian"], ["created_at", "2018-01-22 23:27:17.910701"], ["updated_at", "2018-01-22 23:27:17.910701"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "French"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "French"], ["created_at", "2018-01-22 23:27:17.916325"], ["updated_at", "2018-01-22 23:27:17.916325"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "New American"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "New American"], ["created_at", "2018-01-22 23:27:17.921974"], ["updated_at", "2018-01-22 23:27:17.921974"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Mexican"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mexican"], ["created_at", "2018-01-22 23:27:17.927443"], ["updated_at", "2018-01-22 23:27:17.927443"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Fast Food"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Fast Food"], ["created_at", "2018-01-22 23:27:17.934866"], ["updated_at", "2018-01-22 23:27:17.934866"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Tapas"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tapas"], ["created_at", "2018-01-22 23:27:17.941626"], ["updated_at", "2018-01-22 23:27:17.941626"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Cantonese"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cuisines" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cantonese"], ["created_at", "2018-01-22 23:27:17.947869"], ["updated_at", "2018-01-22 23:27:17.947869"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCity Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Los Angeles"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Los Angeles"], ["created_at", "2018-01-22 23:27:17.991966"], ["updated_at", "2018-01-22 23:27:17.991966"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCity Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "New York City"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "New York City"], ["created_at", "2018-01-22 23:27:17.997806"], ["updated_at", "2018-01-22 23:27:17.997806"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCity Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Barcelona"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Barcelona"], ["created_at", "2018-01-22 23:27:18.006972"], ["updated_at", "2018-01-22 23:27:18.006972"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCity Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Paris"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Paris"], ["created_at", "2018-01-22 23:27:18.035249"], ["updated_at", "2018-01-22 23:27:18.035249"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCity Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Tokyo"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tokyo"], ["created_at", "2018-01-22 23:27:18.047426"], ["updated_at", "2018-01-22 23:27:18.047426"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCity Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Hong Kong"], ["LIMIT", 1]]
+  [1m[35mSQL (7.8ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Hong Kong"], ["created_at", "2018-01-22 23:27:18.052519"], ["updated_at", "2018-01-22 23:27:18.052519"]]
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCity Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Mexico City"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mexico City"], ["created_at", "2018-01-22 23:27:18.078937"], ["updated_at", "2018-01-22 23:27:18.078937"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Los Angeles"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Italian"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Los Angeles"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Fast Food"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Los Angeles"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Mexican"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Los Angeles"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Japanese"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "New York City"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Fast Food"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "New York City"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "New American"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "New York City"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "French"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "New York City"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Italian"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "New York City"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Fast Food"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Barcelona"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Tapas"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Barcelona"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Tapas"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Barcelona"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Tapas"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Barcelona"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Italian"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Barcelona"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Italian"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Paris"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "French"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Paris"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "French"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Paris"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Fast Food"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Paris"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "French"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Paris"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Chinese"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Tokyo"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Japanese"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Tokyo"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Japanese"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Tokyo"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Japanese"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Tokyo"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Fast Food"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Tokyo"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Japanese"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Hong Kong"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "French"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Hong Kong"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Cantonese"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Hong Kong"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Chinese"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Hong Kong"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Chinese"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Hong Kong"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Cantonese"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Mexico City"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Mexican"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Mexico City"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Mexican"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Mexico City"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Japanese"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Mexico City"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "French"], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."name" = ? LIMIT ?[0m  [["name", "Mexico City"], ["LIMIT", 1]]
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."name" = ? LIMIT ?[0m  [["name", "Mexican"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 1], ["name", "Cal Mare"], ["cuisine_id", 4], ["created_at", "2018-01-22 23:27:18.208595"], ["updated_at", "2018-01-22 23:27:18.208595"], ["price_range", "$$$"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 1], ["name", "In-N-Out"], ["cuisine_id", 8], ["created_at", "2018-01-22 23:27:18.216389"], ["updated_at", "2018-01-22 23:27:18.216389"], ["price_range", "$"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 1], ["name", "Guisados"], ["cuisine_id", 7], ["created_at", "2018-01-22 23:27:18.227704"], ["updated_at", "2018-01-22 23:27:18.227704"], ["price_range", "$"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 1], ["name", "Inko Nito"], ["cuisine_id", 1], ["created_at", "2018-01-22 23:27:18.238008"], ["updated_at", "2018-01-22 23:27:18.238008"], ["price_range", "$$"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 2], ["name", "Katz's Delicatessen"], ["cuisine_id", 8], ["created_at", "2018-01-22 23:27:18.301883"], ["updated_at", "2018-01-22 23:27:18.301883"], ["price_range", "$$"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 2], ["name", "ABC Kitchen"], ["cuisine_id", 6], ["created_at", "2018-01-22 23:27:18.314869"], ["updated_at", "2018-01-22 23:27:18.314869"], ["price_range", "$$$"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 2], ["name", "Balthazar"], ["cuisine_id", 5], ["created_at", "2018-01-22 23:27:18.331404"], ["updated_at", "2018-01-22 23:27:18.331404"], ["price_range", "$$$"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.7ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 2], ["name", "Di Fara"], ["cuisine_id", 4], ["created_at", "2018-01-22 23:27:18.358936"], ["updated_at", "2018-01-22 23:27:18.358936"], ["price_range", "$$"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 2], ["name", "Gray's Papaya"], ["cuisine_id", 8], ["created_at", "2018-01-22 23:27:18.377155"], ["updated_at", "2018-01-22 23:27:18.377155"], ["price_range", "$"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 3], ["name", "Quimet i Quimet"], ["cuisine_id", 9], ["created_at", "2018-01-22 23:27:18.395648"], ["updated_at", "2018-01-22 23:27:18.395648"], ["price_range", "$$"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 3], ["name", "La Esquinica"], ["cuisine_id", 9], ["created_at", "2018-01-22 23:27:18.403726"], ["updated_at", "2018-01-22 23:27:18.403726"], ["price_range", "$$"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 3], ["name", "Floreta"], ["cuisine_id", 9], ["created_at", "2018-01-22 23:27:18.412262"], ["updated_at", "2018-01-22 23:27:18.412262"], ["price_range", "$$$"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 3], ["name", "Le Cucine Mandarosso"], ["cuisine_id", 4], ["created_at", "2018-01-22 23:27:18.428217"], ["updated_at", "2018-01-22 23:27:18.428217"], ["price_range", "$$$"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCity Load (1.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 3], ["name", "PerBacco!"], ["cuisine_id", 4], ["created_at", "2018-01-22 23:27:18.443012"], ["updated_at", "2018-01-22 23:27:18.443012"], ["price_range", "$$$"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 4], ["name", "Le Baratin"], ["cuisine_id", 5], ["created_at", "2018-01-22 23:27:18.461164"], ["updated_at", "2018-01-22 23:27:18.461164"], ["price_range", "$$$"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 4], ["name", "Les Arlots"], ["cuisine_id", 5], ["created_at", "2018-01-22 23:27:18.474955"], ["updated_at", "2018-01-22 23:27:18.474955"], ["price_range", "$$$"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.4ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 4], ["name", "Chez Aline"], ["cuisine_id", 8], ["created_at", "2018-01-22 23:27:18.490833"], ["updated_at", "2018-01-22 23:27:18.490833"], ["price_range", "$"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 4], ["name", "Les Philosphes"], ["cuisine_id", 5], ["created_at", "2018-01-22 23:27:18.504437"], ["updated_at", "2018-01-22 23:27:18.504437"], ["price_range", "$$$"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 4], ["name", "Raviolis Chinois Nord-Est"], ["cuisine_id", 2], ["created_at", "2018-01-22 23:27:18.512775"], ["updated_at", "2018-01-22 23:27:18.512775"], ["price_range", "$"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 5], ["name", "Kagari"], ["cuisine_id", 1], ["created_at", "2018-01-22 23:27:18.520738"], ["updated_at", "2018-01-22 23:27:18.520738"], ["price_range", "$"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 5], ["name", "Nihonryori RyuGin"], ["cuisine_id", 1], ["created_at", "2018-01-22 23:27:18.538127"], ["updated_at", "2018-01-22 23:27:18.538127"], ["price_range", "$$$$"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 5], ["name", "Sushi Saito"], ["cuisine_id", 1], ["created_at", "2018-01-22 23:27:18.546048"], ["updated_at", "2018-01-22 23:27:18.546048"], ["price_range", "$$$$"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 5], ["name", "7-Eleven"], ["cuisine_id", 8], ["created_at", "2018-01-22 23:27:18.552748"], ["updated_at", "2018-01-22 23:27:18.552748"], ["price_range", "$"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 5], ["name", "Nodaiwa"], ["cuisine_id", 1], ["created_at", "2018-01-22 23:27:18.561728"], ["updated_at", "2018-01-22 23:27:18.561728"], ["price_range", "$$$$"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 6], ["name", "Caprice"], ["cuisine_id", 5], ["created_at", "2018-01-22 23:27:18.574369"], ["updated_at", "2018-01-22 23:27:18.574369"], ["price_range", "$$$$"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 6], ["name", "Lung King Heen"], ["cuisine_id", 10], ["created_at", "2018-01-22 23:27:18.586884"], ["updated_at", "2018-01-22 23:27:18.586884"], ["price_range", "$$$$"]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 6], ["name", "Xi Yan Hong Kong"], ["cuisine_id", 2], ["created_at", "2018-01-22 23:27:18.596050"], ["updated_at", "2018-01-22 23:27:18.596050"], ["price_range", "$$$$"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 6], ["name", "Jumbo Kingdom"], ["cuisine_id", 2], ["created_at", "2018-01-22 23:27:18.605880"], ["updated_at", "2018-01-22 23:27:18.605880"], ["price_range", "$$"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 6], ["name", "Yan Toh Heen"], ["cuisine_id", 10], ["created_at", "2018-01-22 23:27:18.613826"], ["updated_at", "2018-01-22 23:27:18.613826"], ["price_range", "$$$$"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 7], ["name", "Pujol"], ["cuisine_id", 7], ["created_at", "2018-01-22 23:27:18.627964"], ["updated_at", "2018-01-22 23:27:18.627964"], ["price_range", "$$$$"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 7], ["name", "Azul Historico"], ["cuisine_id", 7], ["created_at", "2018-01-22 23:27:18.643607"], ["updated_at", "2018-01-22 23:27:18.643607"], ["price_range", "$$$$"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.1ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 7], ["name", "Suntory Del Valle"], ["cuisine_id", 1], ["created_at", "2018-01-22 23:27:18.649632"], ["updated_at", "2018-01-22 23:27:18.649632"], ["price_range", "$$$$"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.3ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 7], ["name", "Au Pied de Cochon"], ["cuisine_id", 5], ["created_at", "2018-01-22 23:27:18.660325"], ["updated_at", "2018-01-22 23:27:18.660325"], ["price_range", "$$$$"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("city_id", "name", "cuisine_id", "created_at", "updated_at", "price_range") VALUES (?, ?, ?, ?, ?, ?)[0m  [["city_id", 7], ["name", "Dulce Patria"], ["cuisine_id", 7], ["created_at", "2018-01-22 23:27:18.670498"], ["updated_at", "2018-01-22 23:27:18.670498"], ["price_range", "$$$$"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user1@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "user1@email.com"], ["encrypted_password", "$2a$11$kmk97kdC7AyDqTeniarw9Omxy8Beg.UEq.e5zEdsOeYL242ZvV2wO"], ["created_at", "2018-01-22 23:27:18.916388"], ["updated_at", "2018-01-22 23:27:18.916388"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user2@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "user2@email.com"], ["encrypted_password", "$2a$11$A551NbSL8DMwYF5abpZ9quB1IgZgLHdcpYtgNlQJbYdbaOK7IAa2O"], ["created_at", "2018-01-22 23:27:19.100983"], ["updated_at", "2018-01-22 23:27:19.100983"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user3@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "user3@email.com"], ["encrypted_password", "$2a$11$Acacsm7x5jRUqcF6PP2FseQcO1gcvvW9LUxePZWUCSFeu70evDvqu"], ["created_at", "2018-01-22 23:27:19.282941"], ["updated_at", "2018-01-22 23:27:19.282941"]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user4@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "user4@email.com"], ["encrypted_password", "$2a$11$SOhkiajrBeHOaUZ7sw6e0uZNpQjkJaPabEjHrhM9ANHAp8qxlwO2O"], ["created_at", "2018-01-22 23:27:19.483824"], ["updated_at", "2018-01-22 23:27:19.483824"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user5@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "user5@email.com"], ["encrypted_password", "$2a$11$eX/npyftE52nXXBBd1DQoef1SSGJMVbvDAqKh0lpN.Gy4eTzzIs5C"], ["created_at", "2018-01-22 23:27:19.687063"], ["updated_at", "2018-01-22 23:27:19.687063"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user6@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "user6@email.com"], ["encrypted_password", "$2a$11$yzGHCEQ1LgP9.YO3NsCv/.O1tNarCdSWN4WVSYlHYAzE6fkIyMSGO"], ["created_at", "2018-01-22 23:27:19.855825"], ["updated_at", "2018-01-22 23:27:19.855825"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user7@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "user7@email.com"], ["encrypted_password", "$2a$11$MlbIe8WvYBD7jFUT8AH27.z5yfhUcsjs9k9tL4TAdFIF/acpTYeq2"], ["created_at", "2018-01-22 23:27:20.029718"], ["updated_at", "2018-01-22 23:27:20.029718"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user8@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "user8@email.com"], ["encrypted_password", "$2a$11$El2Pmvc.Ouvsj1uFY.TEuuhQdtXupCnKA0cN6/TcRvNWLu4UIidhq"], ["created_at", "2018-01-22 23:27:20.217666"], ["updated_at", "2018-01-22 23:27:20.217666"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@email.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "admin") VALUES (?, ?, ?, ?, ?)[0m  [["email", "admin@email.com"], ["encrypted_password", "$2a$11$CrvUeIQqgTkn2EYnBu9Ym.Bn8l60OCR6qbX7v7XLbqH4cB7piQ5rq"], ["created_at", "2018-01-22 23:27:20.390263"], ["updated_at", "2018-01-22 23:27:20.390263"], ["admin", "t"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
