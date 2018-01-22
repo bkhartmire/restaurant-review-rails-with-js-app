@@ -8,8 +8,10 @@ Specs:
   -> restaurant belongs_to cuisine, restaurant belongs_to city, review belongs_to user, review belongs_to restaurant
 - [x] Include at least one has_many through relationship (x has_many y through z e.g. Recipe has_many Items through Ingredients)
   -> city has_many cuisines through restaurants, cuisine has_many cities through restaurants, restaurant has_many users through reviews, user has_many restaurants through reviews
-- [ ] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
-- [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+- [x] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
+  -> reviews are user submittable
+- [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+  -> City, Cuisine, Restaurant, Review have validations (User validations are automated through Devise)
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [ ] Include a nested form writing to an associated model using a custom attribute writer (form URL, model name e.g. /recipe/new, Item)
 - [ ] Include signup (how e.g. Devise)
