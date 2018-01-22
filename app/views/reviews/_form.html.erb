@@ -1,4 +1,5 @@
 <%= form_for(review) do |f| %>
+  <%= render partial: 'validation_errors', locals: {review: @review} %>
   <%= f.hidden_field :restaurant_id %>
   <%= f.label :rating %>
   <%= f.number_field :rating, in: 1...6 %><br>
