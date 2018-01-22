@@ -1,5 +1,5 @@
 <%= form_for(review) do |f| %>
-  <% if review.restaurant && review.errors.any? %>
+  <% if review.errors.any? %>
     <div id="error_explanation">
       <h2>
         Please fix the follwing <%= pluralize(review.errors.count, "error") %> with your review:

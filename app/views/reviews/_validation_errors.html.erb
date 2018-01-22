@@ -1,7 +1,7 @@
 <% if review.errors.any? %>
   <div id="error_explanation">
     <h2>
-      Please fix the follwing <%= pluralize(review.errors.count, "error") %> with your review:
+      Please fix the following <%= pluralize(review.errors.count, "error") %> with your review:
     </h2>
     <ul>
       <%= review.errors.full_messages.each do |message| %>

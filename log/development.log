@@ -21823,3 +21823,108 @@ Processing by ReviewsController#new as HTML
 Completed 200 OK in 52ms (Views: 44.4ms | ActiveRecord: 0.8ms)
 
 
+Started POST "/reviews" for 127.0.0.1 at 2018-01-22 22:58:12 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pR3krF1sszhP9Et9VktrKvN0oaSoKAYYellazT9l98YzWR5jEFiom//3ek1MfWDWrqpeT5SgKxyrrCqyCat/bA==", "review"=>{"restaurant_id"=>"14", "rating"=>"", "content"=>""}, "commit"=>"Create Review"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+Redirected to http://0.0.0.0:3000/restaurants/14/reviews/new
+Completed 302 Found in 8ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/restaurants/14/reviews/new" for 127.0.0.1 at 2018-01-22 22:58:12 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"14"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."restaurant_id" = ? LIMIT ?[0m  [["user_id", 1], ["restaurant_id", 14], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (1.9ms)
+  Rendered reviews/new.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 38ms (Views: 31.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2018-01-22 22:58:13 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YrKBoo3gi9P3+w+GuSpK6KpDhPgzWJ+Catl9z+y+hL/09nttwNSQcEf4PrajHEEU9517Ew/Qsoa7LA2w2nAMFQ==", "review"=>{"restaurant_id"=>"14", "rating"=>"", "content"=>""}, "commit"=>"Create Review"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+Redirected to http://0.0.0.0:3000/restaurants/14/reviews/new
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/restaurants/14/reviews/new" for 127.0.0.1 at 2018-01-22 22:58:13 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"14"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."restaurant_id" = ? LIMIT ?[0m  [["user_id", 1], ["restaurant_id", 14], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (2.0ms)
+  Rendered reviews/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 42ms (Views: 35.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/restaurants/14/reviews/new" for 127.0.0.1 at 2018-01-22 22:58:14 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"14"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."restaurant_id" = ? LIMIT ?[0m  [["user_id", 1], ["restaurant_id", 14], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (2.2ms)
+  Rendered reviews/new.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 47ms (Views: 36.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2018-01-22 22:58:16 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9+9hNxiUFWowKLQb/D1hyEyWr23SVkNlLWqamSAiM89hq5v4VaAOyYArhSvmC2o0EUhQhu7ebmH8n+rmFuy7ZQ==", "review"=>{"restaurant_id"=>"14", "rating"=>"", "content"=>""}, "commit"=>"Create Review"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+Redirected to http://0.0.0.0:3000/restaurants/14/reviews/new
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/restaurants/14/reviews/new" for 127.0.0.1 at 2018-01-22 22:58:16 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"14"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."restaurant_id" = ? LIMIT ?[0m  [["user_id", 1], ["restaurant_id", 14], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (2.0ms)
+  Rendered reviews/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+Completed 200 OK in 39ms (Views: 32.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2018-01-22 22:58:27 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CuEFDsM47ujvD6nGa/bvrvXExAMLQhJKJjcE+9/YL6+cpf/Bjgz1S18MmPZxwORSqBo76DfKP073wnSE6RanBQ==", "review"=>{"restaurant_id"=>"14", "rating"=>"5", "content"=>""}, "commit"=>"Create Review"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+Redirected to http://0.0.0.0:3000/restaurants/14/reviews/new
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/restaurants/14/reviews/new" for 127.0.0.1 at 2018-01-22 22:58:27 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"restaurant_id"=>"14"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."restaurant_id" = ? LIMIT ?[0m  [["user_id", 1], ["restaurant_id", 14], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (2.3ms)
+  Rendered reviews/new.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 39ms (Views: 31.3ms | ActiveRecord: 0.8ms)
+
+
