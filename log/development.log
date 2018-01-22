@@ -9301,3 +9301,92 @@ Processing by RestaurantsController#show as HTML
 Completed 200 OK in 43ms (Views: 37.0ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/restaurants/42" for 127.0.0.1 at 2018-01-22 10:50:25 +0100
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 42], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Review Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 42], ["LIMIT", 1]]
+  Rendered restaurants/show.html.erb within layouts/application (68.2ms)
+  Rendered layouts/_header.html.erb (13.0ms)
+Completed 200 OK in 143ms (Views: 109.4ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/restaurants/42" for 127.0.0.1 at 2018-01-22 10:51:09 +0100
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  Rendered restaurants/show.html.erb within layouts/application (1.0ms)
+Completed 401 Unauthorized in 16ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/brittanyhartmire/Development/code/restaurant-review-rails-app/app/views/restaurants/show.html.erb:12: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...staurant.user == current_user );@output_buffer.safe_append='
+...                               ^
+/Users/brittanyhartmire/Development/code/restaurant-review-rails-app/app/views/restaurants/show.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/brittanyhartmire/Development/code/restaurant-review-rails-app/app/views/restaurants/show.html.erb:16: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/brittanyhartmire/Development/code/restaurant-review-rails-app/app/views/restaurants/show.html.erb:18: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/restaurants/show.html.erb:12: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/restaurants/show.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+app/views/restaurants/show.html.erb:16: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/restaurants/show.html.erb:18: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/restaurants/42" for 127.0.0.1 at 2018-01-22 10:51:26 +0100
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mCuisine Load (0.2ms)[0m  [1m[34mSELECT  "cuisines".* FROM "cuisines" WHERE "cuisines"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT  "cities".* FROM "cities" WHERE "cities"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mReview Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 42], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Review Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "reviews" WHERE "reviews"."restaurant_id" = ? LIMIT ?[0m  [["restaurant_id", 42], ["LIMIT", 1]]
+  Rendered restaurants/show.html.erb within layouts/application (15.8ms)
+Completed 401 Unauthorized in 31ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for #<Restaurant:0x007fa1b9f25af0>
+Did you mean?  users):
+     9:   <%= render partial: 'list_reviews', locals: {restaurant: @restaurant} %>
+    10: <% end %>
+    11: 
+    12: <% if @restaurant.user == current_user %>
+    13:   <h1> Hello </h1>
+    14: <% end %>
+  
+app/views/restaurants/show.html.erb:12:in `_app_views_restaurants_show_html_erb__2244320557481539627_70166293062680'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserCreatorIdToRestaurants (20180122095458)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "restaurants" ADD "user_creator_id" integer DEFAULT NULL[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180122095458"]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
