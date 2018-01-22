@@ -2,17 +2,19 @@
 <%= form_for(@restaurant) do |f| %>
   <p><%= f.label :name %>
   <%= f.text_field :name %></p>
+  <p>Select/Enter Cuisine:
   <%= f.text_field :cuisine_name, list: "cuisine_autocomplete" %>
   <datalist id="cuisine_autocomplete">
     <% @cuisines.each do |cuisine| %>
       <option value="<%= cuisine.name %>">
     <% end %>
-  </datalist>
+  </datalist></p>
+  <p>Select/Enter City:
   <%= f.text_field :city_name, list: "city_autocomplete" %>
   <datalist id="city_autocomplete">
     <% @cities.each do |city| %>
       <option value="<%= city.name %>">
     <% end %>
   </datalist>
-  <%= f.submit "Submit"%>
+  <p><%= f.submit "Submit"%></p>
 <% end %>
