@@ -1,16 +1,20 @@
-<% error_messages = [] %>
-<% error_messages << object.errors.full_messages if object.errors.any? %>
-<% error_messages << object.cuisine.errors.full_messages if object.cuisine.errors.any?%>
-<% error_messages << object.city.errors.full_messages if object.city.errors.any?%>
-<% if error_messages.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(error_messages.count, "error") %> prohibited this <%= object.class %> from being saved:
-    </h2>
-    <ul>
-      <% error_messages.each do |message| %>
-        <li><%= message[0] %></li>
-      <% end %>
-    </ul>
-  </div>
+<% if object.cuisine && object.city %>
+  <% error_messages = [] %>
+  <% error_messages << object.errors.full_messages if object.errors.any? %>
+  <% error_messages << object.cuisine.errors.full_messages if object.cuisine.errors.any?%>
+  <% error_messages << object.city.errors.full_messages if object.city.errors.any?%>
+
+  <% if error_messages.any? || object.cuisine.errors.any? || object.city.errors.any?%>
+
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(error_messages.count, "error") %> prohibited this <%= object.class %> from being saved:
+      </h2>
+      <ul>
+        <% error_messages.each do |message| %>
+          <li><%= message[0] %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 <% end %>

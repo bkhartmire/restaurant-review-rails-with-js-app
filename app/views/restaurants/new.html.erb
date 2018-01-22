@@ -1,6 +1,7 @@
 <h1>Add Restaurant Listing</h1>
-<%= render partial: 'validation_errors', locals: {object: @restaurant} %>
+
 <%= form_for(@restaurant) do |f| %>
+  <%= render partial: 'validation_errors', locals: {object: @restaurant} %>
   <p><%= f.label :name %>
   <%= f.text_field :name %></p>
   <p>Select/Enter Cuisine:
