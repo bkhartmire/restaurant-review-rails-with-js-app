@@ -8,5 +8,11 @@
       <option value="<%= cuisine.name %>">
     <% end %>
   </datalist>
+  <%= f.text_field :city_name, list: "city_autocomplete" %>
+  <datalist id="city_autocomplete">
+    <% @cities.each do |city| %>
+      <option value="<%= city.name %>">
+    <% end %>
+  </datalist>
   <%= f.submit "Submit"%>
 <% end %>
