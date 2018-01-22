@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20180122191047) do
     t.integer "cuisine_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price_range"
+    t.string "price_range"
   end
 
   create_table "reviews", force: :cascade do |t|
