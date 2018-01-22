@@ -1,7 +1,7 @@
 <% error_messages = [] %>
-<% error_messages << object.errors.full_messages %>
-<% error_messages << object.cuisine.errors.full_messages %>
-<% error_messages << object.city.errors.full_messages %>
+<% error_messages << object.errors.full_messages if object.errors.any? %>
+<% error_messages << object.cuisine.errors.full_messages if object.cuisine.errors.any?%>
+<% error_messages << object.city.errors.full_messages if object.city.errors.any?%>
 <% if error_messages.any? %>
   <div id="error_explanation">
     <h2>
@@ -9,7 +9,7 @@
     </h2>
     <ul>
       <% error_messages.each do |message| %>
-        <li><%= message %></li>
+        <li><%= message[0] %></li>
       <% end %>
     </ul>
   </div>
