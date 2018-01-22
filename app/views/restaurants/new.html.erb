@@ -1,5 +1,5 @@
 <h1>Add Restaurant Listing</h1>
-<%= render partial: './layouts/validation_errors', locals: {object: @restaurant} %>
+<%= render partial: 'validation_errors', locals: {object: @restaurant} %>
 <%= form_for(@restaurant) do |f| %>
   <p><%= f.label :name %>
   <%= f.text_field :name %></p>
