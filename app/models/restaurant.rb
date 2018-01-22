@@ -4,6 +4,10 @@ class Restaurant < ApplicationRecord
   belongs_to :cuisine
   belongs_to :city
 
+  validates :name, presence: true, message: "Restaurant must have a name."
+  validates :city_name, presence: true, message: "Restaurant must have a city."
+  validates :cuisine_name, presence: true, message: "Restaurant must have a cuisine."
+
 
   def cuisine_name=(name)
     self.cuisine = Cuisine.find_or_create_by(name: name)
