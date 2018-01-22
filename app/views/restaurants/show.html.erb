@@ -8,3 +8,9 @@
 <% if @restaurant.reviews.any? %>
   <%= render partial: 'list_reviews', locals: {restaurant: @restaurant} %>
 <% end %>
+
+<% if current_user.admin == true %>
+  <div>
+    <%= button_to 'Delete', {controller: 'restaurants', action: 'destroy', restaurant_id: @restaurant.id}, method: "delete" %>
+  </div>
+<% end %>
