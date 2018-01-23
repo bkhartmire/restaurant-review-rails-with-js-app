@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
   def new
-    puts params
     @restaurant = Restaurant.find(params[:restaurant_id])
     if !current_user.reviews.find_by(restaurant_id: @restaurant.id)
       @review = Review.new(restaurant_id: params[:restaurant_id])
@@ -10,7 +9,6 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    puts params
     @restaurant = Restaurant.find(params[:review][:restaurant_id])
     @review = Review.new(review_params)
     @review.user_id = current_user.id
@@ -27,9 +25,9 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.find(params[:id])
-    temp = Review.new(review_params)
-      if temp.valid?
+    @restaurant = Restaurant.find(params[:review][:restaurant_id])
+    @review = Review.new(review_params)
+      if @review.valid?
         @review.update(review_params)
         redirect_to restaurant_path(@review.restaurant_id), notice: "Review successfully edited."
       else
