@@ -23,13 +23,18 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @review = Review.find_by(id: params[:id])
+    @review = Review.find_by(params[:id])
   end
 
   def update
     @review = Review.find(params[:id])
-    @review.update(review_params)
-    redirect_to user_path(current_user)
+    temp = Review.new(review_params)
+      if temp.valid?
+        @review.update(review_params)
+        redirect_to restaurant_path(@review.restaurant_id), notice: "Review successfully edited."
+      else
+        render :edit
+      end
   end
 
   def destroy
