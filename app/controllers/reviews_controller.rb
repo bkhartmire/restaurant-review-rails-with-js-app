@@ -26,11 +26,15 @@ class ReviewsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:review][:restaurant_id])
-    @review = Review.new(review_params)
-      if @review.valid?
+    @review = Review.find(params[:id])
+    edited_review = Review.new(review_params)
+    edited_review.user = current_user
+      if edited_review.valid?
         @review.update(review_params)
         redirect_to restaurant_path(@review.restaurant_id), notice: "Review successfully edited."
       else
+        @review.destroy
+        @review = edited_review
         render :edit
       end
   end
