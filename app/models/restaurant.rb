@@ -8,6 +8,10 @@ class Restaurant < ApplicationRecord
   validates :city_name, presence: true
   validates :cuisine_name, presence: true
 
+  def self.five_stars
+    self.all.select {|restaurant| restaurant.average_rating == 5.0 }
+  end
+  
   def average_rating
     if self.reviews.any?
       sum = 0
@@ -19,6 +23,7 @@ class Restaurant < ApplicationRecord
       0
     end
   end
+
 
   def cuisine_name=(name)
     self.cuisine = Cuisine.find_or_create_by(name: name)

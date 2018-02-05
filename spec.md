@@ -13,7 +13,7 @@ Specs:
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
   -> City, Cuisine, Restaurant, Review have validations (User validations are automated through Devise)
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
-  -> User.from_omniauth(auth)
+  -> Restaurant.five_stars
 - [x] Include a nested form writing to an associated model using a custom attribute writer (form URL, model name e.g. /recipe/new, Item)
   -> /restaurants/new, Cuisine & City
 - [x] Include signup (how e.g. Devise)

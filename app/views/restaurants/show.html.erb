@@ -20,6 +20,6 @@
 
 <% if user_signed_in? && current_user.admin == true %>
   <div>
-    <%= button_to 'Delete', {controller: 'restaurants', action: 'destroy', restaurant_id: @restaurant.id}, method: "delete" %>
+    <%= button_to 'Delete Restaurant Listing', {controller: 'restaurants', action: 'destroy', restaurant_id: @restaurant.id}, method: "delete" %>
   </div>
 <% end %>

@@ -4,4 +4,5 @@ class Review < ApplicationRecord
 
   validates :rating, presence: true
   validates :content, length: {in: 15..500, message: "Review must be in betweeen 15 and 500 characters."}
+
 end

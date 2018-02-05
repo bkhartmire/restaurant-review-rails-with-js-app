@@ -9,7 +9,13 @@
       <% end %>
   </ul>
 <% end %>
-
+<br>
+<% if Restaurant.five_stars.any? %>
+  <h3>Five Star Restaurants Across the Globe!</h3>
+    <% Restaurant.five_stars.each do |restaurant| %>
+      <li><%= link_to restaurant.name, restaurant_path(restaurant) %> in <%=restaurant.city.name %></li>
+    <% end %>
+<% end %>
 <% if user_signed_in? %>
   <%= link_to "Add Restaurant Listing", new_restaurant_path %>
 <% else %>

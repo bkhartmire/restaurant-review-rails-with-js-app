@@ -5,3 +5,7 @@ Instructions: Simply fork, clone, and run bundle install! Adjust the database se
   2. output should inform on the PID numbers
   3. kill -9 [PID number]
   4. now try launching the server again :-)
+
+To Do:
+Contributors' Guide:
+Mit Open Source License (add file)
