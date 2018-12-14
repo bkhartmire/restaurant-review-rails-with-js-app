@@ -1,7 +1,23 @@
 Restaurant Table:
+(belongs_to city, country, cuisine)
 name
 city_id
 country_id
+cuisine_id
+
+City Table:
+(belongs_to country)
+(has_many restaurants, cuisines)
+name
+country_id
+
+Country Table:
+(has_many cities, restaurants, cuisines)
+name
+
+Cuisine Table:
+(has_many restaurants)
+-name
 
 -fix Omniauth (deleted fb)
   --> yelp or foursquare instead?
