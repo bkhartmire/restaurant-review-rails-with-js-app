@@ -1,9 +1,8 @@
 Restaurant Table:
-(belongs_to city, country, cuisine)
+(belongs_to city, cuisine)
 name
 website_url
 city_id
-country_id
 cuisine_id
 
 City Table:
