@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 cuisines = Cuisine.create([{name: 'Japanese'}, {name: 'Chinese'}, {name: 'Korean'}, {name: 'Italian'}, {name: 'French'}, {name: 'New American'}, {name: 'Mexican'}, {name: 'Fast Food'}, {name: 'Tapas'}, {name: 'Cantonese'}])
 
+countries = Country.create([{name: 'Japan'}, {name: 'France'}, {name: 'United States'}, {name: 'Spain'}, {name: 'Germany'}, {name: 'Hong Kong'}, {name: 'Macau'}, {name: 'Italy'}, {name: 'United Kingdom'}, {name: 'Netherlands'}, {name: 'Switzerland'}])
+
 cities = City.create([{name: 'Los Angeles'}, {name: 'New York City'}, {name: 'Barcelona'}, {name: 'Paris'}, {name: 'Tokyo'}, {name: 'Hong Kong'}, {name: 'Mexico City'}])
 
 restaurants = Restaurant.create([

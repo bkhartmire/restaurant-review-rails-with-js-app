@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 20181214235344) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
+    t.integer "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,10 +34,10 @@ ActiveRecord::Schema.define(version: 20181214235344) do
   create_table "restaurants", force: :cascade do |t|
     t.integer "city_id"
     t.string "name"
+    t.string "website_url"
     t.integer "cuisine_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "price_range"
   end
 
   create_table "reviews", force: :cascade do |t|
