@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-cuisines = Cuisine.create([{name: 'Belgian'}, {name: 'Western'}, {name: 'Scandinavian'}, {name: 'French'}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}])
+cuisines = Cuisine.create([{name: 'Belgian'}, {name: 'Western'}, {name: 'Scandinavian'}, {name: 'French'}, {name: 'European'}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}])
 
 countries = Country.create([{name: 'Japan'}, {name: 'France'}, {name: 'United States'}, {name: 'Spain'}, {name: 'Germany'}, {name: 'Hong Kong'}, {name: 'Macau'}, {name: 'Italy'}, {name: 'United Kingdom'}, {name: 'Netherlands'}, {name: 'Switzerland'}, {name: 'Belgium'}, {name: 'China'}, {name: 'Denmark'}, {name: 'Monaco'}, {name: 'Norway'}, {name: 'South Korea'}, {name: 'Sweden'}, {name: 'Taiwan'}])
 
@@ -31,6 +31,22 @@ cities = City.create([{name: 'Kruishoutem', country_id: Country.find_by(name: 'B
   {name: 'Tinqueux', country_id: Country.find_by(name: 'France').id},
   {name: 'Valence', country_id: Country.find_by(name: 'France').id},
   {name: 'Vonnas', country_id: Country.find_by(name: 'France').id},
+  {name: 'Baiersbronn', country_id: Country.find_by(name: 'Germany').id},
+  {name: 'Bergisch Gladbach', country_id: Country.find_by(name: 'Germany').id},
+  {name: 'Dreis', country_id: Country.find_by(name: 'GermanyGermany').id},
+  {name: 'Hamburg', country_id: Country.find_by(name: 'Germany').id},
+  {name: 'Munich', country_id: Country.find_by(name: 'Germany').id},
+  {name: 'Perl', country_id: Country.find_by(name: 'Germany').id},
+  {name: 'Rottach-Egern', country_id: Country.find_by(name: 'Germany').id},
+  {name: 'Saarbrücken', country_id: Country.find_by(name: 'Germany').id},
+  {name: 'Wolfsburg', country_id: Country.find_by(name: 'Germany').id},
+  {name: '', country_id: Country.find_by(name: '').id},
+  {name: '', country_id: Country.find_by(name: '').id},
+  {name: '', country_id: Country.find_by(name: '').id},
+  {name: '', country_id: Country.find_by(name: '').id},
+  {name: '', country_id: Country.find_by(name: '').id},
+  {name: '', country_id: Country.find_by(name: '').id},
+  {name: '', country_id: Country.find_by(name: '').id},
   {name: '', country_id: Country.find_by(name: '').id},
   {name: '', country_id: Country.find_by(name: '').id},
   {name: '', country_id: Country.find_by(name: '').id},
@@ -69,16 +85,16 @@ restaurants = Restaurant.create([
     {name: '	L\'Assiette Champenoise', city_id: City.find_by(name: 'Tinqueux').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.assiettechampenoise.com/en/"},
     {name: 'Maison	Pic', city_id: City.find_by(name: 'Valence').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.anne-sophie-pic.com/en/content/anne-sophie-pic-restaurant"},
     {name: 'Georges Blanc', city_id: City.find_by(name: 'Vonnas').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.georgesblanc.com/en/"},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
+    {name: 'Schwarzwaldstube', city_id: City.find_by(name: 'Baiersbronn').id , cuisine_id: Cuisine.find_by(name: 'European').id, website_url: "https://www.traube-tonbach.de/en/schwarzwaldstube-restaurant"},
+    {name: 'Restaurant Bareiss', city_id: City.find_by(name: 'Baiersbronn').id , cuisine_id: Cuisine.find_by(name: 'European').id, website_url: "https://www.bareiss.com/en/restaurants/restaurant-bareiss.html"},
+    {name: 'Vendôme', city_id: City.find_by(name: 'Bergisch Gladbach').id , cuisine_id: Cuisine.find_by(name: 'European').id, website_url: "https://www.schlossbensberg.com/restaurant-vendome?utm_source=tripadvisor&utm_medium=referral"},
+    {name: 'Waldhotel Sonnora', city_id: City.find_by(name: 'Dreis').id , cuisine_id: Cuisine.find_by(name: 'European').id, website_url: "https://www.hotel-sonnora.de/?utm_source=tripadvisor&utm_medium=referral"},
+    {name: 'The Table', city_id: City.find_by(name: 'Hamburg').id , cuisine_id: Cuisine.find_by(name: 'European').id, website_url: "http://www.thetable-hamburg.de/?utm_source=tripadvisor&utm_medium=referral"},
+    {name: 'Atelier', city_id: City.find_by(name: 'Munich').id , cuisine_id: Cuisine.find_by(name: 'European').id, website_url: "https://www.bayerischerhof.de/de/erleben-geniessen/restaurants-bars/restaurants/atelier.html?utm_source=tripadvisor&utm_medium=referral"},
+    {name: 'Victor\'s Fine Dining by Christian Bau', city_id: City.find_by(name: 'Perl').id , cuisine_id: Cuisine.find_by(name: 'European').id, website_url: "http://www.victors-fine-dining.de/?utm_source=tripadvisor&utm_medium=referral"},
+    {name: 'Restaurant Überfahrt', city_id: City.find_by(name: 'Rottach-Egern').id , cuisine_id: Cuisine.find_by(name: 'European').id, website_url: "https://www.seehotel-ueberfahrt.com/restaurant-ueberfahrt"},
+    {name: 'GästeHaus Klaus Erfort', city_id: City.find_by(name: 'Saarbrücken').id , cuisine_id: Cuisine.find_by(name: 'European').id, website_url: "http://www.gaestehaus-erfort.de/?utm_source=tripadvisor&utm_medium=referral"},
+    {name: 'Aqua', city_id: City.find_by(name: 'Wolfsburg').id , cuisine_id: Cuisine.find_by(name: 'European').id, website_url: "http://www.restaurant-aqua.com/?utm_source=tripadvisor&utm_medium=referral"},
     {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
     {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
     {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
