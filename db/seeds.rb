@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-cuisines = Cuisine.create([{name: 'Belgian'}, {name: 'Western'}, {name: 'Scandinavian'}, {name: 'French'}, {name: 'European'}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}])
+cuisines = Cuisine.create([{name: 'Belgian'}, {name: 'Western'}, {name: 'Scandinavian'}, {name: 'French'}, {name: 'European'}, {name: 'Cantonese'}, {name: 'Italian'}, {name: 'Chinese'}, {name: 'Japanese'}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}])
 
 countries = Country.create([{name: 'Japan'}, {name: 'France'}, {name: 'United States'}, {name: 'Spain'}, {name: 'Germany'}, {name: 'Hong Kong'}, {name: 'Macau'}, {name: 'Italy'}, {name: 'United Kingdom'}, {name: 'Netherlands'}, {name: 'Switzerland'}, {name: 'Belgium'}, {name: 'China'}, {name: 'Denmark'}, {name: 'Monaco'}, {name: 'Norway'}, {name: 'South Korea'}, {name: 'Sweden'}, {name: 'Taiwan'}])
 
@@ -33,15 +33,15 @@ cities = City.create([{name: 'Kruishoutem', country_id: Country.find_by(name: 'B
   {name: 'Vonnas', country_id: Country.find_by(name: 'France').id},
   {name: 'Baiersbronn', country_id: Country.find_by(name: 'Germany').id},
   {name: 'Bergisch Gladbach', country_id: Country.find_by(name: 'Germany').id},
-  {name: 'Dreis', country_id: Country.find_by(name: 'GermanyGermany').id},
+  {name: 'Dreis', country_id: Country.find_by(name: 'Germany').id},
   {name: 'Hamburg', country_id: Country.find_by(name: 'Germany').id},
   {name: 'Munich', country_id: Country.find_by(name: 'Germany').id},
   {name: 'Perl', country_id: Country.find_by(name: 'Germany').id},
   {name: 'Rottach-Egern', country_id: Country.find_by(name: 'Germany').id},
   {name: 'Saarbrücken', country_id: Country.find_by(name: 'Germany').id},
   {name: 'Wolfsburg', country_id: Country.find_by(name: 'Germany').id},
-  {name: '', country_id: Country.find_by(name: '').id},
-  {name: '', country_id: Country.find_by(name: '').id},
+  {name: 'Hong Kong', country_id: Country.find_by(name: 'Hong Kong').id},
+  {name: 'Macau', country_id: Country.find_by(name: 'Macau').id},
   {name: '', country_id: Country.find_by(name: '').id},
   {name: '', country_id: Country.find_by(name: '').id},
   {name: '', country_id: Country.find_by(name: '').id},
@@ -95,16 +95,16 @@ restaurants = Restaurant.create([
     {name: 'Restaurant Überfahrt', city_id: City.find_by(name: 'Rottach-Egern').id , cuisine_id: Cuisine.find_by(name: 'European').id, website_url: "https://www.seehotel-ueberfahrt.com/restaurant-ueberfahrt"},
     {name: 'GästeHaus Klaus Erfort', city_id: City.find_by(name: 'Saarbrücken').id , cuisine_id: Cuisine.find_by(name: 'European').id, website_url: "http://www.gaestehaus-erfort.de/?utm_source=tripadvisor&utm_medium=referral"},
     {name: 'Aqua', city_id: City.find_by(name: 'Wolfsburg').id , cuisine_id: Cuisine.find_by(name: 'European').id, website_url: "http://www.restaurant-aqua.com/?utm_source=tripadvisor&utm_medium=referral"},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
+    {name: 'Lung King Heen', city_id: City.find_by(name: 'Hong Kong').id , cuisine_id: Cuisine.find_by(name: 'Cantonese').id, website_url: "https://www.fourseasons.com/hongkong/dining/restaurants/lung_king_heen/"},
+    {name: '8½ Otto e Mezzo Bombana', city_id: City.find_by(name: 'Hong Kong').id , cuisine_id: Cuisine.find_by(name: 'Italian').id, website_url: "http://www.ottoemezzobombana.com/hong-kong/en/homepage/"},
+    {name: 'L\'Atelier de Joël Robuchon', city_id: City.find_by(name: 'Hong Kong').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "www.robuchon.hk/"},
+    {name: 'Bo Innovation', city_id: City.find_by(name: 'Hong Kong').id , cuisine_id: Cuisine.find_by(name: 'Chinese').id, website_url: "http://www.boinnovation.com/html/html_default.html"},
+    {name: 'Sushi Shikon', city_id: City.find_by(name: 'Hong Kong').id , cuisine_id: Cuisine.find_by(name: 'Japanese').id, website_url: "http://sushi-shikon.com/"},
+    {name: 'T\'ang Court', city_id: City.find_by(name: 'Hong Kong').id , cuisine_id: Cuisine.find_by(name: 'Cantonese').id, website_url: "http://www.langhamhotels.com/en/the-langham/hong-kong/dining/tang-court/"},
+    {name: 'Caprice', city_id: City.find_by(name: 'Hong Kong').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.fourseasons.com/hongkong/dining/restaurants/caprice/"},
+    {name: 'Jade Dragon', city_id: City.find_by(name: 'Macau').id , cuisine_id: Cuisine.find_by(name: 'Chinese').id, website_url: "https://hk.asiatatler.com/restaurants/jade-dragon"},
+    {name: 'Robuchon au Dôme', city_id: City.find_by(name: 'Macau').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.joel-robuchon.com/fr/"},
+    {name: 'The 8 Restaurant', city_id: City.find_by(name: 'Macau').id , cuisine_id: Cuisine.find_by(name: 'Chinese').id, website_url: "https://www.grandlisboahotels.com/en/grandlisboa/dining/the-8"},
     {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
     {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
     {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
