@@ -21,7 +21,7 @@ Cuisine Table:
 
 
 
-
+-only admin users should be able to add a new restaurant
 -fix Omniauth (deleted fb)
   --> yelp or foursquare instead?
 

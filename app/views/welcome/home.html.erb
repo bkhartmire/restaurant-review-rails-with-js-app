@@ -1,12 +1,10 @@
 <h1>Welcome to Restaurant World Critic!</h1>
 
-<h3>Browse Restaurants by City (A-Z)</h3>
-<% @cities.each do |city| %>
+<h3>Browse Restaurants by Country (A-Z)</h3>
+<% @countries.each do |country| %>
   <ul>
-    <h3><%= link_to city.name, city_path(city) %></h3>
-      <% city.cuisines.uniq.each do |cuisine| %>
-        <li><%= link_to cuisine.name, city_cuisine_path(city, cuisine) %></li>
-      <% end %>
+     <h3><%= link_to country.name, country_path(country) %></h3>
+
   </ul>
 <% end %>
 <br>

@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def home
-    @cities = City.all.sort_by{ |city| city.name }
+    @countries = Country.all.sort_by{ |country| country.name }
   end
 end
