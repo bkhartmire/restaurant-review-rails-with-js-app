@@ -1,6 +1,8 @@
 <h1>Welcome to Restaurant World Critic!</h1>
 
-<h3>Browse Restaurants by Country (A-Z)    |    View All</h3>
+<div id="browse bar">
+  <button id="byCountry">Browse Restaurants by Country (A-Z)</button>    <button id="byCity">Browse Restaurants by City (A-Z)</button>   <button id="viewAll">View All</button>
+</div>
 <% @countries.each do |country| %>
   <ul>
      <h3><%= link_to country.name, country_path(country) %> (<%= country.restaurants.count%>)</h3>
