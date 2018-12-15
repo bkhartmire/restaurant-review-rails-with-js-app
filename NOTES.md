@@ -19,7 +19,8 @@ Cuisine Table:
 (has_many restaurants)
 -name
 
-
+HOME PAGE:
+Sort by: Country (A-Z), City (A-Z), Cuisine (A-Z), All Restaurants (A-Z)
 
 -only admin users should be able to add a new restaurant
 -fix Omniauth (deleted fb)
