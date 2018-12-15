@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-cuisines = Cuisine.create([{name: 'Belgian'}, {name: 'Western'}, {name: 'Scandinavian'}, {name: 'French'}, {name: 'European'}, {name: 'Cantonese'}, {name: 'Italian'}, {name: 'Chinese'}, {name: 'Japanese'}, {name: 'Spanish'}, {name: 'Dutch'}, {name: 'Korean'}, {name: 'Basque'}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}, {name: ''}])
+cuisines = Cuisine.create([{name: 'Belgian'}, {name: 'Western'}, {name: 'Scandinavian'}, {name: 'French'}, {name: 'European'}, {name: 'Cantonese'}, {name: 'Italian'}, {name: 'Chinese'}, {name: 'Japanese'}, {name: 'Spanish'}, {name: 'Dutch'}, {name: 'Korean'}, {name: 'Basque'}, {name: 'Swiss'}, {name: 'British'}, {name: 'New American'}])
 
 countries = Country.create([{name: 'Japan'}, {name: 'France'}, {name: 'United States'}, {name: 'Spain'}, {name: 'Germany'}, {name: 'Hong Kong'}, {name: 'Macau'}, {name: 'Italy'}, {name: 'United Kingdom'}, {name: 'Netherlands'}, {name: 'Switzerland'}, {name: 'Belgium'}, {name: 'China'}, {name: 'Denmark'}, {name: 'Monaco'}, {name: 'Norway'}, {name: 'South Korea'}, {name: 'Sweden'}, {name: 'Taiwan'}])
 
@@ -206,29 +206,31 @@ restaurants = Restaurant.create([
     {name: 'Arzak', city_id: City.find_by(name: 'San Sebastián').id , cuisine_id: Cuisine.find_by(name: 'Basque').id, website_url: "https://www.arzak.es/"},
     {name: 'Akelare', city_id: City.find_by(name: 'San Sebastián').id , cuisine_id: Cuisine.find_by(name: 'Basque').id, website_url: "https://www.akelarre.net/en/"},
     {name: 'Quique Dacosta Restaurante', city_id: City.find_by(name: 'Dénia').id , cuisine_id: Cuisine.find_by(name: 'Spanish').id, website_url: "https://en.quiquedacosta.es/"},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},
-    {name: '', city_id: City.find_by(name: '').id , cuisine_id: Cuisine.find_by(name: '').id, website_url: ""},Japanes
+    {name: 'Frantzén', city_id: City.find_by(name: 'Stockholm').id , cuisine_id: Cuisine.find_by(name: 'Japanese').id, website_url: "www.restaurantfrantzen.com/"},
+    {name: 'Cheval Blanc', city_id: City.find_by(name: 'Basel').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.chevalblancbasel.com/de"},
+    {name: 'Restaurant de l\'Hôtel de Ville', city_id: City.find_by(name: 'Crissier').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.restaurantcrissier.com/en/"},
+    {name: 'Schloss Schauenstein', city_id: City.find_by(name: 'Fürstenau').id , cuisine_id: Cuisine.find_by(name: 'Swiss').id, website_url: "www.schauenstein.ch/restaurant"},
+    {name: 'Le Palais', city_id: City.find_by(name: 'Taipei').id , cuisine_id: Cuisine.find_by(name: 'Chinese').id, website_url: "https://www.palaisdechinehotel.com/en/restaurant.php"},
+    {name: 'The Waterside Inn', city_id: City.find_by(name: 'Bray').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.waterside-inn.co.uk/"},
+    {name: 'The Fat Duck', city_id: City.find_by(name: 'Bray').id , cuisine_id: Cuisine.find_by(name: 'British').id, website_url: "https://www.thefatduck.co.uk/"},
+    {name: 'Restaurant Gordon Ramsay', city_id: City.find_by(name: 'London').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.gordonramsayrestaurants.com/restaurant-gordon-ramsay/"},
+    {name: '	Alain Ducasse at the Dorchester', city_id: City.find_by(name: 'London').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "m.alainducasse-dorchester.com/en/"},
+    {name: 'The Araki', city_id: City.find_by(name: 'London').id , cuisine_id: Cuisine.find_by(name: 'Japanese').id, website_url: "http://www.the-araki.com/"},
+    {name: 'Alinea', city_id: City.find_by(name: 'Chicago').id , cuisine_id: Cuisine.find_by(name: 'New American').id, website_url: "https://www.alinearestaurant.com/"},
+    {name: 'SingleThread Farms', city_id: City.find_by(name: 'Healdsburg').id , cuisine_id: Cuisine.find_by(name: 'New American').id, website_url: "https://www.singlethreadfarms.com/"},
+    {name: 'Manresa', city_id: City.find_by(name: 'Los Gatos').id , cuisine_id: Cuisine.find_by(name: 'New American').id, website_url: "https://www.manresarestaurant.com/"},
+    {name: 'Le Bernardin', city_id: City.find_by(name: 'New York City').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.le-bernardin.com/"},
+    {name: 'Per Se', city_id: City.find_by(name: 'New York City').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.thomaskeller.com/perseny"},
+    {name: 'Masa', city_id: City.find_by(name: 'New York City').id , cuisine_id: Cuisine.find_by(name: 'Japanese').id, website_url: "www.masanyc.com/"},
+    {name: 'Eleven Madison Park', city_id: City.find_by(name: 'New York City').id , cuisine_id: Cuisine.find_by(name: 'New American').id, website_url: "https://www.elevenmadisonpark.com/"},
+    {name: 'Chef\'s Table at Brooklyn Fare', city_id: City.find_by(name: 'New York City').id , cuisine_id: Cuisine.find_by(name: 'Japanese').id, website_url: "https://www.brooklynfare.com/pages/chefs-table"},
+    {name: 'Atelier Crenn', city_id: City.find_by(name: 'San Francisco').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.ateliercrenn.com/"},
+    {name: 'Benu', city_id: City.find_by(name: 'San Francisco').id , cuisine_id: Cuisine.find_by(name: 'New American').id, website_url: "https://www.benusf.com/"},
+    {name: 'Quince', city_id: City.find_by(name: 'San Francisco').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.quincerestaurant.com/"},
+    {name: 'Saison', city_id: City.find_by(name: 'San Francisco').id , cuisine_id: Cuisine.find_by(name: 'New American').id, website_url: "https://www.saisonsf.com/"},
+    {name: 'The Restaurant at Meadowood', city_id: City.find_by(name: 'St. Helena').id , cuisine_id: Cuisine.find_by(name: 'New American').id, website_url: "https://www.therestaurantatmeadowood.com/"},
+    {name: 'The Inn at Little Washington', city_id: City.find_by(name: 'Washington').id , cuisine_id: Cuisine.find_by(name: 'New American').id, website_url: "https://theinnatlittlewashington.com/restaurant/"},
+    {name: 'The French Laundry', city_id: City.find_by(name: 'Yountville').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.thomaskeller.com/tfl"}
   ])
 
 counter = 1
