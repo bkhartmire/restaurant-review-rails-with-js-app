@@ -1,9 +1,9 @@
 <h1>Welcome to Restaurant World Critic!</h1>
 
-<h3>Browse Restaurants by Country (A-Z)</h3>
+<h3>Browse Restaurants by Country (A-Z)    |    View All</h3>
 <% @countries.each do |country| %>
   <ul>
-     <h3><%= link_to country.name, country_path(country) %></h3>
+     <h3><%= link_to country.name, country_path(country) %> (<%= country.restaurants.count%>)</h3>
 
   </ul>
 <% end %>
