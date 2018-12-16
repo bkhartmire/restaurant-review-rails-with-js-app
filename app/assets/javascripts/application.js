@@ -18,19 +18,13 @@
 
 $(document).ready(function() {
   alert("Hi, I'm working.");
-  document.getElementById('browseBar').addEventListener('change', () => browseSorter());
+  //document.getElementById('browseBar').addEventListener('change', () => browseSorter());
 });
 
 
 function browseSorter() {
   alert("HIHIHI")
   var browseValue = document.getElementById('browseBar').value;
-  if (browseValue === "countryAZ") {
-    $.ajax({
-      method: 'GET',
-      url: '/countries/index'
-    })
-  } else {
-    alert("Hello")
-  }
+  //$.get('countries/index')
+  window.location = "/countries/index"
 }
