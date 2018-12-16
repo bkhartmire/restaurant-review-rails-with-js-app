@@ -26,7 +26,10 @@ function browseSorter() {
   alert("HIHIHI")
   var browseValue = document.getElementById('browseBar').value;
   if (browseValue === "countryAZ") {
-    $('#displayRestaurants').append('<h1>Hello</h1>')
+    $.ajax({
+      method: 'GET',
+      url: '/countries/index'
+    })
   } else {
     alert("Hello")
   }
