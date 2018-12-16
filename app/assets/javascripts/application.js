@@ -14,3 +14,20 @@
 //= require_tree .
 //= require jquery
 //= require jquery_ujs
+//= require welcome
+
+$(document).ready(function() {
+  alert("Hi, I'm working.");
+  document.getElementById('browseBar').addEventListener('change', () => browseSorter());
+});
+
+
+function browseSorter() {
+  alert("HIHIHI")
+  var browseValue = document.getElementById('browseBar').value;
+  if (browseValue === "countryAZ") {
+    $('#displayRestaurants').append('<h1>Hello</h1>')
+  } else {
+    alert("Hello")
+  }
+}
