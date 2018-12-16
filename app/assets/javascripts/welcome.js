@@ -1,7 +1,7 @@
 $(document).ready(function() {
   alert("Hellohellohello");
 
-  $('#browseBar').addEventListener('change', alert("Event Listener"));
+  document.getElementById('browseBar').addEventListener('change', () => browseSorter());
 });
 
 
