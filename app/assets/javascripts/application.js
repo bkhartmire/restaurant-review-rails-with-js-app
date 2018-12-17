@@ -26,3 +26,10 @@ function browseSorter() {
     $("#displayList").empty().append(response)
   })
 }
+
+function listReviews() {
+  let req = $.get('reviews')
+  req.done(function(response){
+    $("#reviews").empty().append(response)
+  })
+}
