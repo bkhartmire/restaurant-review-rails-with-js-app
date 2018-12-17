@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   resources :countries, only: [:index, :show]
   resources :users, only: [:show]
   post 'reviews/:id/edit' => 'reviews#edit'
-  get 'countriesAZ', to: 'countries#countriesAZ'
-  get 'countriesMost', to: 'countries#countriesMost'
+  get 'countriesAZ', to: 'countries#sortAZ'
+  get 'countriesMost', to: 'countries#sortMost'
+  get 'citiesAZ', to: 'cities#sortAZ'
+  get 'citiesMost', to: 'cities#sortmost'
+  get 'cuisinesAZ', to: 'cuisines#sortAZ'
+  get 'cuisinesMost', to: 'cuisines#sortMost'
+  get 'restaurantsAZ', to 'restaurants#index'
 end

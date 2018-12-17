@@ -22,59 +22,50 @@ $(document).ready(function() {
 
 function browseSorter() {
   var browseValue = document.getElementById('browseBar').value;
-  if (browseValue === 'countryAZ') {
-    countryAZSorter()
-  } else if (browseValue === 'countryMost') {
-    countryMostSorter()
-  } else if (browseValue === 'cityAZ') {
-    cityAZSorter()
-  } else if (browseValue === 'cityMost') {
-    cityMostSorter()
-  } else if (browseValue === 'cuisineAZ') {
-    cuisineSorter()
-  } else if (browseValue === 'allAZ') {
-    restaurantSorter()
-  }
-}
-
-function countryAZSorter() {
-  let req = $.get('countriesAZ')
+  let req = $.get(browseValue)
   req.done(function(response){
     $("#displayList").empty().append(response)
   })
 }
 
-function countryMostSorter() {
-  let req = $.get('countriesMost')
-  req.done(function(response){
-    $("#displayList").empty().append(response)
-  })
-}
-
-function cityAZSorter() {
-  let req = $.get('cities')
-  req.done(function(response){
-    $("#displayList").empty().append(response)
-  })
-}
-
-function cityMostSorter() {
-  let req = $.get('cities')
-  req.done(function(response){
-    $("#displayList").empty().append(response)
-  })
-}
-
-function cuisineSorter() {
-  let req = $.get('cuisines')
-  req.done(function(response){
-    $("#displayList").empty().append(response)
-  })
-}
-
-function restaurantSorter() {
-  let req = $.get('restaurants')
-  req.done(function(response){
-    $("#displayList").empty().append(response)
-  })
-}
+// function countryAZSorter() {
+//   let req = $.get('countriesAZ')
+//   req.done(function(response){
+//     $("#displayList").empty().append(response)
+//   })
+// }
+//
+// function countryMostSorter() {
+//   let req = $.get('countriesMost')
+//   req.done(function(response){
+//     $("#displayList").empty().append(response)
+//   })
+// }
+//
+// function cityAZSorter() {
+//   let req = $.get('cities')
+//   req.done(function(response){
+//     $("#displayList").empty().append(response)
+//   })
+// }
+//
+// function cityMostSorter() {
+//   let req = $.get('cities')
+//   req.done(function(response){
+//     $("#displayList").empty().append(response)
+//   })
+// }
+//
+// function cuisineSorter() {
+//   let req = $.get('cuisines')
+//   req.done(function(response){
+//     $("#displayList").empty().append(response)
+//   })
+// }
+//
+// function restaurantSorter() {
+//   let req = $.get('restaurants')
+//   req.done(function(response){
+//     $("#displayList").empty().append(response)
+//   })
+// }
