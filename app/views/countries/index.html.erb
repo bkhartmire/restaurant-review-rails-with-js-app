@@ -1,3 +1,8 @@
-<div id="results">
 <h1>This is the countries#index page. yayyy</h1>
-</div>
+<% @countries.each do |country| %>
+  <ul>
+     <h3><%= link_to country.name, country_path(country) %> (<%= country.restaurants.count%>)</h3>
+
+  </ul>
+<% end %>
+<br>

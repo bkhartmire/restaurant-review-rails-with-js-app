@@ -13,13 +13,7 @@
   </select>
 </div>
 <div id="displayList">
-  <% @countries.each do |country| %>
-    <ul>
-       <h3><%= link_to country.name, country_path(country) %> (<%= country.restaurants.count%>)</h3>
-
-    </ul>
-  <% end %>
-  <br>
+  
 </div>
 <% if !user_signed_in? %>
   <h5>Log In or Sign Up to track your dining experiences and post a review!</h5>
