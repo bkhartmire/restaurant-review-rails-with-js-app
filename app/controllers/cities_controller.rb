@@ -1,10 +1,11 @@
 class CitiesController < ApplicationController
   def sortAZ
-    @cities = City.all
+    @cities = City.all.sort_by{|city| city.name}
     render 'cities/index', layout: false
   end
 
   def sortMost
+    @cities = City.all.sort_by{|city| city.restaurants.count}.reverse
     render 'cities/index', layout: false
   end
 

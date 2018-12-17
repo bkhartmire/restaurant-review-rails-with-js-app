@@ -1,6 +1,5 @@
 <% @countries.each do |country| %>
   <ul>
      <h3><%= link_to country.name, country_path(country) %> (<%= country.restaurants.count%>)</h3>
-
   </ul>
 <% end %>
