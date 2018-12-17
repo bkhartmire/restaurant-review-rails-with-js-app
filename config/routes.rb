@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
   resources :restaurants, only: [:new, :create, :destroy]
   resources :cuisines, only: [:index]
-  resources :cities, only: [:show] do
+  resources :cities, only: [:show, :index] do
     resources :cuisines, only: [:show]
   end
   resources :restaurants, only: [:show] do

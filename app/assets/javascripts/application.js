@@ -30,6 +30,8 @@ function browseSorter() {
     citySorter()
   } else if (browseValue === 'cuisineAZ') {
     cuisineSorter()
+  } else if (browseValue === 'allAZ') {
+    restaurantSorter()
   }
 }
 
@@ -51,5 +53,12 @@ function cuisineSorter() {
   let req = $.get('cuisines')
   req.done(function(response){
     $("#displayList").empty().append(response)
+  })
+}
+
+function restaurantSorter() {
+  let req = $.get('restaurants')
+  req.done(function(response){
+    $("displayList").empty().append(response)
   })
 }
