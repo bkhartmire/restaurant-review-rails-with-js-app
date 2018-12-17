@@ -24,8 +24,16 @@ $(document).ready(function() {
 function browseSorter() {
   alert("HIHIHI")
   var browseValue = document.getElementById('browseBar').value;
+
+}
+
+function countrySorter() {
   let req = $.get('countries')
-  req.done(function(data){
-    $("#displayList").append(data)
+  req.done(function(response){
+    $("#displayList").append(response)
   })
+}
+
+function cuisineSorter() {
+
 }
