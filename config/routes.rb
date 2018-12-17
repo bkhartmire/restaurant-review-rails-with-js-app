@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'welcome#home'
   resources :restaurants, only: [:new, :create, :destroy]
+  resources :cuisines, only: [:index]
   resources :cities, only: [:show] do
     resources :cuisines, only: [:show]
   end
