@@ -24,7 +24,11 @@ $(document).ready(function() {
 function browseSorter() {
   alert("HIHIHI")
   var browseValue = document.getElementById('browseBar').value;
-
+  if (browseValue === 'countryAZ') {
+    countrySorter()
+  } else if (browseValue === 'cuisineAZ') {
+    cuisineSorter()
+  }
 }
 
 function countrySorter() {
@@ -35,5 +39,8 @@ function countrySorter() {
 }
 
 function cuisineSorter() {
-
+  let req = $.get('cuisines')
+  req.done(function(response){
+    $("#displayList").append(response)
+  })
 }
