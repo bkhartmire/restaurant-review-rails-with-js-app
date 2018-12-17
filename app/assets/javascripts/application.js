@@ -18,7 +18,6 @@
 
 $(document).ready(function() {
   alert("Hi, I'm working.");
-  //document.getElementById('browseBar').addEventListener('change', () => browseSorter());
 });
 
 
@@ -29,6 +28,4 @@ function browseSorter() {
   req.done(function(data){
     $("#displayList").append(data)
   })
-  //window.location = "/countries/index"
-
 }
