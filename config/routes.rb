@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'countriesAZ', to: 'countries#sortAZ'
   get 'countriesMost', to: 'countries#sortMost'
   get 'citiesAZ', to: 'cities#sortAZ'
-  get 'citiesMost', to: 'cities#sortmost'
+  get 'citiesMost', to: 'cities#sortMost'
   get 'cuisinesAZ', to: 'cuisines#sortAZ'
   get 'cuisinesMost', to: 'cuisines#sortMost'
   get 'restaurantsAZ', to: 'restaurants#index'
