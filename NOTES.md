@@ -1,5 +1,8 @@
 -adding event listeners in .js file isn't working? :( ".on is not a function")
--//why does this = the window and not the a#reviews_button element???
+ ->.addEventListener works, but not .on
+-why does this = the window and not the a#reviews_button element???
+  ->having to redeclare elements inside event function
+-manifest file isn't loading other js files :(((
 
 
 -only admin users should be able to add a new restaurant
@@ -17,7 +20,7 @@
 -Must render at least one index page (index resource - 'list of things') via JavaScript and an Active Model Serialization JSON Backend.
   ->click on button in restaurant show page to list all reviews
   ->click on button in citylist all
-  ->on city show page, restaurants will be sorted by 1, 2, or 3 Michelin stars. Should be able to sort sub-cateogries by price, cuisine, user rating, or alphabetically.
+  ->on city show page, restaurants will be sorted by 1, 2, or 3 Michelin stars. Should be able to sort sub-cateogries by cuisine, user rating, or alphabetically.
 
 -Must render at least one show page (show resource - 'one specific thing') via JavaScript and an Active Model Serialization JSON Backend.
   ->In a restuarant show page, have next button to load following restaurant in a city/country/cuisine
