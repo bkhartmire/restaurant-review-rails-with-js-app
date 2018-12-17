@@ -26,6 +26,8 @@ function browseSorter() {
   var browseValue = document.getElementById('browseBar').value;
   if (browseValue === 'countryAZ') {
     countrySorter()
+  } else if (browseValue === 'cityAZ') {
+    citySorter()
   } else if (browseValue === 'cuisineAZ') {
     cuisineSorter()
   }
@@ -34,13 +36,20 @@ function browseSorter() {
 function countrySorter() {
   let req = $.get('countries')
   req.done(function(response){
-    $("#displayList").append(response)
+    $("#displayList").empty().append(response)
   })
 }
 
 function cuisineSorter() {
   let req = $.get('cuisines')
   req.done(function(response){
-    $("#displayList").append(response)
+    $("#displayList").empty().append(response)
+  })
+}
+
+function citySorter() {
+  let req = $.get('cities')
+  req.done(function(response){
+    $("#displayList").empty().append(response)
   })
 }
