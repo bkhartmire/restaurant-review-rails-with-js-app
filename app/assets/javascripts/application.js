@@ -21,7 +21,6 @@ $(document).ready(function() {
 
 
 function browseSorter() {
-  alert("HIHIHI")
   var browseValue = document.getElementById('browseBar').value;
   if (browseValue === 'countryAZ') {
     countrySorter()
@@ -56,10 +55,8 @@ function cuisineSorter() {
 }
 
 function restaurantSorter() {
-  alert('Hello')
   let req = $.get('restaurants')
   req.done(function(response){
-    debugger
     $("#displayList").empty().append(response)
   })
 }
