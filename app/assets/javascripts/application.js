@@ -17,7 +17,6 @@
 //= require welcome
 
 $(document).ready(function() {
-  alert("Hi, I'm working.");
 });
 
 
@@ -57,8 +56,10 @@ function cuisineSorter() {
 }
 
 function restaurantSorter() {
+  alert('Hello')
   let req = $.get('restaurants')
   req.done(function(response){
-    $("displayList").empty().append(response)
+    debugger
+    $("#displayList").empty().append(response)
   })
 }
