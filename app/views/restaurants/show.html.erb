@@ -1,6 +1,11 @@
 <h1><%= @restaurant.name %></h1>
-<h3><%= @restaurant.cuisine_name %> <%= @restaurant.price_range %> | <%= @restaurant.city_name %>
-<h4><%= calculate_average(@restaurant) %></h3>
+<h3><%= @restaurant.cuisine.name %> Cuisine |
+  <% if @restaurant.city.name != @restaurant.city.country.name %>
+  <%= @restaurant.city.name %>, <%= @restaurant.city.country.name %>
+  <% else %>
+  <%= @restaurant.city.name %>
+  <% end %></h3>
+<h4><%= calculate_average(@restaurant) %></h4>
 <% if user_signed_in? %>
   <h4><%= link_to 'Add Review', "/restaurants/#{@restaurant.id}/reviews/new" %></h4>
 <% end %>
