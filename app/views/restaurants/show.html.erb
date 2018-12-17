@@ -11,9 +11,9 @@
   <h4><%= link_to 'Add Review', "/restaurants/#{@restaurant.id}/reviews/new" %></h4>
 <% end %>
 
-
+<%= link_to_function "See Reviews", restaurant_reviews_path(@restaurant), id: "reviewsButton" %>
 <% if @restaurant.reviews.any? %>
-  <h3 id="reviewsButton" onclick="listReviews()">Reviews</h3>
+
 <% end %>
 <div id="reviews">
 </div>

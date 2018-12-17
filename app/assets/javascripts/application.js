@@ -17,7 +17,11 @@
 //= require welcome
 
 $(document).ready(function() {
-});
+  $('a#reviewsButton').on('click', function(e) {
+    e.preventDefault()
+    listReviews())
+  })
+})
 
 function browseSorter() {
   var browseValue = document.getElementById('browseBar').value;
@@ -28,7 +32,7 @@ function browseSorter() {
 }
 
 function listReviews() {
-  let req = $.get('reviews')
+  let req = $.get(this.href)
   req.done(function(response){
     $("#reviews").empty().append(response)
   })
