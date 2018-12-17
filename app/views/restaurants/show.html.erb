@@ -11,9 +11,14 @@
   <h4><%= link_to 'Add Review', "/restaurants/#{@restaurant.id}/reviews/new" %></h4>
 <% end %>
 
+
 <% if @restaurant.reviews.any? %>
-  <h3 id="listReviews">Reviews</h3>
+  <h3 id="reviewsButton">Reviews</h3>
 <% end %>
+<div id="reviews">
+</div>
+
+
 
 <% if user_signed_in? && current_user.admin == true %>
   <div>
