@@ -26,6 +26,9 @@ function browseSorter() {
   alert("HIHIHI")
   var browseValue = document.getElementById('browseBar').value;
   let req = $.get('countries')
+  req.done(function(data){
+    console.log(data)
+  })
   //window.location = "/countries/index"
-  document.getElementById("displayList").innerHTML = req.innerHTML
+  document.getElementById("displayList")
 }
