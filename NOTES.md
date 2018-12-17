@@ -1,3 +1,7 @@
+-adding event listeners in .js file isn't working? :( ".on is not a function")
+-//why does this = the window and not the a#reviews_button element???
+
+
 -only admin users should be able to add a new restaurant
 -fix Omniauth feature (deleted fb)
   --> google?

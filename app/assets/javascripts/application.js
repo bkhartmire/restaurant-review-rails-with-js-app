@@ -17,22 +17,25 @@
 //= require welcome
 
 $(document).ready(function() {
-  $('reviewsButton').on('click', function(e) {
-    listReviews()
-    e.preventDefault()
+  var link = document.getElementById('reviews_button')
+  link.addEventListener('click', function(e) {
+    listReviews(e)
   })
 })
 
 function browseSorter() {
-  var browseValue = document.getElementById('browseBar').value;
+  var browseValue = document.getElementById('browse_bar').value;
   let req = $.get(browseValue)
   req.done(function(response){
-    $("#displayList").empty().append(response)
+    $("#display_list").empty().append(response)
   })
 }
 
-function listReviews() {
-  let req = $.get(this.href)
+function listReviews(e) {
+  e.preventDefault()
+  debugger
+  //why does this = the window and not the a#reviews_button element???
+  let req = $.get(document.getElementById('reviews_button').href)
   req.done(function(response){
     $("#reviews").empty().append(response)
   })

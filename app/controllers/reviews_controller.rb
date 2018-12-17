@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
 
   def index
     @restaurant = Restaurant.find(params[:restaurant_id])
+    render 'reviews/index', layout: false
   end
 
   def new
