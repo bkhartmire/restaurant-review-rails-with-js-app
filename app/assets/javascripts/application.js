@@ -17,9 +17,9 @@
 //= require welcome
 
 $(document).ready(function() {
-  $('a#reviewsButton').on('click', function(e) {
+  $('reviewsButton').on('click', function(e) {
+    listReviews()
     e.preventDefault()
-    listReviews())
   })
 })
 

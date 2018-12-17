@@ -2,7 +2,7 @@
   <h1>It WORKS!!</h1>
   <% @restaurant.reviews.order({created_at: :desc}).each do |review| %>
     <li>
-      <p><%=link_to review.user.email, user_path(review.user) %> at <%= review.updated_at.strftime("%b %d, %Y %I:%M %p") %> </p>
+      <p><%=link_to review.user.email, user_path(review.user)%> at <%= review.updated_at.strftime("%b %d, %Y %I:%M %p") %> </p>
       <%= render partial: './reviews/list', locals: {review: review} %>
     </li>
   <% end %>
