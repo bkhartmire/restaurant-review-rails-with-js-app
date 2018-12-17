@@ -1,0 +1,10 @@
+<ul>
+  <h1>reviews/index view</h1>
+  <% @restaurant.reviews.order({created_at: :desc}).each do |review| %>
+    <li>
+      <p><%=link_to review.user.email, user_path(review.user)%> at <%= review.updated_at.strftime("%b %d, %Y %I:%M %p") %> </p>
+      <p><%=review.rating.to_s %> Star Rating: <%= review.content %></p>
+      <%# render partial: './reviews/list', locals: {review: review} %>
+    </li>
+  <% end %>
+</ul>

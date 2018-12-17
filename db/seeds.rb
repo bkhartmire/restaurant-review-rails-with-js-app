@@ -174,7 +174,7 @@ restaurants = Restaurant.create([
     {name: 'Taian', city_id: City.find_by(name: 'Osaka').id , cuisine_id: Cuisine.find_by(name: 'Japanese').id, website_url: "https://www.facebook.com/pages/%E5%A4%AA%E5%BA%B5/539042576173935?utm_source=tripadvisor&utm_medium=referral"},
     {name: 'Koryu', city_id: City.find_by(name: 'Osaka').id , cuisine_id: Cuisine.find_by(name: 'Japanese').id, website_url: "http://www.koryu.net/"},
     {name: 'Hajime', city_id: City.find_by(name: 'Osaka').id , cuisine_id: Cuisine.find_by(name: 'Japanese').id, website_url: "www.hajime-artistes.com/"},
-    {name: 'Kouan', city_id: City.find_by(name: 'Tokyo').id , cuisine_id: Cuisine.find_by(name: 'Japanese').id, website_url: "http://www.kouan.info/"},
+    {name: 'Kouan', city_id: City.find_by(name: 'Shōnan').id , cuisine_id: Cuisine.find_by(name: 'Japanese').id, website_url: "http://www.kouan.info/"},
     {name: 'Joël Robuchon', city_id: City.find_by(name: 'Tokyo').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.robuchon.jp/joelrobuchon"},
     {name: 'Kanda', city_id: City.find_by(name: 'Tokyo').id , cuisine_id: Cuisine.find_by(name: 'Japanese').id, website_url: "http://nihonryori-kanda.com/"},
     {name: 'Quintessence', city_id: City.find_by(name: 'Tokyo').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "http://www.quintessence.jp/"},

@@ -1,0 +1,10 @@
+<% @cuisines.each do |cuisine| %>
+  <ul>
+    <h2><%= cuisine.name %> (<%= cuisine.restaurants.count%>)</h2>
+    <ul>
+    <% cuisine.restaurants.each do |restaurant| %>
+      <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+    <% end %>
+    </ul>
+  </ul>
+<% end %>

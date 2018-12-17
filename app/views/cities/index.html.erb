@@ -1,0 +1,5 @@
+<% @cities.each do |city| %>
+  <ul>
+     <h3><%= link_to city.name, city_path(city) %> (<%= city.restaurants.count%>)</h3>
+  </ul>
+<% end %>

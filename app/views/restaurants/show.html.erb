@@ -1,22 +1,23 @@
 <h1><%= @restaurant.name %></h1>
-<h3><%= @restaurant.cuisine_name %> <%= @restaurant.price_range %> | <%= @restaurant.city_name %>
-<h4><%= calculate_average(@restaurant) %></h3>
+<h3><%= @restaurant.cuisine.name %> Cuisine |
+  <% if @restaurant.city.name != @restaurant.city.country.name %>
+  <%= @restaurant.city.name %>, <%= @restaurant.city.country.name %>
+  <% else %>
+  <%= @restaurant.city.name %>
+  <% end %></h3>
+<h4><%= calculate_average(@restaurant) %></h4>
+
 <% if user_signed_in? %>
   <h4><%= link_to 'Add Review', "/restaurants/#{@restaurant.id}/reviews/new" %></h4>
 <% end %>
 
 <% if @restaurant.reviews.any? %>
-  <h3>Reviews</h3>
-  <ul>
-    <% @restaurant.reviews.order({created_at: :desc}).each do |review| %>
-      <li>
-        <p><%=link_to review.user.email, user_path(review.user) %> at <%= review.updated_at.strftime("%b %d, %Y %I:%M %p") %> </p>
-        <%= render partial: './reviews/list', locals: {review: review} %>
-      </li>
-    <% end %>
-  </ul>
-
+  <%= link_to "See Reviews", restaurant_reviews_path(@restaurant), id: "reviews_button"%>
 <% end %>
+<div id="reviews">
+</div>
+
+
 
 <% if user_signed_in? && current_user.admin == true %>
   <div>
