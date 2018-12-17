@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
 
   def index
-    @restaurant = Restaurant.find(params[:review][:restaurant_id])
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
-  
+
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     if !current_user.reviews.find_by(restaurant_id: @restaurant.id)
