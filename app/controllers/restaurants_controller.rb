@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.all.sort_by{|restaurant| restaurant.name}
     render 'restaurants/index', layout: false
   end
 

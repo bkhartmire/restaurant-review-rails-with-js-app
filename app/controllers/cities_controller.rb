@@ -1,6 +1,10 @@
 class CitiesController < ApplicationController
-  def index
+  def sortAZ
     @cities = City.all
+    render 'cities/index', layout: false
+  end
+
+  def sortMost
     render 'cities/index', layout: false
   end
 

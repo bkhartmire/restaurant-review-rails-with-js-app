@@ -1,9 +1,13 @@
 class CuisinesController < ApplicationController
-  def index
+  def sortAZ
     @cuisines = Cuisine.all
     render 'cuisines/index', layout: false
   end
-  
+
+  def sortMost
+    render 'cuisines/index', layout: false
+  end
+
   def show
     @cuisine = Cuisine.find(params[:id])
     @city = City.find(params[:city_id])
