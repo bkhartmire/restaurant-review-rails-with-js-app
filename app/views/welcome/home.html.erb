@@ -3,17 +3,17 @@
 <div>
   <select onchange="browseSorter()" id="browseBar" name="listSorter">
     <option value="">Browse By:</option>
-    <option value="countryAZ" >Country (A-Z)</option>
-    <option value="countryMost">Country (Most)</option>
-    <option value="cityAZ">City (A-Z)</option>
-    <option value="cityMost">City (Most)</option>
-    <option value="cuisineAZ">Cuisine (A-Z)</option>
-    <option value="cuisineMost">Cuisine (Most)</option>
-    <option value="allAZ">View All (A-Z)</option>
+    <option value="countrieAZ" >Country (A-Z)</option>
+    <option value="countriesMost">Country (Most)</option>
+    <option value="citiesAZ">City (A-Z)</option>
+    <option value="citiesMost">City (Most)</option>
+    <option value="cuisinesAZ">Cuisine (A-Z)</option>
+    <option value="cuisinesMost">Cuisine (Most)</option>
+    <option value="restaurantsAZ">View All (A-Z)</option>
   </select>
 </div>
 <div id="displayList">
-  
+
 </div>
 <% if !user_signed_in? %>
   <h5>Log In or Sign Up to track your dining experiences and post a review!</h5>
