@@ -40,15 +40,15 @@ function countrySorter() {
   })
 }
 
-function cuisineSorter() {
-  let req = $.get('cuisines')
+function citySorter() {
+  let req = $.get('cities')
   req.done(function(response){
     $("#displayList").empty().append(response)
   })
 }
 
-function citySorter() {
-  let req = $.get('cities')
+function cuisineSorter() {
+  let req = $.get('cuisines')
   req.done(function(response){
     $("#displayList").empty().append(response)
   })
