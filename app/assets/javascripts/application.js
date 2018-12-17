@@ -19,7 +19,6 @@
 $(document).ready(function() {
 });
 
-
 function browseSorter() {
   var browseValue = document.getElementById('browseBar').value;
   let req = $.get(browseValue)
