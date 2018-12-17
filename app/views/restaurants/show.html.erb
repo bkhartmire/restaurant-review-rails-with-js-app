@@ -6,21 +6,13 @@
   <%= @restaurant.city.name %>
   <% end %></h3>
 <h4><%= calculate_average(@restaurant) %></h4>
+
 <% if user_signed_in? %>
   <h4><%= link_to 'Add Review', "/restaurants/#{@restaurant.id}/reviews/new" %></h4>
 <% end %>
 
 <% if @restaurant.reviews.any? %>
-  <h3>Reviews</h3>
-  <ul>
-    <% @restaurant.reviews.order({created_at: :desc}).each do |review| %>
-      <li>
-        <p><%=link_to review.user.email, user_path(review.user) %> at <%= review.updated_at.strftime("%b %d, %Y %I:%M %p") %> </p>
-        <%= render partial: './reviews/list', locals: {review: review} %>
-      </li>
-    <% end %>
-  </ul>
-
+  <h3 id="listReviews">Reviews</h3>
 <% end %>
 
 <% if user_signed_in? && current_user.admin == true %>
