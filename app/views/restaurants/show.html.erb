@@ -11,9 +11,8 @@
   <h4><%= link_to 'Add Review', "/restaurants/#{@restaurant.id}/reviews/new" %></h4>
 <% end %>
 
-<%= link_to "See Reviews", restaurant_reviews_path(@restaurant), id: "reviews_button"%>
 <% if @restaurant.reviews.any? %>
-
+  <%= link_to "See Reviews", restaurant_reviews_path(@restaurant), id: "reviews_button"%>
 <% end %>
 <div id="reviews">
 </div>

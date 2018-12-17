@@ -9,10 +9,8 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:show] do
     resources :reviews
   end
-  resources :reviews
   resources :countries, only: [:index, :show]
   resources :users, only: [:show]
-  post 'reviews/:id/edit' => 'reviews#edit'
   get 'countriesAZ', to: 'countries#sortAZ'
   get 'countriesMost', to: 'countries#sortMost'
   get 'citiesAZ', to: 'cities#sortAZ'
