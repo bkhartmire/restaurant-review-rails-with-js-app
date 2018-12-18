@@ -11,10 +11,9 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require_tree .
 //= require jquery
 //= require jquery_ujs
-//= require welcome
+//= require_tree .
 
 $(document).ready(function() {
   alert('applicaton.js is loading')
