@@ -11,12 +11,12 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require_tree .
 //= require jquery
 //= require jquery_ujs
-//= require welcome
+//= require_tree .
 
 $(document).ready(function() {
+  alert('applicaton.js is loading')
   var link = document.getElementById('reviews_button')
   link.addEventListener('click', function(e) {
     listReviews(e)
@@ -33,7 +33,6 @@ function browseSorter() {
 
 function listReviews(e) {
   e.preventDefault()
-  debugger
   //why does this = the window and not the a#reviews_button element???
   let req = $.get(document.getElementById('reviews_button').href)
   req.done(function(response){
