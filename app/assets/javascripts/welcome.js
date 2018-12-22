@@ -1,5 +1,9 @@
 $(document).ready(function() {
-  document.getElementById('browse_bar').addEventListener('change', () => browseSorter(), false)
+  //why isn't jquery selector working? $("#browse_bar")[0] no method error
+  //($('#browse_bar')[0]).on('change', browseSorter(), false)
+  if (document.getElementById('browse_bar')) {
+    document.getElementById('browse_bar').addEventListener('change', () => browseSorter(), false)
+  }
 })
 
 function browseSorter() {
