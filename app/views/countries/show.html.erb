@@ -1,1 +1,6 @@
-<h1>THis is the countries#show page</h1>
+<h2><%= @country.name %> Restaurants:</h2>
+<ol>
+<% @country.restaurants.each do |restaurant| %>
+  <li></li>
+<% end %>
+</ol>
