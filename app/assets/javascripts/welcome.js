@@ -1,25 +1,15 @@
 $(document).ready(function() {
-  addEventListeners()
+  eventListeners()
 })
 
-function addEventListeners() {
-  $('#reviews_button').on('click', function(e) {
-    listReviews(e)
-  })
+function eventListeners() {
+  document.getElementById('browse_bar').addEventListener('change', () => browseSorter(), false)
 }
+
 function browseSorter() {
   var browseValue = document.getElementById('browse_bar').value;
   let req = $.get(browseValue)
   req.done(function(response){
     $("#display_list").empty().append(response)
-  })
-}
-
-function listReviews(e) {
-  e.preventDefault()
-  //why does this = the window and not the a#reviews_button element???
-  let req = $.get(document.getElementById('reviews_button').href)
-  req.done(function(response){
-    $("#reviews").empty().append(response)
   })
 }
