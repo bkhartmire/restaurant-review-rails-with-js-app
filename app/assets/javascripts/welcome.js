@@ -1,10 +1,12 @@
 $(document).ready(function() {
-  var link = document.getElementById('reviews_button')
-  link.addEventListener('click', function(e) {
-    listReviews(e)
-  })
+  addEventListeners()
 })
 
+function addEventListeners() {
+  $('#reviews_button').on('click', function(e) {
+    listReviews(e)
+  })
+}
 function browseSorter() {
   var browseValue = document.getElementById('browse_bar').value;
   let req = $.get(browseValue)
