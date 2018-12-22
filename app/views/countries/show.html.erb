@@ -1,6 +1,5 @@
-<h2><%= @country.name %> Restaurants:</h2>
-<ol>
+<ul>
 <% @country.restaurants.each do |restaurant| %>
-  <li></li>
+  <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
 <% end %>
-</ol>
+</ul>
