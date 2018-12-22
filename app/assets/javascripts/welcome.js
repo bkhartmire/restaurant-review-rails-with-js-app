@@ -4,6 +4,7 @@ $(document).ready(function() {
   if (document.getElementById('browse_bar')) {
     document.getElementById('browse_bar').addEventListener('change', () => browseSorter(), false)
   }
+  $('.country_item').on("click", function(e) {listCountryRestaurants(e)}, false)
 })
 
 function browseSorter() {
@@ -12,4 +13,9 @@ function browseSorter() {
   req.done(function(response){
     $("#display_list").empty().append(response)
   })
+}
+
+function listCountryRestaurants(e) {
+  e.preventDefault()
+  alert('Hello')
 }
