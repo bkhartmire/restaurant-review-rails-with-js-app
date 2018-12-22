@@ -1,10 +1,6 @@
 $(document).ready(function() {
-  eventListeners()
-})
-
-function eventListeners() {
   document.getElementById('browse_bar').addEventListener('change', () => browseSorter(), false)
-}
+})
 
 function browseSorter() {
   var browseValue = document.getElementById('browse_bar').value;

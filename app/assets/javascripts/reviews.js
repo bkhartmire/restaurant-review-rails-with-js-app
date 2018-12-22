@@ -1,12 +1,8 @@
 $(document).ready(function() {
-  eventListeners()
-})
-
-function eventListeners() {
   $('#reviews_button').on('click', function(e) {
     listReviews(e)
   })
-}
+})
 
 function listReviews(e) {
   e.preventDefault()
