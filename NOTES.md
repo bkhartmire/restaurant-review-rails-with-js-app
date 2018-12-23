@@ -1,3 +1,6 @@
+-users will need to maintain a visted_restuarants array
+
+
 -adding event listeners in .js file isn't working? :( ".on is not a function")
  ->.addEventListener works, but not .on
 -why does this = the window and not the a#reviews_button element???
