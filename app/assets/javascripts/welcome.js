@@ -22,13 +22,13 @@ function addListener(browseValue) {
   if (browseValue === "countriesAZ" || browseValue === "countriesMost") {
     var countryArray = document.getElementsByClassName('country_item')
     for(var i = 0; i < countryArray.length; i++){
-      countryArray[i].addEventListener("click", function(e){listCountryRestaurants(e)}, false)
+      countryArray[i].addEventListener("click", function(e){listCountryRestaurants(e, i)}, false)
     }
   }
 }
 
-function listCountryRestaurants(e) {
+function listCountryRestaurants(e, index) {
   e.preventDefault()
-  alert('Hello')
-  //$('div.list_restaurants').append
+  debugger
+  $('.list_restaurants_' + index).append('<p>HELLO</p>')
 }

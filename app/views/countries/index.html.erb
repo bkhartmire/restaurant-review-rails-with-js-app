@@ -1,7 +1,7 @@
 <% i = 1 %>
 <% @countries.each do |country| %>
   <ul>
-     <h3><%= link_to country.name, country_path(country), :class => "country_item"  %> (<%= country.restaurants.count%>)</h3>
+     <h3 class="list_restaurants_<%=i%>"><%= link_to country.name, country_path(country), :class => "country_item"  %> (<%= country.restaurants.count%>)</h3>
      <div class="list_restaurants_<%=i%>">
      </div>
   </ul>
