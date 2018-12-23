@@ -23,15 +23,13 @@ function addListener(browseValue) {
     var countryArray = document.getElementsByClassName('country_item')
     for(var i = 0; i < countryArray.length; i++){
       countryArray[i].addEventListener("click", function(e){
-        let self = this;
-        debugger
-        listCountryRestaurants(e, i)}, false)
+        var self = this;
+        listCountryRestaurants(e, self)}, false)
     }
   }
 }
 
-function listCountryRestaurants(e, index) {
+function listCountryRestaurants(e, self) {
   e.preventDefault()
-  debugger
-  $('.list_restaurants_' + index).append('<p>HELLO</p>')
+  $('div.' + self.id).append('<p>HELLO</p>')
 }
