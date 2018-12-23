@@ -31,5 +31,8 @@ function addListener(browseValue) {
 
 function listCountryRestaurants(e, self) {
   e.preventDefault()
-  $('div.' + self.id).append('<p>HELLO</p>')
+  let req = $.get(this.href)
+  req.done(function(response){
+    $('div.' + self.id).append(response)
+  })
 }
