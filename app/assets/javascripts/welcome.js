@@ -22,7 +22,10 @@ function addListener(browseValue) {
   if (browseValue === "countriesAZ" || browseValue === "countriesMost") {
     var countryArray = document.getElementsByClassName('country_item')
     for(var i = 0; i < countryArray.length; i++){
-      countryArray[i].addEventListener("click", function(e){listCountryRestaurants(e, i)}, false)
+      countryArray[i].addEventListener("click", function(e){
+        let self = this;
+        debugger
+        listCountryRestaurants(e, i)}, false)
     }
   }
 }
