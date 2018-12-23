@@ -17,10 +17,9 @@ function browseSorter() {
 }
 
 function addListener(browseValue) {
-  alert("IN FUNCTION")
   var browseValue = document.getElementById('browse_bar').value;
+  //add if else conditions for all other values
   if (browseValue === "countriesAZ" || browseValue === "countriesMost") {
-    alert("in conditional")
     var countryArray = document.getElementsByClassName('country_item')
     for(var i = 0; i < countryArray.length; i++){
       countryArray[i].addEventListener("click", function(e){listCountryRestaurants(e)}, false)
@@ -31,4 +30,5 @@ function addListener(browseValue) {
 function listCountryRestaurants(e) {
   e.preventDefault()
   alert('Hello')
+  //$('div.list_restaurants').append
 }
