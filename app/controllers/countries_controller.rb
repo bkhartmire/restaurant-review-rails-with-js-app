@@ -11,5 +11,6 @@ class CountriesController < ApplicationController
 
   def show
     @country = Country.find(params[:id])
+    render 'countries/show', layout: false
   end
 end
