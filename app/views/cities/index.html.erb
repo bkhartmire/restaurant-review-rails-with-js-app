@@ -1,3 +1,4 @@
+<% i = 1 %>
 <% @cities.each do |city| %>
   <ul>
      <h3><a class="city_item list_restaurants_<%=i%>" href=<%=city_path(city) %>><%=city.name%></a> (<%= city.restaurants.count%>)</h3>

@@ -20,14 +20,21 @@ function addListener(browseValue) {
   var browseValue = document.getElementById('browse_bar').value;
   //add if else conditions for all other values
   if (browseValue === "countriesAZ" || browseValue === "countriesMost") {
-    var countryArray = document.getElementsByClassName('country_item')
-    for(var i = 0; i < countryArray.length; i++){
-      countryArray[i].addEventListener("click", function(e){
-        var self = this;
-        listCountryRestaurants(e, self)}, false)
+    var countryCollection = document.getElementsByClassName('country_item')
+    for(var i = 0; i < countryCollection.length; i++){
+      countryCollection[i].addEventListener("click", function(e){
+        var self = this
+        listCountryRestaurants(e, self)
+      }, false)
     }
   } else if (browseValue === "citiesAZ" || browseValue === "citiesMost") {
-    var cityArray = document.getElementsByClassName('city_item')
+    var cityCollection = document.getElementsByClassName('city_item')
+    for(var i = 0; i < cityCollection.length; i++){
+      cityCollection[i].addEventListener("click", function(e){
+        var self = this
+        listCityRestaurants(e, self)
+      }, false)
+    }
   }
 }
 
