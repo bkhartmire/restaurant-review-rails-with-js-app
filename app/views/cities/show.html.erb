@@ -1,6 +1,5 @@
-<h1>Restaurants in <%= @city.name %>: </h1>
 <ul>
-  <% @restaurants.each do |restaurant| %>
+  <% @city.restaurants.each do |restaurant| %>
     <%= render partial: './restaurants/list_restaurants', locals: {restaurant: restaurant} %>
   <% end %>
 </ul>
