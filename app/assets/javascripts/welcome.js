@@ -17,41 +17,16 @@ function browseSorter() {
 }
 
 function addListener(browseValue) {
-  var browseValue = document.getElementById('browse_bar').value;
-  //add if else conditions for all other values
-  if (browseValue === "countriesAZ" || browseValue === "countriesMost") {
-    var countryCollection = document.getElementsByClassName('country_item')
-    for(var i = 0; i < countryCollection.length; i++){
-      countryCollection[i].addEventListener("click", function(e){
+  categoryCollection = document.getElementsByClassName("category_item")//
+    for(var i = 0; i < categoryCollection.length - 1; i++){
+      categoryCollection[i].addEventListener("click", function(e){
         var self = this
-        listCountryRestaurants(e, self)
-      }, false)
-    }
-  } else if (browseValue === "citiesAZ" || browseValue === "citiesMost") {
-    var cityCollection = document.getElementsByClassName('city_item')
-    for(var i = 0; i < cityCollection.length; i++){
-      cityCollection[i].addEventListener("click", function(e){
-        var self = this
-        listCityRestaurants(e, self)
+        listRestaurants(e, self)
       }, false)
     }
   }
-}
 
-function listCountryRestaurants(e, self) {
-  e.preventDefault()
-  let div = $('div.' + self.classList[1])
-  if (div.html() === "") {
-    let req = $.get(self.href)
-    req.done(function(response){
-      div.append(response)
-    })
-  } else {
-    div.empty()
-  }
-}
-
-function listCityRestaurants(e, self) {
+function listRestaurants(e, self) {
   e.preventDefault()
   let div = $('div.' + self.classList[1])
   if (div.html() === "") {
