@@ -5,6 +5,7 @@
   <% else %>
   <%= @restaurant.city.name %>
   <% end %></h3>
+  <h6><%= link_to "Visit Website", @restaurant.website_url, target: :_blank %></h6>
 <h4><%= calculate_average(@restaurant) %></h4>
 
 <% if user_signed_in? %>
