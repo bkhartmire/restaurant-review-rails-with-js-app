@@ -26,6 +26,8 @@ function addListener(browseValue) {
         var self = this;
         listCountryRestaurants(e, self)}, false)
     }
+  } else if (browseValue === "citiesAZ" || browseValue === "citiesMost") {
+    var cityArray = document.getElementsByClassName('city_item')
   }
 }
 
@@ -41,5 +43,8 @@ function listCountryRestaurants(e, self) {
   } else {
     div.empty()
   }
+}
+
+function listCityRestaurants(e, self) {
 
 }
