@@ -1,13 +1,5 @@
 -users will need to maintain a visted_restuarants array
 
-
--adding event listeners in .js file isn't working? :( ".on is not a function")
- ->.addEventListener works, but not .on
--why does this = the window and not the a#reviews_button element???
-  ->having to redeclare elements inside event function
--manifest file isn't loading other js files :(((
-
-
 -only admin users should be able to add a new restaurant
 -fix Omniauth feature (deleted fb)
   --> google?
