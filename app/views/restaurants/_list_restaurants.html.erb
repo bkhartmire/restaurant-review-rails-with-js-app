@@ -1,5 +1,5 @@
 <li>
-  <%= link_to restaurant.name, restaurant_path(restaurant) %> (<%= restaurant.cuisine.name %> Cuisine)<br>
+  <%= link_to restaurant.name, restaurant_path(restaurant) %><br>
     <% if restaurant.reviews.any? %>
     <p><%= calculate_average(restaurant) %></p>
   <% else %>
