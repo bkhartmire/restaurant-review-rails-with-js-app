@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks"}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'welcome#home'
-  resources :cuisines, only: [:index]
+  resources :cuisines
   resources :cities, only: [:show, :index] do
     resources :cuisines, only: [:show]
   end
