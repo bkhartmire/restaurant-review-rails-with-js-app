@@ -39,7 +39,6 @@ function addListener(browseValue) {
 }
 
 function listCountryRestaurants(e, self) {
-  //when click on it again empty it.
   e.preventDefault()
   let div = $('div.' + self.classList[1])
   if (div.html() === "") {
@@ -53,5 +52,14 @@ function listCountryRestaurants(e, self) {
 }
 
 function listCityRestaurants(e, self) {
-
+  e.preventDefault()
+  let div = $('div.' + self.classList[1])
+  if (div.html() === "") {
+    let req = $.get(self.href)
+    req.done(function(response){
+      div.append(response)
+    })
+  } else {
+    div.empty()
+  }
 }
