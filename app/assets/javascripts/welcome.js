@@ -34,7 +34,7 @@ function addListener(browseValue) {
 function listCountryRestaurants(e, self) {
   //when click on it again empty it.
   e.preventDefault()
-  let div = $('div.' + self.id)
+  let div = $('div.' + self.classList[1])
   if (div.html() === "") {
     let req = $.get(self.href)
     req.done(function(response){
