@@ -5,10 +5,7 @@ class VisitsController < ApplicationController
 
   def create
     #raise params.inspect
-    visit = Visit.create
-    visit.user_id = current_user.id
-    visit.restaurant_id = params[:restaurant]
-    visit.save
+    visit = Visit.create(user_id: current_user.id, restaurant_id: params[:restaurant])
     redirect_to user_path(current_user)
   end
 
