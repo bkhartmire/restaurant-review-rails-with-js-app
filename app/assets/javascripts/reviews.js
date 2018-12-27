@@ -2,6 +2,9 @@ $(document).ready(function() {
   $('.list_reviews').on('click', function(e) {
     listReviews(e)
   })
+  $('.add_review').on('click', function(e) {
+    addReview(e)
+  })
 })
 
 function listReviews(e) {
@@ -11,4 +14,9 @@ function listReviews(e) {
   req.done(function(response){
     $("#reviews").empty().append(response)
   })
+}
+
+function addReview(e) {
+  e.preventDefault()
+  alert('Hello')
 }
