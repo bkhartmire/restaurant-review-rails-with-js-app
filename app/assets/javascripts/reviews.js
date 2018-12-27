@@ -6,7 +6,7 @@ $(document).ready(function() {
     let self = this
     addReview(e, self)
   })
-  $('.see_review').on('click', function(e) {
+  $('a.see_review').on('click', function(e) {
     let self = this
     seeReview(e, self)
   })
@@ -28,10 +28,16 @@ function addReview(e, self) {
     $(`div.${self.classList[1]}`).empty().append(response)
   })
 }
+
 function seeReview(e, self) {
   e.preventDefault()
-  let req = $.get(self.href)
-  req.done(function(response){
-    $(`div.${self.classList[1]}`).empty().append(response)
-  })
+  let div = $('div.' + self.classList[1])
+  if (div.html() === "") {
+    let req = $.get(self.href)
+    req.done(function(response){
+      div.append(response)
+    })
+  } else {
+    div.empty()
+  }
 }
