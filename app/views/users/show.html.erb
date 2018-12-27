@@ -7,7 +7,7 @@
 <% end %>
 <h5>Enter a new restaurant you've visited:</h5>
 <%= form_for (@visit) do |f| %>
-  <%= select_tag "Restaurants", options_from_collection_for_select(@restaurants, "id", "name") %>
+  <%= select_tag :restaurant, options_from_collection_for_select(@restaurants, "id", "name") %>
   <%= f.submit %>
 <% end %>
 <% if current_user.reviews.any? %>

@@ -1,12 +1,15 @@
+require 'pry'
+
 class VisitsController < ApplicationController
   def new
     @visit = Visit.new
   end
 
   def create
-    #debugger
-    visit = Visit.create(params[:current_user, :restaurant_id])
-    redirect_to current_user
+    visit = Visit.create
+    visit.user_id = current_user.id
+    binding.pry
+    visit.restaurant_id = params[:restaurant_id]    redirect_to current_user
   end
 
   #private
