@@ -1,5 +1,10 @@
 <h1>Your Profile</h1>
 <h5>Logged in as <%= current_user.email %></h5>
+<% if current_user.restaurants.any? %>
+  <h3>Restaurants You've Visited</h3>
+<% else %>
+  <h3> You haven't visited any 3-Star Michelin Restaurants Yet</h3>
+<% end %>
 <% if current_user.reviews.any? %>
   <h3>Your Reviews</h3>
   <ul>
