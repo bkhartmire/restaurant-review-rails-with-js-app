@@ -3,7 +3,7 @@
 <% if current_user.restaurants.any? %>
   <h3>3-Star Michelin Restaurants You've Visited</h3>
   <ul>
-  <%= current_user.restaurants.each do |restaurant| %>
+  <% current_user.restaurants.each do |restaurant| %>
     <li><%=restaurant.name %></li>
   <% end %>
   </ul>
