@@ -6,8 +6,8 @@
   <% current_user.restaurants.each do |restaurant| %>
     <li>
       <%=restaurant.name %><br>
-      <%= link_to "Add Review", new_restaurant_review_path(restaurant), class: "add_review"%>
-      <div class="review_form"></div>
+      <%= link_to "Add Review", new_restaurant_review_path(restaurant), class: "add_review restaurant_#{restaurant.id}"%>
+      <div class="restaurant_<%= restaurant.id %>"></div>
     </li>
   <% end %>
   </ul>

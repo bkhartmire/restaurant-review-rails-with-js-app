@@ -21,6 +21,6 @@ function addReview(e, self) {
   e.preventDefault()
   let req = $.get(self.href)
   req.done(function(response){
-    $('div.review_form').empty().append(response)
+    $(`div.${self.classList[1]}`).empty().append(response)
   })
 }
