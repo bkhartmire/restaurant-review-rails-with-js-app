@@ -2,6 +2,11 @@
 <h5>Logged in as <%= current_user.email %></h5>
 <% if current_user.restaurants.any? %>
   <h3>3-Star Michelin Restaurants You've Visited</h3>
+  <ul>
+  <%= current_user.restaurants.each do |restaurant| %>
+    <li><%=restaurant.name %></li>
+  <% end %>
+  </ul>
 <% else %>
   <h3> You haven't visited any 3-Star Michelin Restaurants Yet</h3>
 <% end %>
