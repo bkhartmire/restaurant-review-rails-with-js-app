@@ -4,8 +4,8 @@ class Restaurant < ApplicationRecord
   #has_many :users, through: :reviews
   belongs_to :cuisine
   belongs_to :city
-  has_many :user_restaurants
-  has_many :restaurants, through: :user_restaurants
+  has_many :visits
+  has_many :restaurants, through: :visits
 
   validates :name, presence: true
   validates :city_name, presence: true
