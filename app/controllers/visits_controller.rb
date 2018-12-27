@@ -3,7 +3,7 @@ class VisitsController < ApplicationController
   end
 
   def create
-    visit = Vist.create(visit_params)
+    Visit.create(visit_params)
     redirect_to current_user
   end
 
