@@ -22,15 +22,12 @@ $(document).ready(function() {
 
 function listReviews(e, self) {
   e.preventDefault()
-  let div = $("div.list_reviews")
-  if (div.html() === "") {
-    let req = $.get(self.href)
-    req.done(function(response){
-      div.append(response)
-    })
-  } else {
-    div.empty()
-  }
+  let req = $.get(self.href)
+  req.done(function(response){
+    $("div.list_reviews").append(response)
+  })
+  self.innerHTML = ""
+
 }
 
 function addReview(e, self) {
@@ -39,6 +36,7 @@ function addReview(e, self) {
   req.done(function(response){
     $(`div.${self.classList[1]}`).empty().append(response)
   })
+
 }
 
 function seeReview(e, self) {
