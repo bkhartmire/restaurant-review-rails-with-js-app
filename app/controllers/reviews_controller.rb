@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
     else
       redirect_to restaurant_path(@restaurant), alert: "You\'ve already reviewed this restaurant!"
     end
+    render layout: false
   end
 
   def create
