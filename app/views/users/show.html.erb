@@ -6,8 +6,12 @@
   <% current_user.restaurants.each do |restaurant| %>
     <li>
       <%=restaurant.name %><br>
-      <%= link_to "Add Review", new_restaurant_review_path(restaurant), class: "add_review restaurant_#{restaurant.id}"%>
-      <div class="restaurant_<%= restaurant.id %>"></div>
+      <% if !!current_user.reviews.detect{|review| review.restaurant_id === restaurant.id} %>
+        <%= link_to "Add Review", new_restaurant_review_path(restaurant), class: "add_review restaurant_#{restaurant.id}"%>
+        <div class="restaurant_<%= restaurant.id %>"></div>
+      <% else %>
+        <%= link_to "See Your Review", restaurant_review_path(restaurant, restaurant.reviews.find_by(user_id: current_user.id)) %>
+      <% end %>
     </li>
   <% end %>
   </ul>
