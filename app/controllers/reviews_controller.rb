@@ -5,6 +5,11 @@ class ReviewsController < ApplicationController
     render 'reviews/index', layout: false
   end
 
+  def show
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @review = Review.find(review_params[:review_id])
+  end
+
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     if !current_user.reviews.find_by(restaurant_id: @restaurant.id)
