@@ -1,8 +1,6 @@
--users will need to maintain a restaurants array
--users_restaurants table??? to track visits? Only for SQL?
 -user can maintain a wishlist
+-list of restaurants toggles between visited and wishlist!
 
--only admin users should be able to add a new restaurant
 -fix Omniauth feature (deleted fb)
   --> google?
 
@@ -13,14 +11,5 @@
 -on restuarant #show page, include link to restaurant website
 -Home page should be able to browse by country, or All 3 star restaurants (add sub categories to sort by)
 
-
--Must render at least one index page (index resource - 'list of things') via JavaScript and an Active Model Serialization JSON Backend.
-  ->click on button in restaurant show page to list all reviews
-  ->click on button in citylist all
-  ->on city show page, restaurants will be sorted by 1, 2, or 3 Michelin stars. Should be able to sort sub-cateogries by cuisine, user rating, or alphabetically.
-
 -Must render at least one show page (show resource - 'one specific thing') via JavaScript and an Active Model Serialization JSON Backend.
   ->In a restuarant show page, have next button to load following restaurant in a city/country/cuisine
-
--Your Rails application must dynamically render on the page at least one 'has-many' relationship through JSON using JavaScript.
-  ->restaurant has_many reviews, city has_many cuisines
