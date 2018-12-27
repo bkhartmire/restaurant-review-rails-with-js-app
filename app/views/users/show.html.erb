@@ -6,7 +6,7 @@
   <% current_user.restaurants.each do |restaurant| %>
     <li>
       <%=restaurant.name %><br>
-      <% if !!current_user.reviews.detect{|review| review.restaurant_id === restaurant.id} %>
+      <% if !current_user.reviews.detect{|review| review.restaurant_id === restaurant.id} %>
         <%= link_to "Add Review", new_restaurant_review_path(restaurant), class: "add_review restaurant_#{restaurant.id}"%>
         <div class="restaurant_<%= restaurant.id %>"></div>
       <% else %>

@@ -6,7 +6,6 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.find(review_params[:review_id])
   end
 
@@ -14,10 +13,11 @@ class ReviewsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     if !current_user.reviews.find_by(restaurant_id: @restaurant.id)
       @review = Review.new(restaurant_id: params[:restaurant_id])
+      render layout: false
     else
-      redirect_to restaurant_path(@restaurant), alert: "You\'ve already reviewed this restaurant!"
+      redirect_to restaurant_path(@restaurant), alert: "You\'ve already reviewed this restaurant!", layout: false
     end
-    render layout: false
+
   end
 
   def create
