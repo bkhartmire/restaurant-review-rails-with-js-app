@@ -20,7 +20,6 @@ $(document).ready(function() {
       listReviews(e, self)
     })
   }
-
 })
 
 function listReviews(e, self) {
@@ -30,7 +29,6 @@ function listReviews(e, self) {
     $("div.list_reviews").append(response)
   })
   self.innerHTML = ""
-
 }
 
 function addReview(e, self) {

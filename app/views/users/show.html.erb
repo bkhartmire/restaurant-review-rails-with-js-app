@@ -1,12 +1,16 @@
 <h1>Your Profile</h1>
 <h5>Logged in as <%= current_user.email %></h5>
 <% if current_user.restaurants.any? %>
-  <h3>3-Star Michelin Restaurants You've Visited</h3>
-  <ul>
+  <% if current_user.restaurants.count == 1 %>
+    <h3>Congratulations! You visited your first 3-Star Michelin Restaurant!</h3>
+  <% elsif current_user.restaurants.count > 1 %>
+    <h3>You've Visited <%= current_user.restaurants.count %> 3-Star Michelin Restaurants So Far!</h3>
+  <% end %>
+  <ol>
   <% current_user.restaurants.each do |restaurant| %>
     <li>
       <%=restaurant.name %><br>
-      <% if !current_user.reviews.detect{|review| review.restaurant_id === restaurant.id} %>
+      <% if !current_user.reviews.detect{|review| review.restaurant_id == restaurant.id} %>
         <%= link_to "Add Review", new_restaurant_review_path(restaurant), class: "add_review restaurant_#{restaurant.id}"%>
         <div class="restaurant_<%= restaurant.id %>"></div>
       <% else %>
@@ -15,7 +19,7 @@
       <% end %>
     </li>
   <% end %>
-  </ul>
+  </ol>
 <% else %>
   <h3> You haven't visited any 3-Star Michelin Restaurants Yet</h3>
 <% end %>
