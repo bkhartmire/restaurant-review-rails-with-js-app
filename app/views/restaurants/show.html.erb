@@ -8,10 +8,6 @@
   <h6><%= link_to "Visit Website", @restaurant.website_url, target: :_blank %></h6>
 <h4><%= calculate_average(@restaurant) %></h4>
 
-<% if user_signed_in? %>
-  <h4><%= link_to 'Add Review', "/restaurants/#{@restaurant.id}/reviews/new" %></h4>
-<% end %>
-
 <% if @restaurant.reviews.any? %>
   <%= link_to "See Reviews", restaurant_reviews_path(@restaurant), class: "list_reviews"%>
 <% end %>
