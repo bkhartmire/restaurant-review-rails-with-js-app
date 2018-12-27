@@ -1,14 +1,23 @@
 $(document).ready(function() {
+
   $('.list_reviews').on('click', function(e) {
     listReviews(e)
   })
+
   $('.add_review').on('click', function(e) {
     let self = this
     addReview(e, self)
   })
+
   $('a.see_review').on('click', function(e) {
     let self = this
     seeReview(e, self)
+  })
+
+  $('a.list_reviews').on('click', function(e) {
+    let self = this
+    debugger
+    listReviews(e, self)
   })
 })
 
@@ -40,4 +49,10 @@ function seeReview(e, self) {
   } else {
     div.empty()
   }
+}
+
+function listReviews(e, self) {
+  e.preventDefault()
+  //debugger
+  alert("HI")
 }
