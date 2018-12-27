@@ -14,20 +14,18 @@ $(document).ready(function() {
     seeReview(e, self)
   })
 
-  $('a.list_reviews').on('click', function(e) {
+  $('a.list_reviews')[0].addEventListener('click', function(e) {
     let self = this
-    debugger
     listReviews(e, self)
   })
 })
 
-function listReviews(e) {
+function listReviews(e, self) {
   e.preventDefault()
-  //why does this = the window and not the a#reviews_button element???
-  let req = $.get(document.getElementById('reviews_button').href)
-  req.done(function(response){
-    $("#reviews").empty().append(response)
-  })
+  alert(self.classList[0])
+  //let req = $.get(document.getElementById('reviews_button').href)
+  //req.done(function(response){
+  //  $("#reviews").empty().append(response)
 }
 
 function addReview(e, self) {
@@ -49,10 +47,4 @@ function seeReview(e, self) {
   } else {
     div.empty()
   }
-}
-
-function listReviews(e, self) {
-  e.preventDefault()
-  //debugger
-  alert("HI")
 }
