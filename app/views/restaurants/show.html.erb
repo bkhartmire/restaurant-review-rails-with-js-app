@@ -9,7 +9,7 @@
 <h4><%= calculate_average(@restaurant) %></h4>
 
 <% if @restaurant.reviews.any? %>
-  <%= link_to "See Reviews", restaurant_reviews_path(@restaurant), class: "list_reviews"%>
+  <%= link_to "See Reviews", restaurant_reviews_path(@restaurant), id: "list_reviews"%>
   <div class="list_reviews">
   </div>
 <% end %>

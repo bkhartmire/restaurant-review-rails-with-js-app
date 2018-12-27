@@ -14,10 +14,13 @@ $(document).ready(function() {
     seeReview(e, self)
   })
 
-  $('a.list_reviews')[0].addEventListener('click', function(e) {
-    let self = this
-    listReviews(e, self)
-  })
+  if (document.getElementById('list_reviews')) {
+    $('a#list_reviews')[0].addEventListener('click', function(e) {
+      let self = this
+      listReviews(e, self)
+    })
+  }
+
 })
 
 function listReviews(e, self) {
