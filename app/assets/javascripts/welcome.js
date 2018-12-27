@@ -8,10 +8,37 @@ $(document).ready(function() {
 
 function browseSorter() {
   var browseValue = document.getElementById('browse_bar').value;
-  let req = $.get(browseValue)
+  let req = $.get(browseValue + '.json')
   req.done(function(response, browseValue){
+
+
+    response.forEach(country => {
+      let newCountry = new Country(country)
+      let newCountryHTML = newCountry.countryHTML()
+      debugger
+      $("#display_list").append(newCountryHTML)
+
+    })
+
     $("#display_list").empty().append(response).ready(addListener())
   })
+}
+
+// jas object model
+
+class Country{
+  constructor(obj){
+    this.name = obj.name
+    this.name = obj.name
+    this.name = obj.name
+  }
+}
+
+//can render form with button and custom function
+Country.prototype.countryHTML = function (){
+  return (`
+    <div>${this.name}</div>
+    `)
 }
 
 function addListener(browseValue) {

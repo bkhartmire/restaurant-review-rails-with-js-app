@@ -37,7 +37,6 @@ function addReview(e, self) {
   req.done(function(response){
     $(`div.${self.classList[1]}`).empty().append(response)
   })
-
 }
 
 function seeReview(e, self) {
