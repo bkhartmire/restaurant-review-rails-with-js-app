@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.find(review_params[:review_id])
+    @review = Review.find(params[:id])
   end
 
   def new
