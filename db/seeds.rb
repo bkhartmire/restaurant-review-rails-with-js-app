@@ -214,7 +214,7 @@ restaurants = Restaurant.create([
     {name: 'The Waterside Inn', city_id: City.find_by(name: 'Bray').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.waterside-inn.co.uk/"},
     {name: 'The Fat Duck', city_id: City.find_by(name: 'Bray').id , cuisine_id: Cuisine.find_by(name: 'British').id, website_url: "https://www.thefatduck.co.uk/"},
     {name: 'Restaurant Gordon Ramsay', city_id: City.find_by(name: 'London').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "https://www.gordonramsayrestaurants.com/restaurant-gordon-ramsay/"},
-    {name: '	Alain Ducasse at the Dorchester', city_id: City.find_by(name: 'London').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "m.alainducasse-dorchester.com/en/"},
+    {name: '	Alain Ducasse at the Dorchester', city_id: City.find_by(name: 'London').id , cuisine_id: Cuisine.find_by(name: 'French').id, website_url: "http://www.alainducasse-dorchester.com/"},
     {name: 'The Araki', city_id: City.find_by(name: 'London').id , cuisine_id: Cuisine.find_by(name: 'Japanese').id, website_url: "http://www.the-araki.com/"},
     {name: 'Alinea', city_id: City.find_by(name: 'Chicago').id , cuisine_id: Cuisine.find_by(name: 'New American').id, website_url: "https://www.alinearestaurant.com/"},
     {name: 'SingleThread Farms', city_id: City.find_by(name: 'Healdsburg').id , cuisine_id: Cuisine.find_by(name: 'New American').id, website_url: "https://www.singlethreadfarms.com/"},
