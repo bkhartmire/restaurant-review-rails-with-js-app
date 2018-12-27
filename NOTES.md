@@ -1,4 +1,6 @@
--users will need to maintain a visted_restuarants array
+-users will need to maintain a restaurants array
+-users_restaurants table??? to track visits? Only for SQL?
+-user can maintain a wishlist
 
 -only admin users should be able to add a new restaurant
 -fix Omniauth feature (deleted fb)

@@ -1,8 +1,10 @@
 class Restaurant < ApplicationRecord
   has_many :reviews
-  has_many :users, through: :reviews
+  has_many :users
+  #has_many :users, through: :reviews
   belongs_to :cuisine
   belongs_to :city
+  has_many :restaurants, through: :user_restaurants
 
   validates :name, presence: true
   validates :city_name, presence: true
@@ -11,7 +13,7 @@ class Restaurant < ApplicationRecord
   def self.five_stars
     self.all.select {|restaurant| restaurant.average_rating == 5.0 }
   end
-  
+
   def average_rating
     if self.reviews.any?
       sum = 0
