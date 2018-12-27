@@ -1,1 +1,7 @@
-<h1>This is review/show</h1>
+<h3><%= @review.rating %> Stars </h3>
+<h4><%= @review.content %></h4>
+<% if @review.updated_at %>
+  <h6>Updated: <%= @review.updated_at %></h6>
+<% else %>
+  <h6>Added: <%= @review.created_at %></h6>
+<% end %>

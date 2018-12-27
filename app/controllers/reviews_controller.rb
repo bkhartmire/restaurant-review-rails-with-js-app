@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
+    render layout: false
   end
 
   def new
