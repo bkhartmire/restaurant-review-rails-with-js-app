@@ -18,12 +18,10 @@ $(document).ready(function() {
     let self = this
     listReviews(e, self)
   })
-  alert("js loading")
 })
 
 function listReviews(e, self) {
   e.preventDefault()
-  alert(self.classList[0])
   let req = $.get(self.href)
   req.done(function(response){
     $("div.list_reviews").empty().append(response)
