@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   resources :countries, only: [:index, :show]
   resources :users, only: [:show]
+  resources :visits
   get 'countriesAZ', to: 'countries#sortAZ'
   get 'countriesMost', to: 'countries#sortMost'
   get 'citiesAZ', to: 'cities#sortAZ'
