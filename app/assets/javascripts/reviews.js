@@ -22,10 +22,15 @@ $(document).ready(function() {
 
 function listReviews(e, self) {
   e.preventDefault()
-  let req = $.get(self.href)
-  req.done(function(response){
-    $("div.list_reviews").empty().append(response)
-  })
+  let div = $("div.list_reviews")
+  if (div.html() === "") {
+    let req = $.get(self.href)
+    req.done(function(response){
+      div.append(response)
+    })
+  } else {
+    div.empty()
+  }
 }
 
 function addReview(e, self) {
