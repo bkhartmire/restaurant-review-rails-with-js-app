@@ -6,7 +6,10 @@
   <h3> You haven't visited any 3-Star Michelin Restaurants Yet</h3>
 <% end %>
 <h5>Enter a new restaurant you've visited:</h5>
-<%= select_tag "Restaurants", options_from_collection_for_select(@restaurants, "id", "name") %> 
+<%= form_for @user_restaurant do |f| %>
+  <%= select_tag "Restaurants", options_from_collection_for_select(@restaurants, "id", "name") %>
+  <%= f.submit %>
+<% end %>
 <% if current_user.reviews.any? %>
   <h3>Your Reviews</h3>
   <ul>
