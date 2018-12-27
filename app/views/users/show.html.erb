@@ -10,7 +10,8 @@
         <%= link_to "Add Review", new_restaurant_review_path(restaurant), class: "add_review restaurant_#{restaurant.id}"%>
         <div class="restaurant_<%= restaurant.id %>"></div>
       <% else %>
-        <%= link_to "See Your Review", restaurant_review_path(restaurant) %>
+        <%= link_to "See Your Review", restaurant_review_path(restaurant), class: "see_review restaurant_#{restaurant.id}"%>
+        <div class="restaurant_<%= restaurant.id %>"></div>
       <% end %>
     </li>
   <% end %>
