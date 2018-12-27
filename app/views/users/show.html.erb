@@ -7,6 +7,7 @@
     <li>
       <%=restaurant.name %><br>
       <%= link_to "Add Review", new_restaurant_review_path(restaurant), class: "add_review"%>
+      <div class="review_form"></div>
     </li>
   <% end %>
   </ul>

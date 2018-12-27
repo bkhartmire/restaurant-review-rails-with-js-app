@@ -3,7 +3,8 @@ $(document).ready(function() {
     listReviews(e)
   })
   $('.add_review').on('click', function(e) {
-    addReview(e)
+    let self = this
+    addReview(e, self)
   })
 })
 
@@ -16,7 +17,10 @@ function listReviews(e) {
   })
 }
 
-function addReview(e) {
+function addReview(e, self) {
   e.preventDefault()
-  alert('Hello')
+  let req = $.get(self.href)
+  req.done(function(response){
+    $('div.review_form').empty().append(response)
+  })
 }
