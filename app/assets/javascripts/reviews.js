@@ -6,6 +6,10 @@ $(document).ready(function() {
     let self = this
     addReview(e, self)
   })
+  $('.see_review').on('click', function(e) {
+    let self = this
+    seeReview(e, self)
+  })
 })
 
 function listReviews(e) {
@@ -18,6 +22,13 @@ function listReviews(e) {
 }
 
 function addReview(e, self) {
+  e.preventDefault()
+  let req = $.get(self.href)
+  req.done(function(response){
+    $(`div.${self.classList[1]}`).empty().append(response)
+  })
+}
+function seeReview(e, self) {
   e.preventDefault()
   let req = $.get(self.href)
   req.done(function(response){
