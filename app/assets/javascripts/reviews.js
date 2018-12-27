@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#reviews_button').on('click', function(e) {
+  $('.list_reviews').on('click', function(e) {
     listReviews(e)
   })
 })

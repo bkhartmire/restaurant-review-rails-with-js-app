@@ -4,7 +4,10 @@
   <h3>3-Star Michelin Restaurants You've Visited</h3>
   <ul>
   <% current_user.restaurants.each do |restaurant| %>
-    <li><%=restaurant.name %></li>
+    <li>
+      <%=restaurant.name %><br>
+      <%= link_to "Add Review", new_restaurant_review_path(restaurant), class: "add_review"%>
+    </li>
   <% end %>
   </ul>
 <% else %>

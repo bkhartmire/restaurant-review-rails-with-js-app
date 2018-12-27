@@ -13,7 +13,7 @@
 <% end %>
 
 <% if @restaurant.reviews.any? %>
-  <%= link_to "See Reviews", restaurant_reviews_path(@restaurant), id: "reviews_button"%>
+  <%= link_to "See Reviews", restaurant_reviews_path(@restaurant), class: "list_reviews"%>
 <% end %>
 <div id="reviews">
 </div>
