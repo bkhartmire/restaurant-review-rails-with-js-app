@@ -10,7 +10,6 @@ function browseSorter() {
   var browseValue = document.getElementById('browse_bar').value;
   let req = $.get(browseValue + '.json')
   req.done(function(response){
-
     $("#display_list").empty()
     let i = 1
     switch (browseValue) {
@@ -42,7 +41,7 @@ function browseSorter() {
         })
         break
       case 'restaurantsAZ':
-        respone.forEach(restaurant => {
+        response.forEach(restaurant => {
           let newRestaurant = new Restaurant(restaurant)
           let newRestaurantHTML = newRestaurant.restaurantHTML()
           $("#display_list").append(newRestaurantHTML)
