@@ -1,7 +1,11 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all.sort_by{|restaurant| restaurant.name}
-    render 'restaurants/index', layout: false
+    #render 'restaurants/index', layout: false
+    respond_to do |f|
+      f.html {render 'restaurants/index', layout: false}
+      f.json {render json: @restaurants}
+    end
   end
 
   def new
@@ -20,6 +24,10 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    respond_to do |f|
+      f.html {render 'restaurants/show', layout: false}
+      f.json {render json: @restaurant}
+    end
   end
 
   def destroy
