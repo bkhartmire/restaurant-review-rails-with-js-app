@@ -12,12 +12,14 @@ function browseSorter() {
   req.done(function(response, browseValue){
 
     $("#display_list").empty()
+    let i = 1
     response.forEach(country => {
       let newCountry = new Country(country)
-      let newCountryHTML = newCountry.countryHTML()
+      let newCountryHTML = newCountry.countryHTML(i)
       $("#display_list").append(newCountryHTML)
-      //debugger
-    }).ready(addListener())
+      i += 1
+    })
+    addListener()
   })
 }
 
@@ -25,16 +27,18 @@ function browseSorter() {
 
 class Country{
   constructor(obj){
+    this.id = obj.id
     this.name = obj.name
-    this.name = obj.name
-    this.name = obj.name
+    this.cities = obj.cities
+    this.restaurants = obj.restaurants
   }
 }
 
 //can render form with button and custom function
-Country.prototype.countryHTML = function (){
+Country.prototype.countryHTML = function (i){
   return (`
-    <div>${this.name}</div>
+    <h3><a class='category_item list_restaurants_${i}' href='countries/${this.id}'>${this.name}</a> (${this.restaurants.length})</h3>
+    <div class='list_restaurants_${i}'></div>
     `)
 }
 
