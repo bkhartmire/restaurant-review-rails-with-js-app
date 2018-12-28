@@ -22,11 +22,28 @@ $(document).ready(function() {
   }
 })
 
+class Review{
+  constructor(obj){
+    this.id = obj.id
+
+  }
+}
+
+//can render form with button and custom function
+Review.prototype.reviewHTML = function (){
+  return (`
+    `)
+}
+
 function listReviews(e, self) {
   e.preventDefault()
-  let req = $.get(self.href)
+  let req = $.get(self.href + '.json')
   req.done(function(response){
-    $("div.list_reviews").append(response)
+    response.forEach(review => {
+      let newReview = new Review(review)
+      let newReviewHTML = newReview.reviewHTML()
+      $("div.list_reviews").append(newReviewHTML)
+    })
   })
   self.innerHTML = ""
 }
