@@ -11,16 +11,13 @@ function browseSorter() {
   let req = $.get(browseValue + '.json')
   req.done(function(response, browseValue){
 
-
+    $("#display_list").empty()
     response.forEach(country => {
       let newCountry = new Country(country)
       let newCountryHTML = newCountry.countryHTML()
-      debugger
       $("#display_list").append(newCountryHTML)
-
-    })
-
-    $("#display_list").empty().append(response).ready(addListener())
+      //debugger
+    }).ready(addListener())
   })
 }
 
@@ -41,7 +38,7 @@ Country.prototype.countryHTML = function (){
     `)
 }
 
-function addListener(browseValue) {
+function addListener() {
   categoryCollection = document.getElementsByClassName("category_item")//
     for(var i = 0; i < categoryCollection.length - 1; i++){
       categoryCollection[i].addEventListener("click", function(e){
