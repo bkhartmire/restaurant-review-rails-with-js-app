@@ -25,13 +25,18 @@ $(document).ready(function() {
 class Review{
   constructor(obj){
     this.id = obj.id
-
+    this.rating = obj.rating
+    this.user = obj.user.email
+    this.content = obj.content
   }
 }
 
 //can render form with button and custom function
 Review.prototype.reviewHTML = function (){
   return (`
+    <li>${this.user}: ${this.rating} Stars
+      <p>${this.content}</p>
+    </li>
     `)
 }
 
