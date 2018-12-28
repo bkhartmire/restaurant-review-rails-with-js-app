@@ -32,11 +32,18 @@ class Review{
 }
 
 //can render form with button and custom function
-Review.prototype.reviewHTML = function (){
+Review.prototype.generalReviewHTML = function (){
   return (`
     <li>${this.user}: ${this.rating} Stars
       <p>${this.content}</p>
     </li>
+    `)
+}
+
+Review.prototype.personalReviewHTML = function (){
+  return (`
+    <h3>${this.rating} Stars</h3>
+    <h4>${this.content}</h4>
     `)
 }
 
@@ -46,7 +53,7 @@ function listReviews(e, self) {
   req.done(function(response){
     response.forEach(review => {
       let newReview = new Review(review)
-      let newReviewHTML = newReview.reviewHTML()
+      let newReviewHTML = newReview.generalReviewHTML()
       $("div.list_reviews").append(newReviewHTML)
     })
   })
@@ -65,9 +72,11 @@ function seeReview(e, self) {
   e.preventDefault()
   let div = $('div.' + self.classList[1])
   if (div.html() === "") {
-    let req = $.get(self.href)
+    let req = $.get(self.href + '.json')
     req.done(function(response){
-      div.append(response)
+      let newReview = new Review(response)
+      let newReviewHTML = newReview.personalReviewHTML()
+      div.append(newReviewHTML)
     })
   } else {
     div.empty()
