@@ -10,6 +10,5 @@ class Restaurant{
 
 //can render form with button and custom function
 Restaurant.prototype.restaurantHTML = function (){
-  return (`<h3><a href='restaurants/${this.id}'>${this.name}</a></h3>
-  <p>${this.city.name}</p><br>`)
+  return (`<h5><a href='restaurants/${this.id}'>${this.name}</a></h5>`)
 }

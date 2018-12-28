@@ -65,9 +65,14 @@ function listRestaurants(e, self) {
   e.preventDefault()
   let div = $('div.' + self.classList[1])
   if (div.html() === "") {
-    let req = $.get(self.href)
+    let req = $.get(self.href + '.json')
     req.done(function(response){
-      div.append(response)
+      debugger
+      response.restaurants.forEach(restaurant => {
+        let newRestaurant = new Restaurant(restaurant)
+        let newRestaurantHTML = newRestaurant.restaurantHTML()
+        div.append(newRestaurantHTML)
+      })
     })
   } else {
     div.empty()
