@@ -53,7 +53,7 @@ function browseSorter() {
 
 function addListener() {
   categoryCollection = document.getElementsByClassName("category_item")//
-    for(var i = 0; i < categoryCollection.length - 1; i++){
+    for(var i = 0; i < categoryCollection.length; i++){
       categoryCollection[i].addEventListener("click", function(e){
         var self = this
         listRestaurants(e, self)
@@ -67,7 +67,6 @@ function listRestaurants(e, self) {
   if (div.html() === "") {
     let req = $.get(self.href + '.json')
     req.done(function(response){
-      debugger
       response.restaurants.forEach(restaurant => {
         let newRestaurant = new Restaurant(restaurant)
         let newRestaurantHTML = newRestaurant.restaurantHTML()
