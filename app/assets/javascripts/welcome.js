@@ -13,14 +13,16 @@ function browseSorter() {
 
     $("#display_list").empty()
     let i = 1
-    //debugger
-    response.forEach(country => {
-      let newCountry = new Country(country)
-      debugger
-      let newCountryHTML = newCountry.countryHTML(i)
-      $("#display_list").append(newCountryHTML)
-      i += 1
-    })
+    switch (browseValue) {
+      case 'countriesAZ':
+        response.forEach(country => {
+          let newCountry = new Country(country)
+          let newCountryHTML = newCountry.countryHTML(i)
+          $("#display_list").append(newCountryHTML)
+          i += 1
+        })
+        break
+    }
     addListener()
   })
 }
