@@ -15,6 +15,7 @@ function browseSorter() {
     let i = 1
     switch (browseValue) {
       case 'countriesAZ':
+      case 'countriesMost':
         response.forEach(country => {
           let newCountry = new Country(country)
           let newCountryHTML = newCountry.countryHTML(i)
@@ -22,6 +23,30 @@ function browseSorter() {
           i += 1
         })
         break
+      case 'citiesAZ':
+      case 'citiesMost':
+        response.forEach(city => {
+          let newCity = new City(city)
+          let newCityHTML = newCity.cityHTML(i)
+          $("#display_list").append(newCityHTML)
+          i += 1
+        })
+        break
+      case 'cuisinesAZ':
+      case 'cuisinesMost':
+        response.forEach(cuisine => {
+          let newCuisine = new Cuisine(cuisine)
+          let newCuisineHTML = newCuisine.cuisineHTML(i)
+          $("#display_list").append(newCuisineHTML)
+          i += 1
+        })
+        break
+      case 'restaurantsAZ':
+        respone.forEach(restaurant => {
+          let newRestaurant = new Restaurant(restaurant)
+          let newRestaurantHTML = newRestaurant.restaurantHTML()
+          $("#display_list").append(newRestaurantHTML)
+        })
     }
     addListener()
   })

@@ -10,8 +10,7 @@ class Restaurant{
 }
 
 //can render form with button and custom function
-//don't need to pass in i as argument for this one
-Restaurant.prototype.restaurantHTML = function (i){
+Restaurant.prototype.restaurantHTML = function (){
   if (this.city.name !== restaurant.city.country.name) {
     return (`
       <h3><a href='restaurants/${this.id}'>${this.name}</a></h3>
