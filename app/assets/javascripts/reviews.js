@@ -65,14 +65,15 @@ function addReview(e, self) {
   let req = $.get(self.href)
   req.done(function(response){
     $(`div.${self.classList[1]}`).empty().append(response)
+    addFormListener()
   })
-  addFormListener()
+
 }
 
 function addFormListener() {
-  let formCollection = document.getElementsByClassName('new_review')
+  formCollection = document.getElementsByClassName('new_review')
   for(var i = 0; i < formCollection.length; i++){
-    formCollection[0].addEventListener("submit", function(e){
+    formCollection[i].addEventListener("submit", function(e){
       e.preventDefault()
       alert("YAY YOU HIJACKED THIS FORM")
     })
