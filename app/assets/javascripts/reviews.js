@@ -66,6 +66,17 @@ function addReview(e, self) {
   req.done(function(response){
     $(`div.${self.classList[1]}`).empty().append(response)
   })
+  addFormListener()
+}
+
+function addFormListener() {
+  let formCollection = document.getElementsByClassName('new_review')
+  for(var i = 0; i < formCollection.length; i++){
+    formCollection[0].addEventListener("submit", function(e){
+      e.preventDefault()
+      alert("YAY YOU HIJACKED THIS FORM")
+    })
+  }
 }
 
 function seeReview(e, self) {
