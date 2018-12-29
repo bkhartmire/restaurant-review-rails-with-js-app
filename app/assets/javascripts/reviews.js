@@ -79,6 +79,9 @@ function addFormListener() {
       debugger
       var values = $(this).serialize();
       var review = $.post(this.action, values)
+      review.done(function(data){
+        console.log(data)
+      })
     })
   }
 }
