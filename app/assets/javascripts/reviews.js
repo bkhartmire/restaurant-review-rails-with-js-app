@@ -75,12 +75,14 @@ function addFormListener() {
   for(var i = 0; i < formCollection.length; i++){
     formCollection[i].addEventListener("submit", function(e){
       e.preventDefault()
-      alert("YAY YOU HIJACKED THIS FORM")
       debugger
-      var values = $(this).serialize();
-      var review = $.post(this.action, values)
+      var values = $(this).serialize()
+      var review = $.post(this.action + '.json', values)
       review.done(function(data){
-        console.log(data)
+        debugger
+        //$(".reviewRating").text(review["rating"])
+        //$(".reviewContent").text(review["content"])
+        $('div.reviewResult').append(data)
       })
     })
   }
