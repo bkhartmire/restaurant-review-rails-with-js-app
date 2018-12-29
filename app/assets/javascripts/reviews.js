@@ -76,6 +76,9 @@ function addFormListener() {
     formCollection[i].addEventListener("submit", function(e){
       e.preventDefault()
       alert("YAY YOU HIJACKED THIS FORM")
+      debugger
+      var values = $(this).serialize();
+      var review = $.post(this.action, values)
     })
   }
 }
