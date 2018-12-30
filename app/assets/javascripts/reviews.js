@@ -80,7 +80,7 @@ function addFormListener() {
       var review = $.post(this.action + '.json', values)
       review.done(function(data){
         $('div.reviewResult').append(data)
-        $('form').empty()
+        $('form.new_review').empty()
       })
     })
   }
