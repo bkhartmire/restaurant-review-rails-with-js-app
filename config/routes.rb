@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:show] do
     resources :reviews
   end
+  resources :reviews, only: [:show]
   resources :countries, only: [:index, :show]
   resources :users, only: [:show]
   resources :visits
