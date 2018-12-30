@@ -86,7 +86,6 @@ function addFormListener() {
   }
 }
 
-//need to render /reviews/:id route, not a nested route
 function seeReview(e, self) {
   e.preventDefault()
   let div = $('div.' + self.classList[1])
