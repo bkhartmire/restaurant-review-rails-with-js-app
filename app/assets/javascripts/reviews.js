@@ -94,10 +94,8 @@ function seeReview(e, self) {
   let div = $('div.' + self.classList[1])
   if (div.html() === "") {
     let req = $.get(self.href + '.json')
-    debugger
     req.done(function(response){
       let newReview = new Review(response)
-      debugger
       let newReviewHTML = newReview.personalReviewHTML()
       div.append(newReviewHTML)
     })

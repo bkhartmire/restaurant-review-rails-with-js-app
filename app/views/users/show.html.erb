@@ -17,7 +17,7 @@
       <% else %>
         <% review = Review.find_by(restaurant_id: restaurant.id)%>
         <%= link_to "See Your Review", review_path(review), class: "see_review review_#{review.id}"%>
-        <div class="restaurant_<%= restaurant.id %>"></div>
+        <div class="review_<%= review.id %>"></div>
       <% end %>
     </li>
   <% end %>
