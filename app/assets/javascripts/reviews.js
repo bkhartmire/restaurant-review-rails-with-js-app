@@ -31,7 +31,6 @@ class Review{
   }
 }
 
-//can render form with button and custom function
 Review.prototype.generalReviewHTML = function (){
   return (`
     <li>${this.user}: ${this.rating} Stars
