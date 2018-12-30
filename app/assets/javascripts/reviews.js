@@ -62,9 +62,10 @@ function listReviews(e, self) {
 
 function addReview(e, self) {
   e.preventDefault()
+  let custom_class = self.classList[1]
   let req = $.get(self.href)
   req.done(function(response){
-    $(`div.${self.classList[1]}`).empty().append(response)
+    $(`div.${custom_class}`).empty().append(response)
     addFormListener()
   })
 
@@ -73,16 +74,13 @@ function addReview(e, self) {
 function addFormListener() {
   formCollection = document.getElementsByClassName('new_review')
   for(var i = 0; i < formCollection.length; i++){
-    formCollection[i].addEventListener("submit", function(e){
+    formCollection[i].addEventListener("submit", function(e, custom_class){
       e.preventDefault()
-      debugger
       var values = $(this).serialize()
       var review = $.post(this.action + '.json', values)
       review.done(function(data){
-        debugger
-        //$(".reviewRating").text(review["rating"])
-        //$(".reviewContent").text(review["content"])
         $('div.reviewResult').append(data)
+        $('form').empty()
       })
     })
   }
