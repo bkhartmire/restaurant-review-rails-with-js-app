@@ -1,23 +1,16 @@
 <h1>Your Profile</h1>
 <h5>Logged in as <%= current_user.email %></h5>
 
-  <%= count_restaurants_greeting %>
+<%= count_restaurants_greeting %>
 
-  <ol>
-  <% current_user.restaurants.each do |restaurant| %>
-    <li>
-      <%=restaurant.name %><br>
-      <% if !current_user.reviews.detect{|review| review.restaurant_id == restaurant.id} %>
-        <%= link_to "Add Review", new_restaurant_review_path(restaurant), class: "add_review restaurant_#{restaurant.id}"%>
-        <div class="restaurant_<%= restaurant.id %>"></div>
-      <% else %>
-        <% review = Review.find_by(restaurant_id: restaurant.id)%>
-        <%= link_to "See Your Review", review_path(review), class: "see_review review_#{review.id}"%>
-        <div class="review_<%= review.id %>"></div>
-      <% end %>
-    </li>
-  <% end %>
-  </ol>
+<ol>
+<% current_user.restaurants.each do |restaurant| %>
+  <li>
+    <%=restaurant.name %><br>
+    <%= add_or_see_review(restaurant) %>
+  </li>
+<% end %>
+</ol>
 
 <%= form_for (@visit) do |f| %>
   <%= select_tag :restaurant, options_from_collection_for_select(@restaurants, "id", "name"), {:prompt => "Enter a new restaurant you've visited:"} %>
