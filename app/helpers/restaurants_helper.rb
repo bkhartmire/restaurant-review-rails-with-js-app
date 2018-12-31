@@ -17,4 +17,13 @@ module RestaurantsHelper
     error_messages << restaurant.city.errors.full_messages if restaurant.city.errors.any?
   end
 
+  def count_restaurants_greeting()
+    if current_user.restaurants.count == 1
+        raw("<h3>Congratulations! You visited your first Michelin 3-Star Restaurant!</h3>")
+    elsif current_user.restaurants.count > 1
+        raw("<h3>You've Visited #{current_user.restaurants.count} Michelin 3-Star Restaurants So Far!</h3>")
+    end
+  end
+
+
 end

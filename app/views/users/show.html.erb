@@ -1,11 +1,8 @@
 <h1>Your Profile</h1>
 <h5>Logged in as <%= current_user.email %></h5>
 <% if current_user.restaurants.any? %>
-  <% if current_user.restaurants.count == 1 %>
-    <h3>Congratulations! You visited your first Michelin 3-Star Restaurant!</h3>
-  <% elsif current_user.restaurants.count > 1 %>
-    <h3>You've Visited <%= current_user.restaurants.count %> Michelin 3-Star Restaurants So Far!</h3>
-  <% end %>
+  <%= count_restaurants_greeting %>
+
   <h5>There are <%= Restaurant.all.count - current_user.restaurants.count %> more Michelin 3-Star Restaurants in the world for you to try!</h5>
   <ol>
   <% current_user.restaurants.each do |restaurant| %>
