@@ -33,7 +33,7 @@ module RestaurantsHelper
   def add_or_see_review(restaurant)
     if current_user.reviews.detect{|review| review.restaurant_id == restaurant.id}
       review = Review.find_by(restaurant_id: restaurant.id)
-      link = "<a class='see_review #{review.id}' href='/reviews/#{review.id}'>See Your Review</a>"
+      link = "<a class='see_review review_#{review.id}' href='/reviews/#{review.id}'>See Your Review</a>"
       raw("#{link}<div class='review_#{review.id}'></div>")
     else
       link = "<a class='add_review restaurant_#{restaurant.id}' href='/restaurants/#{restaurant.id}/reviews/new'>Add Review</a>"
