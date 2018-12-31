@@ -1,7 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all.sort_by{|restaurant| restaurant.name}
-    #render 'restaurants/index', layout: false
     respond_to do |f|
       f.html {render 'restaurants/index', layout: false}
       f.json {render json: @restaurants}

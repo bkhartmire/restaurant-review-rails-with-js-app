@@ -2,7 +2,6 @@ class ReviewsController < ApplicationController
 
   def index
     @restaurant = Restaurant.find(params[:restaurant_id])
-    #render 'reviews/index', layout: false
     respond_to do |f|
       f.html {render 'reviews/index', layout: false}
       f.json {render json: @restaurant.reviews}
@@ -11,7 +10,6 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
-    #render layout: false
     respond_to do |f|
       f.html {render layout: false}
       f.json {render json: @review}
@@ -22,7 +20,6 @@ class ReviewsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new(restaurant_id: params[:restaurant_id])
     render layout: false
-    #redirect_to restaurant_review_path(@restaurant, @review), layout: false
   end
 
   def create
