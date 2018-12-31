@@ -2,18 +2,12 @@ class ReviewsController < ApplicationController
 
   def index
     @restaurant = Restaurant.find(params[:restaurant_id])
-    respond_to do |f|
-      f.html {render 'reviews/index', layout: false}
-      f.json {render json: @restaurant.reviews}
-    end
+    render json: @restaurant.reviews
   end
 
   def show
     @review = Review.find(params[:id])
-    respond_to do |f|
-      f.html {render layout: false}
-      f.json {render json: @review}
-    end
+    render json: @review
   end
 
   def new
