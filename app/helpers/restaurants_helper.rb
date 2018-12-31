@@ -33,11 +33,11 @@ module RestaurantsHelper
   def add_or_see_review(restaurant)
     if current_user.reviews.detect{|review| review.restaurant_id == restaurant.id}
       review = Review.find_by(restaurant_id: restaurant.id)
-      <%= link_to "See Your Review", review_path(review), class: "see_review review_#{review.id}"%>
-      <div class="review_<%= review.id %>"></div>
+      link = "<a class='see_review #{review.id}' href='/reviews/#{review.id}'>See Your Review</a>"
+      raw("#{link}<div class='review_#{review.id}'></div>")
     else
-      <%= link_to "Add Review", new_restaurant_review_path(restaurant), class: "add_review restaurant_#{restaurant.id}"%>
-      <div class="restaurant_<%= restaurant.id %>"></div>
+      link = "<a class='add_review restaurant_#{restaurant.id}' href='/restaurants/#{restaurant.id}/reviews/new'>Add Review</a>"
+      raw("#{link}<div class='restaurant_#{restaurant.id}'></div>")
     end
   end
 
