@@ -78,7 +78,8 @@ function addFormListener() {
       var values = $(this).serialize()
       var review = $.post(this.action + '.json', values)
       review.done(function(data){
-        $('div.reviewResult').append(data)
+        $('h3.reviewRating').append(data["rating"])
+        $('h4.reviewContent').append(data["content"])
         $('form.new_review').empty()
       })
     })
