@@ -4,6 +4,7 @@ $(document).ready(function() {
   }
 })
 
+//renders a list of clickable countries/cuisines/restaurants in a specified order based on the user's selection
 function browseSorter() {
   var browseValue = document.getElementById('browse_bar').value;
   let req = $.get(browseValue + '.json')
@@ -49,6 +50,7 @@ function browseSorter() {
   })
 }
 
+//add event listener to each rendered list item
 function addListener() {
   categoryCollection = document.getElementsByClassName("category_item")//
     for(var i = 0; i < categoryCollection.length; i++){
@@ -59,6 +61,7 @@ function addListener() {
     }
   }
 
+//event will append new json restaurant object
 function listRestaurants(e, self) {
   e.preventDefault()
   let div = $('div.' + self.classList[1])
