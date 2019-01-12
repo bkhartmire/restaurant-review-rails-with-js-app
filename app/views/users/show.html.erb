@@ -6,8 +6,9 @@
 <ol>
 <% current_user.restaurants.each do |restaurant| %>
   <li>
-    <%=restaurant.name %><br>
+    <%= link_to restaurant.name, restaurant_path(restaurant) %><br>
     <%= add_or_see_review(restaurant) %>
+    <br>
   </li>
 <% end %>
 </ol>
