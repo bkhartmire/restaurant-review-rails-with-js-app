@@ -27,6 +27,7 @@ class ReviewsController < ApplicationController
       render :new
     end
   end
+  
 
   private
   def review_params

@@ -31,6 +31,7 @@ class Review{
   }
 }
 
+//reviews on restaurant#show
 Review.prototype.generalReviewHTML = function (){
   return (`
     <li>${this.user}: ${this.rating} Stars
@@ -39,6 +40,7 @@ Review.prototype.generalReviewHTML = function (){
     `)
 }
 
+//reviews on user profile
 Review.prototype.personalReviewHTML = function (){
   return (`
     <h3>${this.rating} Stars</h3>
@@ -77,7 +79,9 @@ function addFormListener() {
       e.preventDefault()
       var values = $(this).serialize()
       var review = $.post(this.action + '.json', values)
+      debugger
       review.done(function(data){
+        debugger
         $('h3.reviewRating').append(data["rating"])
         $('h4.reviewContent').append(data["content"])
         $('form.new_review').empty()
