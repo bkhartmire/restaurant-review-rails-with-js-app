@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get 'cuisinesAZ', to: 'cuisines#sortAZ'
   get 'cuisinesMost', to: 'cuisines#sortMost'
   get 'restaurantsAZ', to: 'restaurants#index'
+  get 'restaurantsRating', to: 'restaurants#index'
 end

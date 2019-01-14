@@ -29,16 +29,23 @@ class Review{
     this.user = obj.user.email
     this.content = obj.content
   }
+  generalReviewHTML(){
+    return (`
+      <li>${this.user}: ${this.rating} Stars
+        <p>${this.content}</p>
+      </li>
+      `)
+  }
 }
 
 //reviews on restaurant#show
-Review.prototype.generalReviewHTML = function (){
-  return (`
-    <li>${this.user}: ${this.rating} Stars
-      <p>${this.content}</p>
-    </li>
-    `)
-}
+//Review.prototype.generalReviewHTML = function (){
+//  return (`
+//    <li>${this.user}: ${this.rating} Stars
+//      <p>${this.content}</p>
+//    </li>
+//    `)
+//}
 
 //reviews on user profile
 Review.prototype.personalReviewHTML = function (){
@@ -76,6 +83,7 @@ function addFormListener() {
   formCollection = document.getElementsByClassName('new_review')
   for(var i = 0; i < formCollection.length; i++){
     formCollection[i].addEventListener("submit", function(e, custom_class){
+
       e.preventDefault()
       var values = $(this).serialize()
       review = $.ajax({
@@ -84,9 +92,10 @@ function addFormListener() {
         data: values,
         success: function(result){console.log(result)},
         dataType: "json",
-        error: function(error){console.log('Something went wrong.')}
+        error: function(error){console.log('Something went wrong.', error)}
       })
       review.done(function(data){
+        console.log('Hello')
         $('h3.reviewRating').append(data["rating"] + ' Stars')
         $('h4.reviewContent').append(data["content"])
         $('form.new_review').empty()

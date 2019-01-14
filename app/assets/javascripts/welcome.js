@@ -45,6 +45,17 @@ function browseSorter() {
           let newRestaurantHTML = newRestaurant.restaurantHTML()
           $("#display_list").append(newRestaurantHTML)
         })
+        break
+      case 'restaurantsRating':
+        sortedRestaurants = response.sort(function compareRatings(a, b){
+          return b.average_rating - a.average_rating
+        })
+        sortedRestaurants.forEach(restaurant => {
+          let newRestaurant = new Restaurant(restaurant)
+          let newRestaurantHTML = newRestaurant.restaurantHTML()
+          $("#display_list").append(newRestaurantHTML)
+        })
+
     }
     addListener()
   })
