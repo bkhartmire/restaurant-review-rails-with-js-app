@@ -78,10 +78,15 @@ function addFormListener() {
     formCollection[i].addEventListener("submit", function(e, custom_class){
       e.preventDefault()
       var values = $(this).serialize()
-      var review = $.post(this.action + '.json', values)
-      debugger
+      review = $.ajax({
+        type: "POST",
+        url: this.action,
+        data: values,
+        success: function(result){console.log(result)},
+        dataType: "json",
+        error: function(error){console.log('Something went wrong.')}
+      })
       review.done(function(data){
-        debugger
         $('h3.reviewRating').append(data["rating"])
         $('h4.reviewContent').append(data["content"])
         $('form.new_review').empty()
