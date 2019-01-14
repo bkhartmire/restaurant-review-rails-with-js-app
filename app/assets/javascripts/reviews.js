@@ -87,7 +87,7 @@ function addFormListener() {
         error: function(error){console.log('Something went wrong.')}
       })
       review.done(function(data){
-        $('h3.reviewRating').append(data["rating"])
+        $('h3.reviewRating').append(data["rating"] + ' Stars')
         $('h4.reviewContent').append(data["content"])
         $('form.new_review').empty()
       })
